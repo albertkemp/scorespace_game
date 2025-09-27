@@ -15,6 +15,7 @@ let playerHahaX = 0;
 
 
 let playerX=300;
+let coins = 5;
 const originalX = playerX;
 const playerY = 400;
 let playerSpeed = 5;
@@ -24,7 +25,7 @@ var gameState = "start";
 var canvasWidth = 600;
 var canvasHeight = 600;
 const obstacleRange = 2000;
-const obstacleXRange = 1000;
+const obstacleXRange = 2000;
 const obstacleNumber = 3600;
 const blockRange = 100;
 let lives = 3;
@@ -38,7 +39,7 @@ const startButtonY = 250;
 const startButtonWidth = 100;
 const startButtonHeight = 50;
 let obstacleMoving = true;
-let blockSpeed =7;
+let blockSpeed =3;
 let playerImage;
 /*
 function preload() {
@@ -61,16 +62,17 @@ function setup() {
   createCanvas(canvasWidth, canvasHeight);
 }
 let obstacleCourse = [
-  {name: "chance", x: 100, y: 100, w: 100, h: 50, hasCollided: false, c: "40%"},
-  {name: "chance", x: 600, y:300, w: 10, h: 20, hasCollided: false,c: "10%"},
-  {name: "chance", x: 200, y: 500, w: 60, h: 50, hasCollided: false,c: "20%"},
-  {name: "chance", x: 400, y: 700, w: 100, h: 80, hasCollided: false,c: "10%"},
-  {name: "chance", x: 100, y: 900, w: 200, h: 50, hasCollided: false,c: "20%"},
+  {name: "chance", x: 100, y: 100, w: 200, h: 50, hasCollided: false, c: "40%"},
+  {name: "chance", x: 600, y:300, w: 20, h: 20, hasCollided: false,c: "10%"},
+  {name: "chance", x: 200, y: 500, w: 220, h: 50, hasCollided: false,c: "20%"},
+  {name: "chance", x: 400, y: 700, w: 400, h: 80, hasCollided: false,c: "10%"},
+  {name: "chance", x: 100, y: 900, w: 400, h: 50, hasCollided: false,c: "20%"},
   {name: "chance", x:500, y: 1100, w: 300, h: 80, hasCollided: false,c: "5%"},
   {name: "chance", x:0, y: 1300, w: 200, h: 25, hasCollided: false,c: "80%"},
   {name: "chance", x:5, y: 1500, w: 150, h: 50, hasCollided: false,c: "5%"},
   {name: "chance", x:100, y: 1700, w: 150, h: 40, hasCollided: false,c: "5%"},
-  {name: "chance", x: 800, y: 1800, w: 60, h: 20, hasCollided: false,c: "60%"}
+  {name: "chance", x: 800, y: 1800, w: 60, h: 20, hasCollided: false,c: "60%"},
+  {name: "block", x: 200, y: 400, w: 20, h: 50}
 ];
 for (obstacle in obstacleCourse) {//can be changed
   obstacleCourse[obstacle].y-=obstacleRange;
@@ -102,15 +104,26 @@ function draw() {
   
   } else if (gameState == "end") {
     drawEndPage();
+  } else if (gameState == "died") {
+    drawDiedPage();
   }
    rect(player.x, player.y, player.w, player.h);
   if (moveLeft) {
-    if (player.x>0){
-    player.x-=playerSpeed;
+    if (playerHahaX<=canvasWidth/2-obstacleXRange) {
+      if (player.x>0) {
+        player.x-=playerSpeed;
+      }
+    } else {
+    left();
     }
   } else if (moveRight) {
-    if (player.x+player.w<canvasWidth){
-    player.x+=playerSpeed;
+    if (playerHahaX>=obstacleXRange-canvasWidth/2){
+      if (player.x+player.w<canvasWidth) {
+      player.x+=playerSpeed;
+      }
+    } else {
+    right();
+      
     }
   }
   
@@ -143,6 +156,11 @@ function drawStartPage() {
   text("PLAY", startButtonX, startButtonY, startButtonWidth, startButtonHeight);
   fill(255);
 }
+function drawDiedPage() {
+  background(50);
+  textSize(30);
+  text("You died", 100, 100, 200, 100);
+}
 function mouseClicked() {
   if (gameState == "start") {
     if (mouseX >= startButtonX && mouseY >= startButtonY && mouseY <= startButtonY + startButtonHeight && mouseX <= startButtonX + startButtonWidth) {
@@ -171,6 +189,9 @@ function playerTouching(obj) {
             }
             // Return the stored outcome, not a new random one
             return obj.isBlocked;
+        }
+        if (obj.name=== "block") {
+          gameState = "died";
         }
     } else {
         // If there's no collision, reset the flag for the next time
