@@ -1,0 +1,4 @@
+To do list for game jam:
+- Add more blocks (make an actual level that's fun to play with the simple logic)
+- Add more features/powers - e.g., lives, monsters, fire, invisibility, missiles,speed boosts and other stuff that you pick up or have or lose or ...
+- Add player art, animations, sound, all the other assets of a good game
