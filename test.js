@@ -232,5 +232,5 @@ function right() {
     for (let obstacle of obstacleCourse) {
         obstacle.x -= playerSpeed;
     }
-    playerHahaX += playerSpeed;
+    playerHahaX += playerSpeed; 
 }

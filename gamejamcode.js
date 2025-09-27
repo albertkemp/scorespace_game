@@ -12,7 +12,7 @@
 
 //Defining global variables - x, y, speed. OriginalX is for teleporting it back to the start
 let playerHahaX = 0;
-
+let finalTim = 0; // Add this to your global variables section.
 
 let playerX=300;
 let coins = 5;
@@ -40,7 +40,11 @@ const startButtonWidth = 100;
 const startButtonHeight = 50;
 let obstacleMoving = true;
 let blockSpeed =3;
-let playerImage;
+
+let startTime;
+let elapsedTime = 0;
+let isRunning = false;
+let highScore = Infinity;
 /*
 function preload() {
 playerImage = ""
@@ -63,14 +67,14 @@ function setup() {
 }
 let obstacleCourse = [
   {name: "chance", x: 100, y: 100, w: 200, h: 50, hasCollided: false, c: "40%"},
-  {name: "chance", x: 600, y:300, w: 20, h: 20, hasCollided: false,c: "10%"},
-  {name: "chance", x: 200, y: 500, w: 220, h: 50, hasCollided: false,c: "20%"},
-  {name: "chance", x: 400, y: 700, w: 400, h: 80, hasCollided: false,c: "10%"},
+  {name: "chance", x: 600, y:300, w: 20, h: 20, hasCollided: false,c: "50%"},
+  {name: "chance", x: 200, y: 500, w: 220, h: 50, hasCollided: false,c: "30%"},
+  {name: "chance", x: 400, y: 700, w: 400, h: 80, hasCollided: false,c: "60%"},
   {name: "chance", x: 100, y: 900, w: 400, h: 50, hasCollided: false,c: "20%"},
   {name: "chance", x:500, y: 1100, w: 300, h: 80, hasCollided: false,c: "5%"},
   {name: "chance", x:0, y: 1300, w: 200, h: 25, hasCollided: false,c: "80%"},
   {name: "chance", x:5, y: 1500, w: 150, h: 50, hasCollided: false,c: "5%"},
-  {name: "chance", x:100, y: 1700, w: 150, h: 40, hasCollided: false,c: "5%"},
+  {name: "chance", x:100, y: 1700, w: 150, h: 40, hasCollided: false,c: "20%"},
   {name: "chance", x: 800, y: 1800, w: 60, h: 20, hasCollided: false,c: "60%"},
   {name: "block", x: 200, y: 400, w: 20, h: 50}
 ];
@@ -97,11 +101,34 @@ function draw() {
   textSize(20);
   fill(255);
   text("Distance covered"+distanceCompleted, 20, 20, 200, 100);
+ /* for (i=0; i<10; i++) {
+    for (j=0; j<canvasWidth/10; j++) {
+      if ((j/2).isInteger()) {
+      fill(255);
+      }else{
+        fill(0);
+      }
+      rect(j*10, i*10, 10, 10);
+    }
+  }*/
+ if (gameState === "playing") {
+    if (distanceCompleted >= 2500) {
+      gameState = "end";
+      finalTim = stopStopwatch(); // Store the final time
+    }
+  } else if (gameState === "died") {
+    // Also, handle the 'died' state.
+    // Ensure the stopwatch is only stopped once.
+    if (isRunning) {
+      finalTim = stopStopwatch();
+    }
+  }
   if (gameState == "start") {
     drawStartPage();
   } else if (gameState == "playing") {
     drawPlayPage();
-  
+   
+  displayStopwatch(400, 20);
   } else if (gameState == "end") {
     drawEndPage();
   } else if (gameState == "died") {
@@ -125,6 +152,10 @@ function draw() {
     right();
       
     }
+  }
+  if (distanceCompleted>=2500) {
+    gameState= "end";
+    
   }
   
 }
@@ -165,6 +196,7 @@ function mouseClicked() {
   if (gameState == "start") {
     if (mouseX >= startButtonX && mouseY >= startButtonY && mouseY <= startButtonY + startButtonHeight && mouseX <= startButtonX + startButtonWidth) {
       gameState = "playing";
+      startStopwatch();
     }
   } 
 }
@@ -191,6 +223,7 @@ function playerTouching(obj) {
             return obj.isBlocked;
         }
         if (obj.name=== "block") {
+          
           gameState = "died";
         }
     } else {
@@ -205,6 +238,7 @@ function playerTouching(obj) {
 
 function drawPlayPage() {
     textSize(20);
+   
     obstacleMoving = true;
 
     for (let i = 0; i < obstacleCourse.length; i++) {
@@ -240,6 +274,7 @@ function drawPlayPage() {
 function drawEndPage() {
   textSize(30);
   text('Your score: blah', 100, 200, 300, 50);
+  displayFormattedTime(elapsedTime, 180, 150);
 }
 function left() {
   for(obstacle in obstacleCourse) {
@@ -252,4 +287,93 @@ function right() {
     obstacleCourse[obstacle].x-=playerSpeed;
     playerHahaX+=playerSpeed
   }
+}
+/**
+ * Starts the stopwatch. Call this when the game begins.
+ */
+function startStopwatch() {
+  isRunning = true;
+  startTime = millis();
+}
+
+/**
+ * Stops the stopwatch. Call this when the game ends.
+ * It also returns the final time in milliseconds.
+ * @returns {number} The final elapsed time in milliseconds.
+ */
+function stopStopwatch() {
+  isRunning = false;
+  return elapsedTime;
+}
+
+/**
+ * Updates the high score if the given time is lower.
+ * Call this after the game ends.
+ * @param {number} finalTime The final elapsed time in milliseconds.
+ */
+function updateHighScore(finalTime) {
+  if (finalTime < highScore) {
+    highScore = finalTime;
+    console.log("New high score:", finalTime);
+  }
+}
+
+/**
+ * Gets the current elapsed time in milliseconds.
+ * @returns {number} The current elapsed time in milliseconds.
+ */
+function getElapsedTime() {
+  if (isRunning) {
+    elapsedTime = millis() - startTime; // This is the change
+  }
+  return elapsedTime;
+}
+
+/**
+ * Gets the current high score in milliseconds.
+ * @returns {number} The current high score.
+ */
+function getHighScore() {
+  return highScore;
+}
+
+// --- Display Functions ---
+
+/**
+ * Displays the current stopwatch time on the screen.
+ * This should be called in your draw() loop.
+ * @param {number} x The x-coordinate for the display.
+ * @param {number} y The y-coordinate for the display.
+ */
+function displayStopwatch(x, y) {
+  let timeToDisplay = getElapsedTime();
+  displayFormattedTime(timeToDisplay, x, y);
+}
+
+/**
+ * Displays the high score on the screen.
+ * @param {number} x The x-coordinate for the display.
+ * @param {number} y The y-coordinate for the display.
+ */
+function displayHighScore(x, y) {
+  if (highScore !== Infinity) {
+    displayFormattedTime(highScore, x, y);
+  }
+}
+
+// --- Internal Helper Function ---
+function displayFormattedTime(timeInMilliseconds, x, y) {
+  let minutes = floor(timeInMilliseconds / 60000);
+  let seconds = floor((timeInMilliseconds % 60000) / 1000);
+  let milliseconds = timeInMilliseconds % 1000;
+  
+  // Format with leading zeros using nf()
+  let formattedMinutes = nf(minutes, 2);
+  let formattedSeconds = nf(seconds, 2);
+  let formattedMilliseconds = nf(milliseconds, 3);
+  
+  let timeString = formattedMinutes + ':' + formattedSeconds + ':' + formattedMilliseconds;
+  
+  // Use p5.js text() function to draw the string
+  text(timeString, x, y);
 }
