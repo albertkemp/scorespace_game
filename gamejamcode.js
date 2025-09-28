@@ -20,6 +20,10 @@ const originalX = playerX;
 const playerY = 400;
 let playerSpeed = 5;
 let isInvisible = false;
+let invisibility = 400;
+let speedBoost = 200;
+let speedBoostOn = false;
+
 let bullets = 10;
 var gameState = "start";
 var canvasWidth = 600;
@@ -38,8 +42,24 @@ const startButtonX = 250;
 const startButtonY = 250;
 const startButtonWidth = 100;
 const startButtonHeight = 50;
+
+const howButtonX = 250;
+const howButtonY = 300;
+const howButtonWidth = 100;
+const howButtonHeight = 50;
+
+const backButtonX = 400;
+const backButtonY = 50;
+const backButtonWidth = 100;
+const backButtonHeight = 50;
+
+const reButtonX = 250;
+const reButtonY = 300;
+const reButtonWidth = 200;
+const reButtonHeight = 50;
 let obstacleMoving = true;
-let blockSpeed =3;
+let blockSpeed =7;
+const speedyBlockSpeed = 46;
 
 let startTime;
 let elapsedTime = 0;
@@ -62,6 +82,7 @@ playerImage = ""
     height:startButtonHeight
   }
 
+
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
 }
@@ -70,7 +91,7 @@ let obstacleCourse = [
   {name: "chance", x: 600, y:300, w: 20, h: 20, hasCollided: false,c: "50%"},
   {name: "chance", x: 200, y: 500, w: 220, h: 50, hasCollided: false,c: "30%"},
   {name: "chance", x: 400, y: 700, w: 400, h: 80, hasCollided: false,c: "60%"},
-  {name: "chance", x: 100, y: 900, w: 400, h: 50, hasCollided: false,c: "20%"},
+  {name: "block", x: 100, y: 900, w: 400, h: 50},
   {name: "chance", x:500, y: 1100, w: 300, h: 80, hasCollided: false,c: "5%"},
   {name: "chance", x:0, y: 1300, w: 200, h: 25, hasCollided: false,c: "80%"},
   {name: "chance", x:5, y: 1500, w: 150, h: 50, hasCollided: false,c: "5%"},
@@ -78,6 +99,7 @@ let obstacleCourse = [
   {name: "chance", x: 800, y: 1800, w: 60, h: 20, hasCollided: false,c: "60%"},
   {name: "block", x: 200, y: 400, w: 20, h: 50}
 ];
+
 for (obstacle in obstacleCourse) {//can be changed
   obstacleCourse[obstacle].y-=obstacleRange;
 }
@@ -100,7 +122,7 @@ function draw() {
   background(50);
   textSize(20);
   fill(255);
-  text("Distance covered"+distanceCompleted, 20, 20, 200, 100);
+ //text("Distance covered"+distanceCompleted, 20, 20, 200, 100);
  /* for (i=0; i<10; i++) {
     for (j=0; j<canvasWidth/10; j++) {
       if ((j/2).isInteger()) {
@@ -133,8 +155,10 @@ function draw() {
     drawEndPage();
   } else if (gameState == "died") {
     drawDiedPage();
+  } else if (gameState == "how") {
+    drawHowPage();
   }
-   rect(player.x, player.y, player.w, player.h);
+   
   if (moveLeft) {
     if (playerHahaX<=canvasWidth/2-obstacleXRange) {
       if (player.x>0) {
@@ -160,14 +184,20 @@ function draw() {
   
 }
 function keyPressed() {
+  if (gameState === "playing") {
   if (keyCode === LEFT_ARROW || keyCode === 65) {
     moveLeft = true;
     moveRight = false;
   } else if (keyCode === RIGHT_ARROW || keyCode === 68) {
     moveRight = true;
     moveLeft = false;
+  } else if (keyCode === 70) {
+    speedBoostOn = true;
+  } else if (keyCode === 73) {
+    isInvisible=true;
   }
   //We can add more key stuff here, like fire missile, invisible, etc.
+}
 }
 function keyReleased() {
   if (keyCode === LEFT_ARROW || keyCode === 65) {
@@ -183,26 +213,44 @@ function drawStartPage() {
   text("Blah", 200, 100);
   textSize(20);
   rect(startButtonX, startButtonY, startButtonWidth, startButtonHeight);
+  rect(howButtonX, howButtonY, howButtonWidth, howButtonHeight);
   fill(0)
   text("PLAY", startButtonX, startButtonY, startButtonWidth, startButtonHeight);
+  text("HOW", howButtonX, howButtonY, howButtonWidth, howButtonHeight)
   fill(255);
 }
 function drawDiedPage() {
   background(50);
   textSize(30);
-  text("You died", 100, 100, 200, 100);
+  text("GAME OVER", 100, 100, 200, 100);
+textSize(20);
+text("Refresh the page to play again", 100, 150, 300, 100);
 }
 function mouseClicked() {
   if (gameState == "start") {
     if (mouseX >= startButtonX && mouseY >= startButtonY && mouseY <= startButtonY + startButtonHeight && mouseX <= startButtonX + startButtonWidth) {
       gameState = "playing";
       startStopwatch();
+    } else if (mouseX >= howButtonX && mouseY >= howButtonY && mouseY<=howButtonY + howButtonHeight && mouseX <= howButtonX + howButtonWidth) {
+      gameState = "how";
     }
-  } 
+  }  else if (gameState == "how") {
+    if (mouseX >= backButtonX && mouseY >= backButtonY && mouseY<=backButtonY + backButtonHeight && mouseX <= backButtonX + backButtonWidth) {
+      gameState="start";
+    }
+  } /*else if (gameState == "end" || gameState == "died") {
+    if (mouseX >= reButtonX && mouseY >= reButtonY && mouseY<=reButtonY + reButtonHeight && mouseX <= reButtonX + reButtonWidth) {
+      gameState="start";
+    }
+  }*/
 }
 
 function playerTouching(obj) {
     // Basic collision detection
+    if (isInvisible && invisibility>0) {
+      invisibility--;
+      return false;
+    }else{
     if (!(player.x + player.w < obj.x || player.x > obj.x + obj.w || player.y + player.h < obj.y || player.y > obj.y + obj.h)) {
         // We have a collision, now handle the chance logic
         if (obj.name === "chance") {
@@ -232,13 +280,29 @@ function playerTouching(obj) {
             obj.hasCollided = false;
         }
     }
+  }
     // No collision at all, so the player is not stopped
     return false;
 }
 
 function drawPlayPage() {
+  rect(player.x, player.y, player.w, player.h);
     textSize(20);
-   
+  if (isInvisible && invisibility>0) {
+    fill(0, 255, 0);
+   text("Invisibility: On", 10, 10, 200, 100);
+   fill(255);
+  }else{
+    text("Invisibility: Off", 10, 10, 200, 100);
+  }
+  if (speedBoostOn && speedBoost >0) {
+    fill(0, 255, 0);
+    text("Speed boost: On", 10, 50, 200, 100);
+    fill(255);
+  } else{
+    text("Speed boost: Off", 10, 50, 200, 100);
+  }
+  fill(255);
     obstacleMoving = true;
 
     for (let i = 0; i < obstacleCourse.length; i++) {
@@ -256,9 +320,18 @@ function drawPlayPage() {
     if (obstacleMoving) {
         for (let i = 0; i < obstacleCourse.length; i++) {
             let obstacle = obstacleCourse[i];
+            if (speedBoostOn && speedBoost>0) {
+              obstacle.y+=speedyBlockSpeed;
+              speedBoost--;
+            } else {
             obstacle.y += blockSpeed;
+            }
         }
+        if(speedBoostOn) {
+          distanceCompleted += speedyBlockSpeed;
+        }else{
         distanceCompleted += blockSpeed;
+        }
     }
 
     // This section is for drawing, and should be separate from the movement logic
@@ -271,10 +344,23 @@ function drawPlayPage() {
         }
     }
 }
+function drawHowPage() {
+  fill(255);
+  textSize(20);
+  text("Left/right arrow keys/AD to move\n\nI key to turn invisible\n\nF key to speed boost\n\nThe normal blocks kill you.\n\n The percent inside the other blocks represents the chance that it will let you through.\n\nTry to reach the end with the fastest time.", 100, 100, 300, 400);
+  rect(backButtonX, backButtonY, backButtonWidth, backButtonHeight);
+
+  fill(0);
+
+  text("BACK", backButtonX, backButtonY, backButtonWidth, backButtonHeight);
+  fill(255);
+}
 function drawEndPage() {
   textSize(30);
-  text('Your score: blah', 100, 200, 300, 50);
-  displayFormattedTime(elapsedTime, 180, 150);
+  text('Your time:', 50, 200, 300, 50);
+   text('Refresh the page to play again', 50, 300, 300, 100);
+  displayFormattedTime(elapsedTime, 200, 230);
+  
 }
 function left() {
   for(obstacle in obstacleCourse) {
@@ -376,4 +462,15 @@ function displayFormattedTime(timeInMilliseconds, x, y) {
   
   // Use p5.js text() function to draw the string
   text(timeString, x, y);
+}
+function reset() {
+   playerX = originalX;
+   playerHahaX=0;
+   moveLeft = false;
+   moveRight = false;
+   isInvisible = false;
+   distanceCompleted = 0;
+   obstacleMoving = true;
+   elapsedTime = 0;
+   obstacleCourse = originalObstacleCourse;
 }
