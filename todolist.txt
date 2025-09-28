@@ -1,6 +1,5 @@
-To do list for game jam:
-- Add more blocks
-- Leaderboard
-- GRAPHICS!!!!!!!!!!!!!!!!!!!
-
-(No time for other features,we have 1 1/2 days left only)
+To do list for tomorrow (big day last day of game jam!)
+1. Game art, sounds???. Drawing pixelated stuff, loading images
+2. Finalizing overall game feeling in the UI styling
+3. Game testing, making sure everythings OK
+4. Submit

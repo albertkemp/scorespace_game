@@ -9,6 +9,11 @@
 
 
 */
+let db;
+let submitInputValue = "";
+let submitted = false;
+let scoresLoaded = false;
+let highScores = [];
 
 //Defining global variables - x, y, speed. OriginalX is for teleporting it back to the start
 let playerHahaX = 0;
@@ -65,6 +70,11 @@ let startTime;
 let elapsedTime = 0;
 let isRunning = false;
 let highScore = Infinity;
+
+const submitNameButtonX = 290;
+const submitNameButtonY = 330;
+const submitNameButtonWidth = 100;
+const submitNameButtonHeight = 50;
 /*
 function preload() {
 playerImage = ""
@@ -82,9 +92,15 @@ playerImage = ""
     height:startButtonHeight
   }
 
+let nameInput;
+
 
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
+  nameInput = createInput('Enter your name');
+  nameInput.position(300, 300);
+  nameInput.hide(); // Hide it until the game is over
+  db  = firebase.firestore();
 }
 let obstacleCourse = [
   {name: "chance", x: 100, y: 100, w: 200, h: 50, hasCollided: false, c: "50%"},
@@ -154,7 +170,7 @@ function draw() {
   background(50);
   textSize(20);
   fill(255);
- text("Distance covered"+distanceCompleted, 200, 20, 200, 100);
+// text("Distance covered"+distanceCompleted, 200, 20, 200, 100);
  /* for (i=0; i<10; i++) {
     for (j=0; j<canvasWidth/10; j++) {
       if ((j/2).isInteger()) {
@@ -270,11 +286,11 @@ function mouseClicked() {
     if (mouseX >= backButtonX && mouseY >= backButtonY && mouseY<=backButtonY + backButtonHeight && mouseX <= backButtonX + backButtonWidth) {
       gameState="start";
     }
-  } /*else if (gameState == "end" || gameState == "died") {
-    if (mouseX >= reButtonX && mouseY >= reButtonY && mouseY<=reButtonY + reButtonHeight && mouseX <= reButtonX + reButtonWidth) {
-      gameState="start";
+  } else if (gameState == "end") {
+    if (mouseX >= submitNameButtonX && mouseY >= submitNameButtonY && mouseY<=submitNameButtonY + submitNameButtonHeight && mouseX <= submitNameButtonX + submitNameButtonWidth) {
+      submitInputValue=nameInput.value();
     }
-  }*/
+  }
 }
 
 function playerTouching(obj) {
@@ -406,11 +422,38 @@ function drawHowPage() {
   fill(255);
 }
 function drawEndPage() {
+  textSize(60);
+  text("Good Job!", 150, 20, 500, 100);
   textSize(30);
   text('Your time:', 50, 200, 300, 50);
-   text('Refresh the page to play again', 50, 300, 300, 100);
+  textSize(20);
+   text('Refresh the page to play again',150, 100, 300, 100);
+   rect(submitNameButtonX, submitNameButtonY, submitNameButtonWidth, submitNameButtonHeight);
+   fill(0);
+   textSize(20);
+   text("Submit Score", submitNameButtonX, submitNameButtonY, submitNameButtonWidth, submitNameButtonHeight);
+   fill(255);
   displayFormattedTime(elapsedTime, 200, 230);
+  nameInput.show();
+  if (submitInputValue!=""&&!submitted){
+    submitScore(submitInputValue, elapsedTime);
+    submitted = true;
   
+}
+  if (!scoresLoaded) {
+    getHighScores().then(scores => {
+    highScores = scores;
+    scoresLoaded = true;
+  }).catch(error => {
+    console.error("Failed to fetch scores:", error);
+  });
+  }else{
+        let yPos = 350;
+        highScores.forEach((scoreData, index) => {
+            text(`${index + 1}. ${scoreData.name}: ${scoreData.score}`, 50, yPos);
+            yPos += 20;
+        });
+      }
 }
 function left() {
   for(obstacle in obstacleCourse) {
@@ -498,7 +541,7 @@ function displayHighScore(x, y) {
 }
 
 // --- Internal Helper Function ---
-function displayFormattedTime(timeInMilliseconds, x, y) {
+function formatTime(timeInMilliseconds) {
   let minutes = floor(timeInMilliseconds / 60000);
   let seconds = floor((timeInMilliseconds % 60000) / 1000);
   let milliseconds = timeInMilliseconds % 1000;
@@ -511,7 +554,23 @@ function displayFormattedTime(timeInMilliseconds, x, y) {
   let timeString = formattedMinutes + ':' + formattedSeconds + ':' + formattedMilliseconds;
   
   // Use p5.js text() function to draw the string
+  
+}
+function displayFormattedTime(timeInMilliseconds, x, y) {
+   let minutes = floor(timeInMilliseconds / 60000);
+  let seconds = floor((timeInMilliseconds % 60000) / 1000);
+  let milliseconds = timeInMilliseconds % 1000;
+  
+  // Format with leading zeros using nf()
+  let formattedMinutes = nf(minutes, 2);
+  let formattedSeconds = nf(seconds, 2);
+  let formattedMilliseconds = nf(milliseconds, 3);
+  
+  let timeString = formattedMinutes + ':' + formattedSeconds + ':' + formattedMilliseconds;
+  textSize(30);
+  // Use p5.js text() function to draw the string
   text(timeString, x, y);
+  textSize(20);
 }
 function reset() {
    playerX = originalX;
@@ -523,4 +582,29 @@ function reset() {
    obstacleMoving = true;
    elapsedTime = 0;
    obstacleCourse = originalObstacleCourse;
+}
+function submitScore(playerName, score) {
+  db.collection("high_scores").add({
+    name: playerName,
+    score: score,
+    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+  })
+  .then((docRef) => {
+    console.log("Score written with ID: ", docRef.id);
+  })
+  .catch((error) => {
+    console.error("Error adding document: ", error);
+  });
+}
+async function getHighScores() {
+  const highScores = [];
+  const snapshot = await db.collection("high_scores")
+    .orderBy("score", "asc")
+    .limit(10)
+    .get();
+
+  snapshot.forEach((doc) => {
+    highScores.push(doc.data());
+  });
+  return highScores;
 }

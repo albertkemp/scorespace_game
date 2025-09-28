@@ -2,10 +2,30 @@
 <html>
     <head>
         <title>My game</title>
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
-    </head>
-    <body>
-<script src="gamejamcode.js"></script>
-    </body>
 
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+        <script>
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyDQzzDP8Ba4L1e--XIwgnTzQA3FOVuQ8jg",
+                authDomain: "scorespace-94df7.firebaseapp.com",
+                databaseURL: "https://scorespace-94df7-default-rtdb.firebaseio.com",
+                projectId: "scorespace-94df7",
+                storageBucket: "scorespace-94df7.firebasestorage.app",
+                messagingSenderId: "345355459863",
+                appId: "1:345355459863:web:345076dee4a89e30b26b52"
+            };
+
+            // Initialize Firebase App
+            // This must be called AFTER the Firebase libraries are loaded
+            firebase.initializeApp(firebaseConfig);
+        </script>
+
+        <script src="gamejamcode.js"></script>
+    </head>
+    <body></body>
 </html>
