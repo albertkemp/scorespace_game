@@ -20,15 +20,15 @@ const originalX = playerX;
 const playerY = 400;
 let playerSpeed = 5;
 let isInvisible = false;
-let invisibility = 400;
-let speedBoost = 200;
+let invisibility = 3600;
+let speedBoost = 400;
 let speedBoostOn = false;
 
 let bullets = 10;
 var gameState = "start";
 var canvasWidth = 600;
 var canvasHeight = 600;
-const obstacleRange = 2000;
+const obstacleRange = 3000;
 const obstacleXRange = 2000;
 const obstacleNumber = 3600;
 const blockRange = 100;
@@ -87,17 +87,32 @@ function setup() {
   createCanvas(canvasWidth, canvasHeight);
 }
 let obstacleCourse = [
-  {name: "chance", x: 100, y: 100, w: 200, h: 50, hasCollided: false, c: "40%"},
-  {name: "chance", x: 600, y:300, w: 20, h: 20, hasCollided: false,c: "50%"},
-  {name: "chance", x: 200, y: 500, w: 220, h: 50, hasCollided: false,c: "30%"},
-  {name: "chance", x: 400, y: 700, w: 400, h: 80, hasCollided: false,c: "60%"},
-  {name: "block", x: 100, y: 900, w: 400, h: 50},
-  {name: "chance", x:500, y: 1100, w: 300, h: 80, hasCollided: false,c: "5%"},
-  {name: "chance", x:0, y: 1300, w: 200, h: 25, hasCollided: false,c: "80%"},
-  {name: "chance", x:5, y: 1500, w: 150, h: 50, hasCollided: false,c: "5%"},
-  {name: "chance", x:100, y: 1700, w: 150, h: 40, hasCollided: false,c: "20%"},
-  {name: "chance", x: 800, y: 1800, w: 60, h: 20, hasCollided: false,c: "60%"},
-  {name: "block", x: 200, y: 400, w: 20, h: 50}
+  {name: "chance", x: 100, y: 100, w: 200, h: 50, hasCollided: false, c: "50%"},
+  {name: "block", x: 400, y:300, w: 20, h: 20},
+  {name: "chance", x: 200, y: 500, w: 220, h: 50, hasCollided: false, c: "80%"},
+  {name: "block", x: 250, y: 700, w: 400, h: 80},
+  {name: "chance", x: -150, y: 800, w: 300, h: 70, hasCollided: false, c: "20%"},
+  {name: "block", x:500, y: 1100, w: 300, h: 80},
+  {name: "chance", x:-150, y: 1300, w: 200, h: 25, hasCollided: false, c: "50%"},
+  {name: "block", x:5, y: 1500, w: 150, h: 50},
+  {name: "chance", x:100, y: 1700, w: 150, h: 40, hasCollided: false, c: "50%"},
+  {name: "block", x: 800, y: 1800, w: 60, h: 20},
+  {name: "block", x:100, y: 250, w: 60, h: 50},
+  {name: "chance", x:100, y: 1500, w: 200, h: 50, hasCollided: false,c: "80%"},
+  {name: "block", x: 100, y: 500, w: 200, h: 50},
+  {name: "chance", x: 400, y: 1000, w: 100, h: 20, hasCollided: false, c: "10%"},
+  {name: "block", x: 300, y: 800, w: 400, h: 50},
+  {name: "block", x: -150, y: 2100, w: 200, h: 50},
+  {name: "chance", x: -100, y: 2300, w: 200, h: 50, hasCollided: false, c: "50%"},
+  {name: "block", x: 0, y: 2350, w: 200, h: 100},
+  {name: "block", x: 200, y: 2500, w: 200, h: 50},
+  {name: "chance", x: 500, y: 2700, w: 100, h: 50, hasCollided: false, c: "80%"},
+  {name: "block", x: 300, y: 2900, w: 200, h: 50},
+  {name: "chance", x: 400, y: 2300, w: 300, h: 50, hasCollided: false, c: "50%"},
+  {name: "chance", x: -50, y: 2000, w: 200, h: 40, hasCollided: false, c: "50%"},
+  {name: "chance", x: 0, y: 200, w: 200, h: 40, hasCollided: false, c: "20%"},
+  {name: "chance", x: 400, y: 1500, w: 200, h: 40, hasCollided: false, c: "5%"},
+  {name: "chance", x: 500, y: 5000, w: 200, h: 40, hasCollided: false, c: "50%"}
 ];
 
 for (obstacle in obstacleCourse) {//can be changed
@@ -105,14 +120,31 @@ for (obstacle in obstacleCourse) {//can be changed
 }
 function randInt(min, max){
   return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+}/*
+for (i=0;i<obstacleNumber;i++) {
+  obstacleCourse.push({
+    name: "chance",
+    x: randInt(0, obstacleXRange),
+    y: randInt(-obstacleRange, 0),
+    w: randInt(0, blockRange),
+    h: randInt(0, blockRange),
+    hasCollided: false,
+    c: str(randInt(0, 100))+"%"
+  });
+}*/
 let randomInt = randInt(0, 100);
-
+//IMPORTANT (tdo to change tmr)
 function drawBlock(x, y, w, h) {
   rect(x, y, w, h);
 }
 function drawChance(x, y, w, h, p) {
-  
+  if (parseInt(p)<50) {
+    fill(0, 255, 0);
+  }else if (parseInt(p)==50) {
+    fill(173, 216, 230);
+  } else{
+    fill(183, 65, 14);
+  }
   rect(x, y, w, h);
   fill(0);
   text(p, x, y, w, h);
@@ -122,7 +154,7 @@ function draw() {
   background(50);
   textSize(20);
   fill(255);
- //text("Distance covered"+distanceCompleted, 20, 20, 200, 100);
+ text("Distance covered"+distanceCompleted, 200, 20, 200, 100);
  /* for (i=0; i<10; i++) {
     for (j=0; j<canvasWidth/10; j++) {
       if ((j/2).isInteger()) {
@@ -134,7 +166,7 @@ function draw() {
     }
   }*/
  if (gameState === "playing") {
-    if (distanceCompleted >= 2500) {
+    if (distanceCompleted >= 3500) {
       gameState = "end";
       finalTim = stopStopwatch(); // Store the final time
     }
@@ -176,11 +208,11 @@ function draw() {
     right();
       
     }
-  }
-  if (distanceCompleted>=2500) {
+  }/*
+  if (distanceCompleted>=7000) {
     gameState= "end";
     
-  }
+  }*/
   
 }
 function keyPressed() {
@@ -262,17 +294,20 @@ function playerTouching(obj) {
 
                 // Determine and store the outcome of this single event
                 if (randomChance > percentageInt) {
-                    obj.isBlocked = true;
-                } else {
                     obj.isBlocked = false;
+                } else {
+                    
+                    obj.isBlocked = true;
+                    gameState = "died";
                 }
             }
             // Return the stored outcome, not a new random one
             return obj.isBlocked;
         }
         if (obj.name=== "block") {
-          
-          gameState = "died";
+          if (!obj.hasCollided) {
+            gameState = "died";
+          }
         }
     } else {
         // If there's no collision, reset the flag for the next time
@@ -327,7 +362,7 @@ function drawPlayPage() {
             obstacle.y += blockSpeed;
             }
         }
-        if(speedBoostOn) {
+        if(speedBoostOn&& speedBoost>0) {
           distanceCompleted += speedyBlockSpeed;
         }else{
         distanceCompleted += blockSpeed;
@@ -347,7 +382,22 @@ function drawPlayPage() {
 function drawHowPage() {
   fill(255);
   textSize(20);
-  text("Left/right arrow keys/AD to move\n\nI key to turn invisible\n\nF key to speed boost\n\nThe normal blocks kill you.\n\n The percent inside the other blocks represents the chance that it will let you through.\n\nTry to reach the end with the fastest time.", 100, 100, 300, 400);
+  text("Left/right arrow keys/AD to move\n\nI key to turn invisible\n\nF key to speed boost\n\nThe percentage/color inside the blocks is the chance that it will kill you\n\n\n\nTry to reach the end with the fastest time", 100, 100, 400, 400);
+  fill(0, 255, 0);
+  rect(100, 300, 40, 40);
+  fill(0);
+  text("High", 100, 300, 40, 40);
+  fill(173, 216, 230);
+  rect(140, 300, 40, 40);
+  fill(0)
+  text("Mid", 140, 300, 40, 40);
+
+  fill(183, 65, 14);
+  rect(180, 300, 40, 40);
+  fill(0);
+  text("Low", 180, 300, 40, 40);
+  
+  fill(255);
   rect(backButtonX, backButtonY, backButtonWidth, backButtonHeight);
 
   fill(0);
