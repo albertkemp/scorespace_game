@@ -74,7 +74,7 @@ let elapsedTime = 0;
 let isRunning = false;
 let highScore = Infinity;
 
-const submitNameButtonX = 330;
+const submitNameButtonX = 500;
 const submitNameButtonY = 330;
 const submitNameButtonWidth = 100;
 const submitNameButtonHeight = 50;
@@ -131,7 +131,7 @@ function preload() {
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
   nameInput = createInput('Enter your name');
-  nameInput.position(320, 300);
+  nameInput.position(480, 300);
   nameInput.hide(); // Hide it until the game is over
   db  = firebase.firestore();
   
@@ -329,7 +329,7 @@ textSize(small);
 //text("Refresh the page to play again", 100, 150, 300, 100);
 rect(playAgainButtonX, playAgainButtonY, playAgainButtonWidth, playAgainButtonHeight);
 fill(0);
-text("PLAY AGAIN", playAgainButtonX, playAgainButtonY+diff, playAgainButtonWidth, playAgainButtonHeight);
+text("PLAY AGAIN", playAgainButtonX, playAgainButtonY+diff/2, playAgainButtonWidth, playAgainButtonHeight);
 }
 function mouseClicked() {
   if (gameState == "start") {
@@ -511,7 +511,7 @@ textSize(20);
 function drawEndPage() {
   background(5, 192, 222)
   textSize(40);
-  text("GOOD JOB!", 250, 20, 500, 100);
+  text("GOOD JOB!", 150, 80, 500, 100);
   textSize(20);
   text('YOUR TIME:', 50, 200, 300, 100);
   textSize(small);
