@@ -354,7 +354,13 @@ function playerTouching(obj) {
       invisibility--;
       return false;
     }else{if (invisibility==0) {
-      playerState="normal";}
+
+      if (moveLeft) {
+        playerState="left";
+      } else if (moveRight) {
+        playerState="right";
+      }else{
+      playerState="normal";}}
     if (!(player.x + player.w < obj.x || player.x > obj.x + obj.w || player.y + player.h < obj.y || player.y > obj.y + obj.h)) {
         // We have a collision, now handle the chance logic
         if (obj.name === "chance") {
@@ -444,7 +450,13 @@ function drawPlayPage() {
               speedBoost--;
             } else {
               if (speedBoost==0) {
+                if (moveLeft) {
+                  playerState="left";
+                } else if (moveRight) {
+                  playerState ="right";
+                } else{
               playerState="normal";
+                }
               }
             obstacle.y += blockSpeed;
             }
