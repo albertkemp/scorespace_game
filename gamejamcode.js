@@ -412,12 +412,15 @@ function drawPlayPage() {
 background(5, 192, 222);
 
   if (playerState == "normal") {
+    music.speed(1);
     music.loop();
     image(boatNormal, player.x, player.y, player.w, player.h);
   } else if (playerState == "left") {
+    music.speed(1);
     music.loop();
     image(boatLeft, player.x, player.y, player.w, player.h);
   } else if (playerState == "right") {
+    music.speed(1);
     music.loop();
     image(boatRight, player.x, player.y, player.w, player.h);
   } else if (playerState == "invisible") {
