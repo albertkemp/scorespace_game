@@ -147,7 +147,7 @@ let obstacleCourse = [
   {name: "block", x:100, y: 250, w: 100, h: 100},
   {name: "chance", x:100, y: 1500,  w: 100, h: 100, hasCollided: false,c: "80%"},
   {name: "block", x: 100, y: 500, w: 100, h: 100,},
-  {name: "chance", x: 400, y: 1000, w: 100, h: 100, hasCollided: false, c: "10%"},
+  {name: "chance", x: 600, y: 1000, w: 100, h: 100, hasCollided: false, c: "10%"},
   {name: "block", x: 300, y: 800, w: 100, h: 100,},
   {name: "block", x: -150, y: 2100, w: 100, h: 100,},
   {name: "chance", x: -100, y: 2300, w: 100, h: 100, hasCollided: false, c: "50%"},
