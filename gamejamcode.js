@@ -360,7 +360,7 @@ textSize(small);
 rect(playAgainButtonX, playAgainButtonY, playAgainButtonWidth, playAgainButtonHeight);
 fill(0);
 text("PLAY AGAIN", playAgainButtonX, playAgainButtonY+diff/2, playAgainButtonWidth, playAgainButtonHeight);
-image(screenshot, 100, 200, 400, 348);
+image(rock, 150, 200, 100, 100);
 }
 function mouseClicked() {
   if (gameState == "start") {
