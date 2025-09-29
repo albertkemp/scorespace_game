@@ -150,7 +150,7 @@ let obstacleCourse = [
   {name: "chance", x: -150, y: 800,  w: 100, h: 100, hasCollided: false, c: "20%"},
   {name: "block", x:500, y: 1100,  w: 100, h: 100},
   {name: "chance", x:-150, y: 1300,  w: 100, h: 100, hasCollided: false, c: "50%"},
-  {name: "block", x:5, y: 1500, w: 100, h: 100},
+  //{name: "block", x:5, y: 1500, w: 100, h: 100},
   {name: "chance", x:100, y: 1700,  w: 100, h: 100,hasCollided: false, c: "50%"},
   {name: "block", x: 800, y: 1800,  w: 100, h: 100},
   {name: "block", x:100, y: 250, w: 100, h: 100},
@@ -176,7 +176,7 @@ let obstacleCourse = [
   {name: "chance", x: 0, y: 2750, w: 100, h: 100, hasCollided: false, c: "50%"},
   {name: "chance", x: 400, y: 2500, w: 100, h: 100, hasCollided: false, c: "5%"},
   {name: "chance", x: 500, y: 2700, w: 200, h: 150, hasCollided: false, c: "55%"},//
-  {name: "chance", x: 500, y: 1200, w: 200, h: 150, hasCollided: false, c: "70%"},//
+  {name: "chance", x: 450, y: 1200, w: 200, h: 150, hasCollided: false, c: "70%"},//
   {name: "chance", x: 300, y: 1750, w: 200, h: 150, hasCollided: false, c: "80%"},//
   {name: "chance", x: 500, y: 2900, w: 100, h: 100, hasCollided: false, c: "15%"},
   {name: "chance", x: 550, y: 2800, w: 100, h: 100, hasCollided: false, c: "20%"},
