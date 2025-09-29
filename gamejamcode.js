@@ -164,7 +164,12 @@ let obstacleCourse = [
   {name: "chance", x: -50, y: 2000,  w: 100, h: 100, hasCollided: false, c: "50%"},
   {name: "chance", x: 0, y: 200,  w: 100, h: 100, hasCollided: false, c: "20%"},
   {name: "chance", x: 400, y: 1500, w: 100, h: 100, hasCollided: false, c: "5%"},
-  {name: "chance", x: 500, y: 5000, w: 100, h: 100, hasCollided: false, c: "50%"}
+  {name: "chance", x: 500, y: 5000, w: 100, h: 100, hasCollided: false, c: "50%"},
+  {name: "chance", x: 500, y: 6000, w: 100, h: 100, hasCollided: false, c: "50%"},
+  {name: "chance", x: 300, y: 1000, w: 100, h: 100, hasCollided: false, c: "80%"},
+  {name: "chance", x: 500, y: 500, w: 100, h: 100, hasCollided: false, c: "15%"},
+  {name: "chance", x: 550, y: 4000, w: 100, h: 100, hasCollided: false, c: "20%"},
+  {name: "chance", x: 0, y: 2750, w: 100, h: 100, hasCollided: false, c: "50%"}
 ];
 
 for (obstacle in obstacleCourse) {//can be changed
