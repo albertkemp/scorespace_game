@@ -282,11 +282,11 @@ function keyPressed() {
   } else if (keyCode === 70 && speedBoost>0) {
     playerState = "speed";
     speedBoostOn = true;
-    //isInvisible = false;
+    isInvisible = false;
   } else if (keyCode === 73 && invisibility>0) {
     playerState = "invisible";
     isInvisible=true;
-    //speedBoostOn=false;
+    speedBoostOn=false;
   }
   //We can add more key stuff here, like fire missile, invisible, etc.
 }
