@@ -267,11 +267,11 @@ function keyPressed() {
     playerState = "right";
     moveRight = true;
     moveLeft = false;
-  } else if (keyCode === 70) {
+  } else if (keyCode === 70 && speedBoost>0) {
     playerState = "speed";
     speedBoostOn = true;
     isInvisible = false;
-  } else if (keyCode === 73) {
+  } else if (keyCode === 73 && invisibility>0) {
     playerState = "invisible"
     isInvisible=true;
     speedBoostOn=false;
@@ -437,7 +437,7 @@ function drawPlayPage() {
             let obstacle = obstacleCourse[i];
             if (speedBoostOn && speedBoost>0) {
               obstacle.y+=speedyBlockSpeed;
-              playerStaet ="speed";
+              playerState ="speed";
               speedBoost--;
             } else {
             obstacle.y += blockSpeed;
