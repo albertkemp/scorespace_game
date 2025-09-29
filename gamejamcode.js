@@ -14,13 +14,7 @@ let submitInputValue = "";
 let submitted = false;
 let scoresLoaded = false;
 let highScores = [];
-var y1;
-var y2 = 0;
 
-var x1 = 0;
-var x2;
-let blockSpeed =7;
-var scrollSpeed = blockSpeed;
 
 //Defining global variables - x, y, speed. OriginalX is for teleporting it back to the start
 let playerHahaX = 0;
@@ -71,7 +65,7 @@ const reButtonY = 300;
 const reButtonWidth = 200;
 const reButtonHeight = 50;
 let obstacleMoving = true;
-
+let blockSpeed =7;
 const speedyBlockSpeed = 46;
 
 let startTime;
@@ -137,8 +131,7 @@ function setup() {
   nameInput.position(300, 300);
   nameInput.hide(); // Hide it until the game is over
   db  = firebase.firestore();
-  y1 = -height; 
-   x2 = width;
+  
 }
 let obstacleCourse = [
   {name: "chance", x: 100, y: 100, w: 100, h: 100, hasCollided: false, c: "50%"},
@@ -247,7 +240,6 @@ function draw() {
   }
    
   if (moveLeft) {
-    x1+=playerSpeed;
     if (playerHahaX<=canvasWidth/2-obstacleXRange) {
       if (player.x>0) {
         player.x-=playerSpeed;
@@ -256,7 +248,6 @@ function draw() {
     left();
     }
   } else if (moveRight) {
-    x1-=playerSpeed;
     if (playerHahaX>=obstacleXRange-canvasWidth/2){
       if (player.x+player.w<canvasWidth) {
       player.x+=playerSpeed;
@@ -314,7 +305,7 @@ moveLeft = false;
 }
 }
 function drawStartPage() {
-  background(79,66,181);
+  background(5, 192, 222);
   textSize(60);
   fill(255)
   text("Blah", 200, 100);
@@ -327,7 +318,7 @@ function drawStartPage() {
   fill(255);
 }
 function drawDiedPage() {
-  background(79,66,181);
+  background(5, 192, 222);
   textSize(60);
   text("GAME OVER", 100, 20, 400, 100);
 textSize(20);
@@ -412,27 +403,7 @@ function playerTouching(obj) {
 }
 
 function drawPlayPage() {
-image(sea, x1, y1, width, height);
-  image(sea, x2, y2, width, height);
-
-  // Increase the y-coordinates to make the images move downward
-  y1 += scrollSpeed;
-  y2 += scrollSpeed;
-
-  // When an image moves off the bottom, wrap it to the top
-  if (y1 > height) {
-    y1 = -height;
-  }
-  if (y2 > height) {
-    y2 = -height;
-  }
-  if (x1 < -width){
-    x1 = width;
-  }
-  if (x2 < -width){
-    x2 = width;
-  }
-
+background(5, 192, 222);
   if (playerState == "normal") {
     image(boatNormal, player.x, player.y, player.w, player.h);
   } else if (playerState == "left") {
@@ -512,6 +483,7 @@ image(sea, x1, y1, width, height);
     }
 }
 function drawHowPage() {
+  background(5, 192, 222)
   fill(255);
   textSize(20);
   text("Left/right arrow keys/AD to move\n\nI key to turn invisible\n\nF key to speed boost\n\nThe percentage is the chance that each thing will kill you. Jellies have the lowest chance, followed by fish, and then coral. Rocks definitely kill you\n\n\n\nTry to reach the end with the fastest time\nYou can't be invisible and have speed boost at the same time\nTo submit your score to the leaderboard, type your name in the box and hit submit", 100, 100, 400, 500);
@@ -533,6 +505,7 @@ function drawHowPage() {
   fill(255);
 }
 function drawEndPage() {
+  background(5, 192, 222)
   textSize(60);
   text("GOOD JOB!", 150, 20, 500, 100);
   textSize(30);
