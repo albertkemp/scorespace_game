@@ -183,7 +183,7 @@ let obstacleCourse = [
   {name: "chance", x: 0, y: 2750, w: 100, h: 100, hasCollided: false, c: "50%"},
   {name: "block", x: 0, y: 1800,  w: 100, h: 100},
   {name: "block", x:500, y: 250, w: 100, h: 100},
-  {name: "block", x: 550, y: 1650,  w: 100, h: 100},
+  {name: "block", x: 350, y: 1650,  w: 100, h: 100},
   {name: "block", x:300, y: 900, w: 100, h: 100},
   {name: "block", x: 200, y: 2300,  w: 100, h: 100},
   {name: "block", x:100, y: 250, w: 100, h: 100}
