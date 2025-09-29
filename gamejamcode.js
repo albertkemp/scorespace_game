@@ -49,12 +49,12 @@ let distanceCompleted = 0;
 let moveLeft = false;
 let moveRight = false;
 const startButtonX = 250;
-const startButtonY = 250;
+const startButtonY = 200;
 const startButtonWidth = 100;
 const startButtonHeight = 50;
 
 const howButtonX = 250;
-const howButtonY = 300;
+const howButtonY = 250;
 const howButtonWidth = 100;
 const howButtonHeight = 50;
 
@@ -338,7 +338,7 @@ function keyReleased() {
   updatePlayerState();
 }
 function drawStartPage() {
-  background(screenshot);
+  background(5, 192, 222);
   textSize(60);
   fill(255)
   text("OCEAN", 150, 100);
@@ -349,6 +349,7 @@ function drawStartPage() {
   text("PLAY", startButtonX, startButtonY+diff, startButtonWidth, startButtonHeight);
   text("HOW", howButtonX, howButtonY+diff, howButtonWidth, howButtonHeight)
   fill(255);
+  image(fish, howButtonX, howButtonY+howButtonHeight+50, 100, 100);
 }
 function drawDiedPage() {
   background(5, 192, 222);
