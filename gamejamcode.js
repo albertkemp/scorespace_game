@@ -493,7 +493,7 @@ function drawHowPage() {
   background(5, 192, 222)
   fill(255);
   textSize(20);
-  text("INSTRUCTIONS:", 100, 20, 200, 50);
+  text("INSTRUCTIONS:", 100, 50, 200, 50);
   textSize(small);
   text("Left/right arrow keys or A/D to move\n\nI key to turn invisible\n\nYou can't be invisible and have speed boost at the same timeF key to speed boost\n\nThe percentage is the chance that each thing will kill you. Jellies have the lowest chance, followed by fish, and then coral. Rocks definitely kill you\n\n\n\nTry to reach the end with the fastest time", 100, 100, 400, 500);
   
