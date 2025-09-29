@@ -504,15 +504,15 @@ function drawHowPage() {
   textSize(20);
   text("INSTRUCTIONS:", 100, 50, 200, 50);
   textSize(small);
-  text("Left/right arrow keys or A/D to move\n\nI key to turn invisible\n\nF key to speed boost\n\nYou can't be invisible and have speed boost at the same timeF key to speed boost\n\nThe percentage is the chance that each thing will kill you. Jellies have the lowest chance, followed by fish, and then coral. Rocks definitely kill you\n\n\n\nTry to reach the end with the fastest time", 100, 100, 400, 500);
+  text("Left/right arrow keys or A/D to move\n\nI key to turn invisible\n\nF key to speed boost\n\nYou can't be invisible and have speed boost at the same time\n\nThe percentage is the chance that each thing will kill you. Jellies have the lowest chance, followed by fish, and then coral. Rocks definitely kill you\n\n\n\nTry to reach the end with the fastest time", 100, 100, 400, 500);
   
-  image(jelly, 100, 450, 40, 40);
+  image(jelly, 100, 425, 40, 40);
  
-  image(fish, 140, 450, 40, 40);
+  image(fish, 140, 425, 40, 40);
  
 
-  image(coral, 180, 450, 40, 40);
- image(rock, 220, 450, 40, 40);
+  image(coral, 180, 425, 40, 40);
+ image(rock, 220, 425, 40, 40);
   
   fill(255);
   rect(backButtonX, backButtonY, backButtonWidth, backButtonHeight);
