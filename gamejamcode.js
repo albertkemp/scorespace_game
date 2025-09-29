@@ -339,7 +339,7 @@ function drawStartPage() {
   background(5, 192, 222);
   textSize(60);
   fill(255)
-  text("Ocean", 150, 100);
+  text("OCEAN", 150, 100);
   textSize(20);
   rect(startButtonX, startButtonY, startButtonWidth, startButtonHeight);
   rect(howButtonX, howButtonY, howButtonWidth, howButtonHeight);
