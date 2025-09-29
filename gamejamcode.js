@@ -669,7 +669,7 @@ function formatTime(timeInMilliseconds) {
   let timeString = formattedMinutes + ':' + formattedSeconds + ':' + formattedMilliseconds;
   
   // Use p5.js text() function to draw the string
-  
+  return timeString;
 }
 function displayFormattedTime(timeInMilliseconds, x, y) {
    let minutes = floor(timeInMilliseconds / 60000);
