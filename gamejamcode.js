@@ -199,8 +199,8 @@ function drawChance(x, y, w, h, p) {
   }
   rect(x, y, 40, 20);
   fill(0);
-  textSize(20);
-  text(p, x, y, w, h);
+  textSize(small);
+  text(p, x, y+15, w, h);
   fill(255);
 }
 function draw() {
