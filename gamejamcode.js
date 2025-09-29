@@ -90,8 +90,8 @@ playerImage = ""
  let player = {
     x: playerX,
     y: playerY,
-    w: 50,
-    h: 50
+    w: 40,
+    h: 40
   }
   let mouseButton = {
     x:startButtonX,
