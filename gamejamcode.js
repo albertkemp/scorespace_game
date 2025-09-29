@@ -145,7 +145,7 @@ function setup() {
 let obstacleCourse = [
   {name: "chance", x: 100, y: 100, w: 100, h: 100, hasCollided: false, c: "50%"},
   {name: "block", x: 400, y:300, w: 100, h: 100},
-  {name: "chance", x: 200, y: 500, w: 100, h: 100, hasCollided: false, c: "80%"},//
+  {name: "chance", x: 200, y: 500, w: 200, h: 100, hasCollided: false, c: "80%"},//
   {name: "block", x: 250, y: 700, w: 100, h: 100,},
   {name: "chance", x: -150, y: 800,  w: 100, h: 100, hasCollided: false, c: "20%"},
   {name: "block", x:500, y: 1100,  w: 100, h: 100},
@@ -154,7 +154,7 @@ let obstacleCourse = [
   {name: "chance", x:100, y: 1700,  w: 100, h: 100,hasCollided: false, c: "50%"},
   {name: "block", x: 800, y: 1800,  w: 100, h: 100},
   {name: "block", x:100, y: 250, w: 100, h: 100},
-  {name: "chance", x:100, y: 1500,  w: 100, h: 100, hasCollided: false,c: "80%"},//
+  {name: "chance", x:100, y: 1500,  w: 200, h: 100, hasCollided: false,c: "80%"},//
   {name: "block", x: 100, y: 500, w: 100, h: 100,},
   {name: "chance", x: 400, y: 1000, w: 100, h: 100, hasCollided: false, c: "10%"},
   {name: "block", x: 300, y: 800, w: 100, h: 100,},
@@ -162,22 +162,22 @@ let obstacleCourse = [
   {name: "chance", x: -100, y: 2300, w: 100, h: 100, hasCollided: false, c: "50%"},
   {name: "block", x: 0, y: 2350,  w: 100, h: 100,},
   {name: "block", x: 900, y: 2500, w: 100, h: 100,},
-  {name: "chance", x: 500, y: 2700, w: 100, h: 100, hasCollided: false, c: "80%"},//
+  {name: "chance", x: 500, y: 2700, w: 200, h: 100, hasCollided: false, c: "80%"},//
   {name: "block", x: 300, y: 2900, w: 100, h: 100,},
   {name: "chance", x: 400, y: 2300, w: 100, h: 100, hasCollided: false, c: "50%"},
   {name: "chance", x: -50, y: 2000,  w: 100, h: 100, hasCollided: false, c: "50%"},
   {name: "chance", x: 0, y: 200,  w: 100, h: 100, hasCollided: false, c: "20%"},
   {name: "chance", x: 400, y: 1500, w: 100, h: 100, hasCollided: false, c: "5%"},
-  {name: "chance", x: 500, y: 5000, w: 100, h: 100, hasCollided: false, c: "60%"},//
+  {name: "chance", x: 500, y: 5000, w: 200, h: 100, hasCollided: false, c: "60%"},//
   {name: "chance", x: 500, y: 6000, w: 100, h: 100, hasCollided: false, c: "50%"},
-  {name: "chance", x: 300, y: 1000, w: 100, h: 100, hasCollided: false, c: "60%"},//
+  {name: "chance", x: 300, y: 1000, w: 200, h: 100, hasCollided: false, c: "60%"},//
   {name: "chance", x: 500, y: 500, w: 100, h: 100, hasCollided: false, c: "15%"},
   {name: "chance", x: 550, y: 4000, w: 100, h: 100, hasCollided: false, c: "20%"},
   {name: "chance", x: 0, y: 2750, w: 100, h: 100, hasCollided: false, c: "50%"},
   {name: "chance", x: 400, y: 2500, w: 100, h: 100, hasCollided: false, c: "5%"},
-  {name: "chance", x: 500, y: 2700, w: 100, h: 100, hasCollided: false, c: "55%"},//
-  {name: "chance", x: 500, y: 1200, w: 100, h: 100, hasCollided: false, c: "70%"},//
-  {name: "chance", x: 300, y: 1750, w: 100, h: 100, hasCollided: false, c: "80%"},//
+  {name: "chance", x: 500, y: 2700, w: 200, h: 100, hasCollided: false, c: "55%"},//
+  {name: "chance", x: 500, y: 1200, w: 200, h: 100, hasCollided: false, c: "70%"},//
+  {name: "chance", x: 300, y: 1750, w: 200, h: 100, hasCollided: false, c: "80%"},//
   {name: "chance", x: 500, y: 2900, w: 100, h: 100, hasCollided: false, c: "15%"},
   {name: "chance", x: 550, y: 2800, w: 100, h: 100, hasCollided: false, c: "20%"},
   {name: "chance", x: 0, y: 2750, w: 100, h: 100, hasCollided: false, c: "50%"},
