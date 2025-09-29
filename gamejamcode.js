@@ -332,11 +332,9 @@ function updatePlayerState() {
 function keyPressed() {
   if (gameState === "playing") {
     if (keyCode === LEFT_ARROW || keyCode === 65) {
-      player.x -= playerSpeed; // Apply movement
       moveLeft = true;
       moveRight = false;
     } else if (keyCode === RIGHT_ARROW || keyCode === 68) {
-      player.x += playerSpeed; // Apply movement
       moveRight = true;
       moveLeft = false;
     } else if (keyCode === 70 && speedBoost > 0) {
