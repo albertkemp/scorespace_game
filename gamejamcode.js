@@ -274,10 +274,12 @@ function keyPressed() {
 function keyReleased() {
   if (keyCode === LEFT_ARROW || keyCode === 65) {
     moveLeft = false;
+    playerState = "normal";
   } else if (keyCode === RIGHT_ARROW || keyCode === 68) {
     moveRight = false;
+    playerState = "normal";
   }
-  playerState = "normal";
+  
 }
 function drawStartPage() {
   background(79,66,181);
