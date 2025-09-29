@@ -189,6 +189,7 @@ function drawChance(x, y, w, h, p) {
   } else{
     image(coral, x, y, w, h);
   }
+  rect(x, y, 30, 20);
   fill(0);
   textSize(20);
   text(p, x, y, w, h);
@@ -481,20 +482,15 @@ function drawPlayPage() {
 function drawHowPage() {
   fill(255);
   textSize(20);
-  text("Left/right arrow keys/AD to move\n\nI key to turn invisible\n\nF key to speed boost\n\nThe percentage/color inside the blocks is the chance that it will kill you\n\n\n\nTry to reach the end with the fastest time\nYou can't be invisible and have speed boost at the same time\nTo submit your score to the leaderboard, type your name in the box and hit submit", 100, 100, 400, 400);
-  fill(0, 255, 0);
-  rect(100, 300, 40, 40);
-  fill(0);
-  text("High", 100, 300, 40, 40);
-  fill(173, 216, 230);
-  rect(140, 300, 40, 40);
-  fill(0)
-  text("Mid", 140, 300, 40, 40);
+  text("Left/right arrow keys/AD to move\n\nI key to turn invisible\n\nF key to speed boost\n\nThe percentage is the chance that each thing will kill you. Jellies have the lowest chance, followed by fish, and then coral. Rocks definitely kill you\n\n\n\nTry to reach the end with the fastest time\nYou can't be invisible and have speed boost at the same time\nTo submit your score to the leaderboard, type your name in the box and hit submit", 100, 100, 400, 500);
+  
+  image(jelly, 100, 300, 40, 40);
+ 
+  image(fish, 140, 300, 40, 40);
+ 
 
-  fill(183, 65, 14);
-  rect(180, 300, 40, 40);
-  fill(0);
-  text("Low", 180, 300, 40, 40);
+  image(coral, 180, 300, 40, 40);
+ image(rock, 220, 300, 40, 40);
   
   fill(255);
   rect(backButtonX, backButtonY, backButtonWidth, backButtonHeight);
