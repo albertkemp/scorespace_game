@@ -316,34 +316,38 @@ function updatePlayerState() {
     playerState = "invisible";
   } else if (speedBoostOn && speedBoost > 0) {
     playerState = "speed";
-  } else if (moveLeft) {
-    playerState = "left";
-  } else if (moveRight) {
-    playerState = "right";
   } else {
-    playerState = "normal";
+    // If no boost is active, the state depends on movement.
+    if (moveLeft) {
+      playerState = "left";
+    } else if (moveRight) {
+      playerState = "right";
+    } else {
+      playerState = "normal";
+    }
   }
 }
 
-// Key functions with the corrected logic
-
+// Key functions
 function keyPressed() {
   if (gameState === "playing") {
     if (keyCode === LEFT_ARROW || keyCode === 65) {
+      player.x -= playerSpeed; // Apply movement
       moveLeft = true;
       moveRight = false;
     } else if (keyCode === RIGHT_ARROW || keyCode === 68) {
+      player.x += playerSpeed; // Apply movement
       moveRight = true;
       moveLeft = false;
     } else if (keyCode === 70 && speedBoost > 0) {
       speedBoostOn = true;
-      isInvisible = false; // Turn off the other boost when a new one is activated
+      isInvisible = false;
     } else if (keyCode === 73 && invisibility > 0) {
       isInvisible = true;
-      speedBoostOn = false; // Turn off the other boost when a new one is activated
+      speedBoostOn = false;
     }
-    updatePlayerState(); // Update the player's state immediately after a key is pressed
   }
+  updatePlayerState();
 }
 
 function keyReleased() {
@@ -352,7 +356,7 @@ function keyReleased() {
   } else if (keyCode === RIGHT_ARROW || keyCode === 68) {
     moveRight = false;
   }
-  updatePlayerState(); // Update the state after a key is released
+  updatePlayerState();
 }
 function drawStartPage() {
   background(5, 192, 222);
@@ -545,10 +549,18 @@ background(5, 192, 222);
 function drawPlayPage() {
   background(5, 192, 222);
 
-  // Use the new updatePlayerState function at the beginning of the draw loop
+  // Apply movement independently of boosts
+  if (moveLeft) {
+    player.x -= playerSpeed;
+  }
+  if (moveRight) {
+    player.x += playerSpeed;
+  }
+
+  // Update the state for drawing/sound
   updatePlayerState();
 
-  // Draw and play music based on the final playerState
+  // Drawing and sound logic based on the updated state
   if (playerState === "normal") {
     music.speed(1);
     music.loop();
@@ -570,9 +582,7 @@ function drawPlayPage() {
     image(playerSpeedBoost, player.x, player.y, player.w, player.h);
   }
 
-  // Rest of your drawPlayPage() code remains the same
-  // ... (collision detection, obstacle movement, etc.)
-
+  // Handle speed and invisibility boost durations
   if (speedBoostOn && speedBoost > 0) {
     speedBoost--;
   } else {
@@ -584,7 +594,58 @@ function drawPlayPage() {
   } else {
     isInvisible = false;
   }
-}
+fill(255);
+    obstacleMoving = true;
+
+    for (let i = 0; i < obstacleCourse.length; i++) {
+        let obstacle = obstacleCourse[i];
+        
+        // This is the only place we check for player stopping
+        if (playerTouching(obstacle)) {
+            obstacleMoving = false;
+            // The break is still a good idea here to stop processing obstacles once one has blocked the player
+            break; 
+        }
+    }
+    
+    // Move obstacles only if the player is not blocked by any of them
+    if (obstacleMoving) {
+        for (let i = 0; i < obstacleCourse.length; i++) {
+            let obstacle = obstacleCourse[i];
+            if (speedBoostOn && speedBoost>0) {
+              obstacle.y+=speedyBlockSpeed;
+              playerState ="speed";
+              speedBoost--;
+            } else {
+              if (speedBoost==0) {
+                if (moveLeft) {
+                  playerState="left";
+                } else if (moveRight) {
+                  playerState ="right";
+                } else{
+              playerState="normal";
+                }
+              }
+            obstacle.y += blockSpeed;
+            }
+        }
+        if(speedBoostOn&& speedBoost>0) {
+          distanceCompleted += speedyBlockSpeed;
+        }else{
+        distanceCompleted += blockSpeed;
+        }
+    }
+
+    // This section is for drawing, and should be separate from the movement logic
+    for (let i = 0; i < obstacleCourse.length; i++) {
+        let obstacle = obstacleCourse[i];
+        if (obstacle.name === "block") {
+            drawBlock(obstacle.x, obstacle.y, obstacle.w, obstacle.h);
+        } else if (obstacle.name === "chance") {
+            drawChance(obstacle.x, obstacle.y, obstacle.w, obstacle.h, obstacle.c);
+        }
+    }
+  }
 function drawHowPage() {
   background(5, 192, 222)
   fill(255);
