@@ -131,32 +131,32 @@ function setup() {
   
 }
 let obstacleCourse = [
-  {name: "chance", x: 100, y: 100, w: 200, h: 50, hasCollided: false, c: "50%"},
-  {name: "block", x: 400, y:300, w: 20, h: 20},
-  {name: "chance", x: 200, y: 500, w: 220, h: 50, hasCollided: false, c: "80%"},
-  {name: "block", x: 250, y: 700, w: 400, h: 80},
-  {name: "chance", x: -150, y: 800, w: 300, h: 70, hasCollided: false, c: "20%"},
-  {name: "block", x:500, y: 1100, w: 300, h: 80},
-  {name: "chance", x:-150, y: 1300, w: 200, h: 25, hasCollided: false, c: "50%"},
-  {name: "block", x:5, y: 1500, w: 150, h: 50},
-  {name: "chance", x:100, y: 1700, w: 150, h: 40, hasCollided: false, c: "50%"},
-  {name: "block", x: 800, y: 1800, w: 60, h: 20},
-  {name: "block", x:100, y: 250, w: 60, h: 50},
-  {name: "chance", x:100, y: 1500, w: 200, h: 50, hasCollided: false,c: "80%"},
-  {name: "block", x: 100, y: 500, w: 200, h: 50},
-  {name: "chance", x: 400, y: 1000, w: 100, h: 20, hasCollided: false, c: "10%"},
-  {name: "block", x: 300, y: 800, w: 400, h: 50},
-  {name: "block", x: -150, y: 2100, w: 200, h: 50},
-  {name: "chance", x: -100, y: 2300, w: 200, h: 50, hasCollided: false, c: "50%"},
-  {name: "block", x: 0, y: 2350, w: 200, h: 100},
-  {name: "block", x: 200, y: 2500, w: 200, h: 50},
-  {name: "chance", x: 500, y: 2700, w: 100, h: 50, hasCollided: false, c: "80%"},
-  {name: "block", x: 300, y: 2900, w: 200, h: 50},
-  {name: "chance", x: 400, y: 2300, w: 300, h: 50, hasCollided: false, c: "50%"},
-  {name: "chance", x: -50, y: 2000, w: 200, h: 40, hasCollided: false, c: "50%"},
-  {name: "chance", x: 0, y: 200, w: 200, h: 40, hasCollided: false, c: "20%"},
-  {name: "chance", x: 400, y: 1500, w: 200, h: 40, hasCollided: false, c: "5%"},
-  {name: "chance", x: 500, y: 5000, w: 200, h: 40, hasCollided: false, c: "50%"}
+  {name: "chance", x: 100, y: 100, w: 100, h: 100, hasCollided: false, c: "50%"},
+  {name: "block", x: 400, y:300, w: 100, h: 100},
+  {name: "chance", x: 200, y: 500, w: 100, h: 100, hasCollided: false, c: "80%"},
+  {name: "block", x: 250, y: 700, w: 100, h: 100,},
+  {name: "chance", x: -150, y: 800,  w: 100, h: 100, hasCollided: false, c: "20%"},
+  {name: "block", x:500, y: 1100,  w: 100, h: 100},
+  {name: "chance", x:-150, y: 1300,  w: 100, h: 100, hasCollided: false, c: "50%"},
+  {name: "block", x:5, y: 1500, w: 100, h: 100},
+  {name: "chance", x:100, y: 1700,  w: 100, h: 100,hasCollided: false, c: "50%"},
+  {name: "block", x: 800, y: 1800,  w: 100, h: 100},
+  {name: "block", x:100, y: 250, w: 100, h: 100},
+  {name: "chance", x:100, y: 1500,  w: 100, h: 100, hasCollided: false,c: "80%"},
+  {name: "block", x: 100, y: 500, w: 100, h: 100,},
+  {name: "chance", x: 400, y: 1000, w: 100, h: 100, hasCollided: false, c: "10%"},
+  {name: "block", x: 300, y: 800, w: 100, h: 100,},
+  {name: "block", x: -150, y: 2100, w: 100, h: 100,},
+  {name: "chance", x: -100, y: 2300, w: 100, h: 100, hasCollided: false, c: "50%"},
+  {name: "block", x: 0, y: 2350,  w: 100, h: 100,},
+  {name: "block", x: 200, y: 2500, w: 100, h: 100,},
+  {name: "chance", x: 500, y: 2700, w: 100, h: 100, hasCollided: false, c: "80%"},
+  {name: "block", x: 300, y: 2900, w: 100, h: 100,},
+  {name: "chance", x: 400, y: 2300, w: 100, h: 100, hasCollided: false, c: "50%"},
+  {name: "chance", x: -50, y: 2000,  w: 100, h: 100, hasCollided: false, c: "50%"},
+  {name: "chance", x: 0, y: 200,  w: 100, h: 100, hasCollided: false, c: "20%"},
+  {name: "chance", x: 400, y: 1500, w: 100, h: 100, hasCollided: false, c: "5%"},
+  {name: "chance", x: 500, y: 5000, w: 100, h: 100, hasCollided: false, c: "50%"}
 ];
 
 for (obstacle in obstacleCourse) {//can be changed
@@ -178,10 +178,10 @@ for (i=0;i<obstacleNumber;i++) {
 }*/
 let randomInt = randInt(0, 100);
 //IMPORTANT (tdo to change tmr)
-function drawBlock(x, y) {
+function drawBlock(x, y, w, h) {
   image(rock, x, y, w, h);
 }
-function drawChance(x, y, p) {
+function drawChance(x, y, w, h, p) {
   if (parseInt(p)<50) {
     image(jelly, x, y, w, h);
   }else if (parseInt(p)==50) {
@@ -354,7 +354,7 @@ function playerTouching(obj) {
       invisibility--;
       return false;
     }else{
-      playerState="normal";
+      //playerState="normal";
     if (!(player.x + player.w < obj.x || player.x > obj.x + obj.w || player.y + player.h < obj.y || player.y > obj.y + obj.h)) {
         // We have a collision, now handle the chance logic
         if (obj.name === "chance") {
@@ -443,7 +443,7 @@ function drawPlayPage() {
               playerState ="speed";
               speedBoost--;
             } else {
-              playerState="normal";
+              //playerState="normal";
             obstacle.y += blockSpeed;
             }
         }
@@ -458,9 +458,9 @@ function drawPlayPage() {
     for (let i = 0; i < obstacleCourse.length; i++) {
         let obstacle = obstacleCourse[i];
         if (obstacle.name === "block") {
-            drawBlock(obstacle.x, obstacle.y);
+            drawBlock(obstacle.x, obstacle.y, obstacle.w, obstacle.h);
         } else if (obstacle.name === "chance") {
-            drawChance(obstacle.x, obstacle.y, obstacle.c);
+            drawChance(obstacle.x, obstacle.y, obstacle.w, obstacle.h, obstacle.c);
         }
     }
 }
