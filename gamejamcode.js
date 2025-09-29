@@ -548,13 +548,13 @@ function drawPlayPage() {
   background(5, 192, 222);
 
   // Apply movement independently of boosts
-  if (moveLeft) {
+  /*if (moveLeft) {
     player.x -= playerSpeed;
   }
   if (moveRight) {
     player.x += playerSpeed;
   }
-
+*/
   // Update the state for drawing/sound
   updatePlayerState();
 
