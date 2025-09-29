@@ -108,6 +108,8 @@ let boatLeft;
 let boatRight;
 let jelly;
 let fish;
+let playerInvisible;
+let playerSpeedBoost;
 function preload() {
   rock = loadImage('images/rock.png');
   boatNormal = loadImage('images/boatnormal.png');
@@ -115,6 +117,8 @@ function preload() {
   boatRight = loadImage('images/boatright.png');
   jelly = loadImage('images/jelly.png');
   fish = loadImage('images/fish.png');
+  playerInvisible = loadImage('images/playerinvisible.png');
+  player.speedBoost = loadImage('images/playerspeedboost.png');
 }
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
@@ -265,8 +269,10 @@ function keyPressed() {
     moveLeft = false;
   } else if (keyCode === 70) {
     speedBoostOn = true;
+    isInvisible = false;
   } else if (keyCode === 73) {
     isInvisible=true;
+    speedBoostOn=false;
   }
   //We can add more key stuff here, like fire missile, invisible, etc.
 }
@@ -372,6 +378,7 @@ function playerTouching(obj) {
 }
 
 function drawPlayPage() {
+  if (!isInvisible&&!speedBoostOn)  {
   if (playerState == "normal") {
     image(boatNormal, player.x, player.y, player.w, player.h);
   } else if (playerState == "left") {
@@ -379,6 +386,11 @@ function drawPlayPage() {
   } else if (playerState == "right") {
     image(boatRight, player.x, player.y, player.w, player.h);
   }
+} else if (isInvisible) {
+image(playerInvisible, player.x, player.y, player.w, player.h);
+} else if (speedBoostOn) {
+  image(playerSpeedBoost, player.x, player.y, player.w, player.h);//Can change to w+10 or sth
+}
     textSize(20);
   if (isInvisible && invisibility>0) {
     fill(0, 255, 0);
@@ -439,7 +451,7 @@ function drawPlayPage() {
 function drawHowPage() {
   fill(255);
   textSize(20);
-  text("Left/right arrow keys/AD to move\n\nI key to turn invisible\n\nF key to speed boost\n\nThe percentage/color inside the blocks is the chance that it will kill you\n\n\n\nTry to reach the end with the fastest time", 100, 100, 400, 400);
+  text("Left/right arrow keys/AD to move\n\nI key to turn invisible\n\nF key to speed boost\n\nThe percentage/color inside the blocks is the chance that it will kill you\n\n\n\nTry to reach the end with the fastest time\nYou can't be invisible and have speed boost at the same time\nTo submit your score to the leaderboard, type your name in the box and hit submit", 100, 100, 400, 400);
   fill(0, 255, 0);
   rect(100, 300, 40, 40);
   fill(0);
