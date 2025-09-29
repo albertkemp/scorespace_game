@@ -111,6 +111,7 @@ let fish;
 let playerInvisible;
 let playerSpeedBoost;
 let coral;
+let sea;
 function preload() {
   rock = loadImage('images/rock.png');
   boatNormal = loadImage('images/boatnormal.png');
@@ -121,6 +122,7 @@ function preload() {
   playerInvisible = loadImage('images/playerinvisible.png');
   playerSpeedBoost = loadImage('images/playerspeed.png');
   coral = loadImage('images/coral.png');
+  sea = loadImage('images/sea.png');
 }
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
@@ -400,7 +402,7 @@ function playerTouching(obj) {
 }
 
 function drawPlayPage() {
-
+background(sea);
   if (playerState == "normal") {
     image(boatNormal, player.x, player.y, player.w, player.h);
   } else if (playerState == "left") {
