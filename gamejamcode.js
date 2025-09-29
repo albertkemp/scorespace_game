@@ -56,8 +56,8 @@ const howButtonY = 300;
 const howButtonWidth = 100;
 const howButtonHeight = 50;
 
-const backButtonX = 400;
-const backButtonY = 50;
+const backButtonX = 100;
+const backButtonY = 500;
 const backButtonWidth = 100;
 const backButtonHeight = 50;
 
@@ -490,7 +490,7 @@ function drawHowPage() {
   background(5, 192, 222)
   fill(255);
   textSize(small);
-  text("Left/right arrow keys/AD to move\n\nI key to turn invisible\n\nF key to speed boost\n\nThe percentage is the chance that each thing will kill you. Jellies have the lowest chance, followed by fish, and then coral. Rocks definitely kill you\n\n\n\nTry to reach the end with the fastest time\nYou can't be invisible and have speed boost at the same time\nTo submit your score to the leaderboard, type your name in the box and hit submit", 100, 100, 400, 500);
+  text("Left/right arrow keys or A/D to move\n\nI key to turn invisible\n\nF key to speed boost\n\nThe percentage is the chance that each thing will kill you. Jellies have the lowest chance, followed by fish, and then coral. Rocks definitely kill you\n\n\n\nTry to reach the end with the fastest time\nYou can't be invisible and have speed boost at the same time", 100, 100, 400, 500);
   
   image(jelly, 100, 350, 40, 40);
  
