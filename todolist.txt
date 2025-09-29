@@ -1,5 +1,15 @@
 To do list for tomorrow (big day last day of game jam!)
 1. Game art, sounds???. Drawing pixelated stuff, loading images
+ideas?
+boat for the character? Then no need for scenery
+Or grass and a car but that's too boring
+clouds for the low chance one?
+
 2. Finalizing overall game feeling in the UI styling
 3. Game testing, making sure everythings OK
 4. Submit
+
+What did AI help with?
+Leaderboard (online with Firebase)
+Collision detection
+A couple small bug fixes

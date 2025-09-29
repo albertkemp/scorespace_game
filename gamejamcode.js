@@ -31,6 +31,7 @@ let speedBoostOn = false;
 
 let bullets = 10;
 var gameState = "start";
+let playerState = "normal";
 var canvasWidth = 600;
 var canvasHeight = 600;
 const obstacleRange = 3000;
@@ -75,6 +76,13 @@ const submitNameButtonX = 290;
 const submitNameButtonY = 330;
 const submitNameButtonWidth = 100;
 const submitNameButtonHeight = 50;
+
+const playAgainButtonX = 200;
+const playAgainButtonY = 100;
+const playAgainButtonWidth = 150;
+const playAgainButtonHeight = 50;
+
+
 /*
 function preload() {
 playerImage = ""
@@ -93,14 +101,28 @@ playerImage = ""
   }
 
 let nameInput;
-
-
+//Images:
+let rock;
+let boatNormal;
+let boatLeft;
+let boatRight;
+let jelly;
+let fish;
+function preload() {
+  rock = loadImage('images/rock.png');
+  boatNormal = loadImage('images/boatnormal.png');
+  boatLeft = loadImage('images/boatleft.png');
+  boatRight = loadImage('images/boatright.png');
+  jelly = loadImage('images/jelly.png');
+  fish = loadImage('images/fish.png');
+}
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
   nameInput = createInput('Enter your name');
   nameInput.position(300, 300);
   nameInput.hide(); // Hide it until the game is over
   db  = firebase.firestore();
+  
 }
 let obstacleCourse = [
   {name: "chance", x: 100, y: 100, w: 200, h: 50, hasCollided: false, c: "50%"},
@@ -167,7 +189,7 @@ function drawChance(x, y, w, h, p) {
   fill(255);
 }
 function draw() {
-  background(50);
+  background(79,66,181);
   textSize(20);
   fill(255);
 // text("Distance covered"+distanceCompleted, 200, 20, 200, 100);
@@ -234,9 +256,11 @@ function draw() {
 function keyPressed() {
   if (gameState === "playing") {
   if (keyCode === LEFT_ARROW || keyCode === 65) {
+    playerState = "left";
     moveLeft = true;
     moveRight = false;
   } else if (keyCode === RIGHT_ARROW || keyCode === 68) {
+    playerState = "right";
     moveRight = true;
     moveLeft = false;
   } else if (keyCode === 70) {
@@ -253,9 +277,10 @@ function keyReleased() {
   } else if (keyCode === RIGHT_ARROW || keyCode === 68) {
     moveRight = false;
   }
+  playerState = "normal";
 }
 function drawStartPage() {
-  background(50);
+  background(79,66,181);
   textSize(60);
   fill(255)
   text("Blah", 200, 100);
@@ -268,11 +293,14 @@ function drawStartPage() {
   fill(255);
 }
 function drawDiedPage() {
-  background(50);
-  textSize(30);
-  text("GAME OVER", 100, 100, 200, 100);
+  background(79,66,181);
+  textSize(60);
+  text("GAME OVER", 100, 20, 400, 100);
 textSize(20);
-text("Refresh the page to play again", 100, 150, 300, 100);
+//text("Refresh the page to play again", 100, 150, 300, 100);
+rect(playAgainButtonX, playAgainButtonY, playAgainButtonWidth, playAgainButtonHeight);
+fill(0);
+text("PLAY AGAIN", playAgainButtonX, playAgainButtonY, playAgainButtonWidth, playAgainButtonHeight);
 }
 function mouseClicked() {
   if (gameState == "start") {
@@ -286,9 +314,14 @@ function mouseClicked() {
     if (mouseX >= backButtonX && mouseY >= backButtonY && mouseY<=backButtonY + backButtonHeight && mouseX <= backButtonX + backButtonWidth) {
       gameState="start";
     }
-  } else if (gameState == "end") {
+  } else if (gameState == "end" || gameState == "died") {
+    if (gameState == "end") {
     if (mouseX >= submitNameButtonX && mouseY >= submitNameButtonY && mouseY<=submitNameButtonY + submitNameButtonHeight && mouseX <= submitNameButtonX + submitNameButtonWidth) {
       submitInputValue=nameInput.value();
+    }
+  }
+    if (mouseX >= playAgainButtonX && mouseY >= playAgainButtonY && mouseY<=playAgainButtonY + playAgainButtonHeight && mouseX <= playAgainButtonX + playAgainButtonWidth) {
+      window.location.reload();
     }
   }
 }
@@ -337,7 +370,13 @@ function playerTouching(obj) {
 }
 
 function drawPlayPage() {
-  rect(player.x, player.y, player.w, player.h);
+  if (playerState = "normal") {
+    image(boatNormal, player.x, player.y, player.w, player.h);
+  } else if (playerState = "left") {
+    image(boatLeft, player.x, player.y, player.w, player.h);
+  } else if (playerState = "right") {
+    image(boatRight, player.x, player.y, player.w, player.h);
+  }
     textSize(20);
   if (isInvisible && invisibility>0) {
     fill(0, 255, 0);
@@ -423,29 +462,36 @@ function drawHowPage() {
 }
 function drawEndPage() {
   textSize(60);
-  text("Good Job!", 150, 20, 500, 100);
+  text("GOOD JOB!", 150, 20, 500, 100);
   textSize(30);
-  text('Your time:', 50, 200, 300, 50);
+  text('YOUR TIME:', 50, 200, 300, 50);
   textSize(20);
-   text('Refresh the page to play again',150, 100, 300, 100);
+   //text('Refresh the page to play again',150, 100, 300, 100);
+   text("LEADERBOARD", 50, 300, 100, 40);
+   rect(playAgainButtonX, playAgainButtonY, playAgainButtonWidth, playAgainButtonHeight);
    rect(submitNameButtonX, submitNameButtonY, submitNameButtonWidth, submitNameButtonHeight);
    fill(0);
    textSize(20);
-   text("Submit Score", submitNameButtonX, submitNameButtonY, submitNameButtonWidth, submitNameButtonHeight);
+   text("PLAY AGAIN", playAgainButtonX, playAgainButtonY, playAgainButtonWidth, playAgainButtonHeight);
+   text("SUBMIT SCORE", submitNameButtonX, submitNameButtonY, submitNameButtonWidth, submitNameButtonHeight);
    fill(255);
   displayFormattedTime(elapsedTime, 200, 230);
+  
   nameInput.show();
   if (submitInputValue!=""&&!submitted){
     submitScore(submitInputValue, elapsedTime);
     submitted = true;
-  
+    
+}
+if(submitted) {
+  text("SCORE SUBMITTED", submitNameButtonX, submitNameButtonY + submitNameButtonHeight+20, 200, 50);
 }
   if (!scoresLoaded) {
     getHighScores().then(scores => {
     highScores = scores;
     scoresLoaded = true;
   }).catch(error => {
-    console.error("Failed to fetch scores:", error);
+    console.error("FAILED TO FETCH SCORES", error);
   });
   }else{
         let yPos = 350;
