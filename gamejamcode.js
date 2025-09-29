@@ -14,6 +14,9 @@ let submitInputValue = "";
 let submitted = false;
 let scoresLoaded = false;
 let highScores = [];
+var y1;
+var y2 = 0;
+var scrollSpeed = 2;
 
 //Defining global variables - x, y, speed. OriginalX is for teleporting it back to the start
 let playerHahaX = 0;
@@ -130,6 +133,7 @@ function setup() {
   nameInput.position(300, 300);
   nameInput.hide(); // Hide it until the game is over
   db  = firebase.firestore();
+  y1 = -height; 
   
 }
 let obstacleCourse = [
@@ -402,7 +406,21 @@ function playerTouching(obj) {
 }
 
 function drawPlayPage() {
-background(sea);
+image(sea, 0, y1, width, height);
+  image(sea, 0, y2, width, height);
+
+  // Increase the y-coordinates to make the images move downward
+  y1 += scrollSpeed;
+  y2 += scrollSpeed;
+
+  // When an image moves off the bottom, wrap it to the top
+  if (y1 > height) {
+    y1 = -height;
+  }
+  if (y2 > height) {
+    y2 = -height;
+  }
+
   if (playerState == "normal") {
     image(boatNormal, player.x, player.y, player.w, player.h);
   } else if (playerState == "left") {
@@ -517,7 +535,7 @@ function drawEndPage() {
    text("PLAY AGAIN", playAgainButtonX, playAgainButtonY, playAgainButtonWidth, playAgainButtonHeight);
    text("SUBMIT SCORE", submitNameButtonX, submitNameButtonY, submitNameButtonWidth, submitNameButtonHeight);
    fill(255);
-  displayFormattedTime(elapsedTime, 200, 230);
+  displayFormattedTime(elapsedTime, 230, 220);
   
   nameInput.show();
   if (submitInputValue!=""&&!submitted){
