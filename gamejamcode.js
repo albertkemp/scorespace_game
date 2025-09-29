@@ -110,6 +110,7 @@ let jelly;
 let fish;
 let playerInvisible;
 let playerSpeedBoost;
+let coral;
 function preload() {
   rock = loadImage('images/rock.png');
   boatNormal = loadImage('images/boatnormal.png');
@@ -119,6 +120,7 @@ function preload() {
   fish = loadImage('images/fish.png');
   playerInvisible = loadImage('images/playerinvisible.png');
   playerSpeedBoost = loadImage('images/playerspeed.png');
+  coral = loadImage('images/coral.png');
 }
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
@@ -177,18 +179,18 @@ for (i=0;i<obstacleNumber;i++) {
 let randomInt = randInt(0, 100);
 //IMPORTANT (tdo to change tmr)
 function drawBlock(x, y, w, h) {
-  rect(x, y, w, h);
+  image(rock, x, y, w, h);
 }
 function drawChance(x, y, w, h, p) {
   if (parseInt(p)<50) {
-    fill(0, 255, 0);
+    image(jelly, x, y, w, h);
   }else if (parseInt(p)==50) {
-    fill(173, 216, 230);
+    image(fish, x, y, w, h);
   } else{
-    fill(183, 65, 14);
+    image(coral, x, y, w, h);
   }
-  rect(x, y, w, h);
   fill(0);
+  textSize(20);
   text(p, x, y, w, h);
   fill(255);
 }
@@ -352,6 +354,7 @@ function playerTouching(obj) {
       invisibility--;
       return false;
     }else{
+      playerState="normal";
     if (!(player.x + player.w < obj.x || player.x > obj.x + obj.w || player.y + player.h < obj.y || player.y > obj.y + obj.h)) {
         // We have a collision, now handle the chance logic
         if (obj.name === "chance") {
@@ -440,6 +443,7 @@ function drawPlayPage() {
               playerState ="speed";
               speedBoost--;
             } else {
+              playerState="normal";
             obstacle.y += blockSpeed;
             }
         }
