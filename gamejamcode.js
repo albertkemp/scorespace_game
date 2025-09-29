@@ -565,7 +565,7 @@ if(submitted) {
   }else{
         let yPos = 350;
         highScores.forEach((scoreData, index) => {
-            text(`${index + 1}. ${formatTime(scoreData.name)}: ${scoreData.score}`, 50, yPos);
+            text(`${index + 1}. ${scoreData.name}: ${formatTime(scoreData.score)}`, 50, yPos);
             yPos += 20;
         });
       }
