@@ -118,7 +118,7 @@ function preload() {
   jelly = loadImage('images/jelly.png');
   fish = loadImage('images/fish.png');
   playerInvisible = loadImage('images/playerinvisible.png');
-  player.speedBoost = loadImage('images/playerspeedboost.png');
+  playerspeedBoost = loadImage('images/playerspeedboost.png');
 }
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
