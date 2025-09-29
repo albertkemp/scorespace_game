@@ -16,7 +16,8 @@ let scoresLoaded = false;
 let highScores = [];
 var y1;
 var y2 = 0;
-var scrollSpeed = 2;
+let blockSpeed =7;
+var scrollSpeed = blockSpeed;
 
 //Defining global variables - x, y, speed. OriginalX is for teleporting it back to the start
 let playerHahaX = 0;
@@ -67,7 +68,7 @@ const reButtonY = 300;
 const reButtonWidth = 200;
 const reButtonHeight = 50;
 let obstacleMoving = true;
-let blockSpeed =7;
+
 const speedyBlockSpeed = 46;
 
 let startTime;
