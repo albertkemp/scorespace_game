@@ -113,6 +113,7 @@ let playerInvisible;
 let playerSpeedBoost;
 let coral;
 let sea;
+let font;
 function preload() {
   rock = loadImage('images/rock.png');
   boatNormal = loadImage('images/boatnormal.png');
@@ -124,6 +125,7 @@ function preload() {
   playerSpeedBoost = loadImage('images/playerspeed.png');
   coral = loadImage('images/coral.png');
   sea = loadImage('images/sea.png');
+  font = loadFont('assets/PressStart2P-Regular.ttf')
 }
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
@@ -201,6 +203,7 @@ function drawChance(x, y, w, h, p) {
 function draw() {
   background(79,66,181);
   textSize(20);
+  textFont(font);
   fill(255);
 // text("Distance covered"+distanceCompleted, 200, 20, 200, 100);
  /* for (i=0; i<10; i++) {
