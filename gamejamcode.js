@@ -424,7 +424,7 @@ background(5, 192, 222);
     music.stop();
     image(playerInvisible, player.x, player.y, player.w, player.h);
   } else if (playerState == "speed") {
-    music.rate(1.5);
+    music.speed(1.5);
     music.loop();
     image(playerSpeedBoost, player.x, player.y, player.w, player.h);
   }
