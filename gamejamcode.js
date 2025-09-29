@@ -15,7 +15,8 @@ let submitted = false;
 let scoresLoaded = false;
 let highScores = [];
 
-
+const diff = 40;
+const small = 15;
 //Defining global variables - x, y, speed. OriginalX is for teleporting it back to the start
 let playerHahaX = 0;
 let finalTim = 0; // Add this to your global variables section.
@@ -316,19 +317,19 @@ function drawStartPage() {
   rect(startButtonX, startButtonY, startButtonWidth, startButtonHeight);
   rect(howButtonX, howButtonY, howButtonWidth, howButtonHeight);
   fill(0)
-  text("PLAY", startButtonX, startButtonY, startButtonWidth, startButtonHeight);
-  text("HOW", howButtonX, howButtonY, howButtonWidth, howButtonHeight)
+  text("PLAY", startButtonX, startButtonY+diff, startButtonWidth, startButtonHeight);
+  text("HOW", howButtonX, howButtonY+diff, howButtonWidth, howButtonHeight)
   fill(255);
 }
 function drawDiedPage() {
   background(5, 192, 222);
-  textSize(60);
-  text("GAME OVER", 100, 20, 400, 100);
-textSize(20);
+  textSize(40);
+  text("GAME OVER", 100, 120, 400, 100);
+textSize(small);
 //text("Refresh the page to play again", 100, 150, 300, 100);
 rect(playAgainButtonX, playAgainButtonY, playAgainButtonWidth, playAgainButtonHeight);
 fill(0);
-text("PLAY AGAIN", playAgainButtonX, playAgainButtonY, playAgainButtonWidth, playAgainButtonHeight);
+text("PLAY AGAIN", playAgainButtonX, playAgainButtonY+diff, playAgainButtonWidth, playAgainButtonHeight);
 }
 function mouseClicked() {
   if (gameState == "start") {
@@ -488,7 +489,7 @@ background(5, 192, 222);
 function drawHowPage() {
   background(5, 192, 222)
   fill(255);
-  textSize(20);
+  textSize(small);
   text("Left/right arrow keys/AD to move\n\nI key to turn invisible\n\nF key to speed boost\n\nThe percentage is the chance that each thing will kill you. Jellies have the lowest chance, followed by fish, and then coral. Rocks definitely kill you\n\n\n\nTry to reach the end with the fastest time\nYou can't be invisible and have speed boost at the same time\nTo submit your score to the leaderboard, type your name in the box and hit submit", 100, 100, 400, 500);
   
   image(jelly, 100, 350, 40, 40);
@@ -503,25 +504,25 @@ function drawHowPage() {
   rect(backButtonX, backButtonY, backButtonWidth, backButtonHeight);
 
   fill(0);
-
-  text("BACK", backButtonX, backButtonY, backButtonWidth, backButtonHeight);
+textSize(20);
+  text("BACK", backButtonX, backButtonY+diff, backButtonWidth, backButtonHeight);
   fill(255);
 }
 function drawEndPage() {
   background(5, 192, 222)
-  textSize(60);
-  text("GOOD JOB!", 150, 20, 500, 100);
-  textSize(30);
-  text('YOUR TIME:', 50, 200, 300, 50);
+  textSize(40);
+  text("GOOD JOB!", 250, 20, 500, 100);
   textSize(20);
+  text('YOUR TIME:', 50, 200, 300, 100);
+  textSize(small);
    //text('Refresh the page to play again',150, 100, 300, 100);
    text("LEADERBOARD", 50, 300, 100, 40);
    rect(playAgainButtonX, playAgainButtonY, playAgainButtonWidth, playAgainButtonHeight);
    rect(submitNameButtonX, submitNameButtonY, submitNameButtonWidth, submitNameButtonHeight);
    fill(0);
    textSize(20);
-   text("PLAY AGAIN", playAgainButtonX, playAgainButtonY, playAgainButtonWidth, playAgainButtonHeight);
-   text("SUBMIT SCORE", submitNameButtonX, submitNameButtonY, submitNameButtonWidth, submitNameButtonHeight);
+   text("PLAY AGAIN", playAgainButtonX, playAgainButtonY+diff, playAgainButtonWidth, playAgainButtonHeight);
+   text("SUBMIT SCORE", submitNameButtonX, submitNameButtonY+diff, submitNameButtonWidth, submitNameButtonHeight);
    fill(255);
   displayFormattedTime(elapsedTime, 230, 220);
   
@@ -661,10 +662,10 @@ function displayFormattedTime(timeInMilliseconds, x, y) {
   let formattedMilliseconds = nf(milliseconds, 3);
   
   let timeString = formattedMinutes + ':' + formattedSeconds + ':' + formattedMilliseconds;
-  textSize(30);
+  textSize(20);
   // Use p5.js text() function to draw the string
   text(timeString, x, y);
-  textSize(20);
+  textSize(small);
 }
 function reset() {
    playerX = originalX;
