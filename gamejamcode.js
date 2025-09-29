@@ -178,10 +178,10 @@ for (i=0;i<obstacleNumber;i++) {
 }*/
 let randomInt = randInt(0, 100);
 //IMPORTANT (tdo to change tmr)
-function drawBlock(x, y, w, h) {
+function drawBlock(x, y) {
   image(rock, x, y, w, h);
 }
-function drawChance(x, y, w, h, p) {
+function drawChance(x, y, p) {
   if (parseInt(p)<50) {
     image(jelly, x, y, w, h);
   }else if (parseInt(p)==50) {
@@ -458,9 +458,9 @@ function drawPlayPage() {
     for (let i = 0; i < obstacleCourse.length; i++) {
         let obstacle = obstacleCourse[i];
         if (obstacle.name === "block") {
-            drawBlock(obstacle.x, obstacle.y, obstacle.w, obstacle.h);
+            drawBlock(obstacle.x, obstacle.y);
         } else if (obstacle.name === "chance") {
-            drawChance(obstacle.x, obstacle.y, obstacle.w, obstacle.h, obstacle.c);
+            drawChance(obstacle.x, obstacle.y, obstacle.c);
         }
     }
 }
