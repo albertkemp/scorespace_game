@@ -115,6 +115,7 @@ let playerSpeedBoost;
 let coral;
 let sea;
 let font;
+let music;
 function preload() {
   rock = loadImage('images/rock.png');
   boatNormal = loadImage('images/boatnormal.png');
@@ -126,7 +127,8 @@ function preload() {
   playerSpeedBoost = loadImage('images/playerspeed.png');
   coral = loadImage('images/coral.png');
   sea = loadImage('images/sea.png');
-  font = loadFont('assets/PressStart2P-Regular.ttf')
+  font = loadFont('assets/PressStart2P-Regular.ttf');
+  music = createAudio('assets/5499981141770240.wav');
 }
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
@@ -408,6 +410,7 @@ function playerTouching(obj) {
 
 function drawPlayPage() {
 background(5, 192, 222);
+music.loop();
   if (playerState == "normal") {
     image(boatNormal, player.x, player.y, player.w, player.h);
   } else if (playerState == "left") {
