@@ -16,6 +16,9 @@ let scoresLoaded = false;
 let highScores = [];
 var y1;
 var y2 = 0;
+
+var x1 = 0;
+var x2;
 let blockSpeed =7;
 var scrollSpeed = blockSpeed;
 
@@ -135,7 +138,7 @@ function setup() {
   nameInput.hide(); // Hide it until the game is over
   db  = firebase.firestore();
   y1 = -height; 
-  
+   x2 = width;
 }
 let obstacleCourse = [
   {name: "chance", x: 100, y: 100, w: 100, h: 100, hasCollided: false, c: "50%"},
@@ -244,6 +247,7 @@ function draw() {
   }
    
   if (moveLeft) {
+    x1+=playerSpeed;
     if (playerHahaX<=canvasWidth/2-obstacleXRange) {
       if (player.x>0) {
         player.x-=playerSpeed;
@@ -252,6 +256,7 @@ function draw() {
     left();
     }
   } else if (moveRight) {
+    x1-=playerSpeed;
     if (playerHahaX>=obstacleXRange-canvasWidth/2){
       if (player.x+player.w<canvasWidth) {
       player.x+=playerSpeed;
@@ -407,8 +412,8 @@ function playerTouching(obj) {
 }
 
 function drawPlayPage() {
-image(sea, 0, y1, width, height);
-  image(sea, 0, y2, width, height);
+image(sea, x1, y1, width, height);
+  image(sea, x2, y2, width, height);
 
   // Increase the y-coordinates to make the images move downward
   y1 += scrollSpeed;
