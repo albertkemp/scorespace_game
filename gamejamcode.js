@@ -74,7 +74,7 @@ let elapsedTime = 0;
 let isRunning = false;
 let highScore = Infinity;
 
-const submitNameButtonX = 290;
+const submitNameButtonX = 330;
 const submitNameButtonY = 330;
 const submitNameButtonWidth = 100;
 const submitNameButtonHeight = 50;
@@ -131,7 +131,7 @@ function preload() {
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
   nameInput = createInput('Enter your name');
-  nameInput.position(300, 300);
+  nameInput.position(320, 300);
   nameInput.hide(); // Hide it until the game is over
   db  = firebase.firestore();
   
@@ -324,7 +324,7 @@ function drawStartPage() {
 function drawDiedPage() {
   background(5, 192, 222);
   textSize(40);
-  text("GAME OVER", 100, 120, 400, 100);
+  text("GAME OVER", 100, 80, 400, 100);
 textSize(small);
 //text("Refresh the page to play again", 100, 150, 300, 100);
 rect(playAgainButtonX, playAgainButtonY, playAgainButtonWidth, playAgainButtonHeight);
@@ -520,11 +520,10 @@ function drawEndPage() {
    rect(playAgainButtonX, playAgainButtonY, playAgainButtonWidth, playAgainButtonHeight);
    rect(submitNameButtonX, submitNameButtonY, submitNameButtonWidth, submitNameButtonHeight);
    fill(0);
-   textSize(20);
-   text("PLAY AGAIN", playAgainButtonX, playAgainButtonY+diff, playAgainButtonWidth, playAgainButtonHeight);
-   text("SUBMIT SCORE", submitNameButtonX, submitNameButtonY+diff, submitNameButtonWidth, submitNameButtonHeight);
+   text("PLAY AGAIN", playAgainButtonX, playAgainButtonY+diff/2, playAgainButtonWidth, playAgainButtonHeight);
+   text("SUBMIT SCORE", submitNameButtonX, submitNameButtonY+diff/2, submitNameButtonWidth, submitNameButtonHeight);
    fill(255);
-  displayFormattedTime(elapsedTime, 230, 220);
+  displayFormattedTime(elapsedTime, 250, 200);
   
   nameInput.show();
   if (submitInputValue!=""&&!submitted){
