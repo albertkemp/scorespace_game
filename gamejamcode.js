@@ -57,7 +57,7 @@ const howButtonWidth = 100;
 const howButtonHeight = 50;
 
 const backButtonX = 100;
-const backButtonY = 500;
+const backButtonY = 550;
 const backButtonWidth = 100;
 const backButtonHeight = 50;
 
@@ -74,7 +74,7 @@ let elapsedTime = 0;
 let isRunning = false;
 let highScore = Infinity;
 
-const submitNameButtonX = 450;
+const submitNameButtonX = 440;
 const submitNameButtonY = 330;
 const submitNameButtonWidth = 100;
 const submitNameButtonHeight = 50;
@@ -133,7 +133,7 @@ function preload() {
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
   nameInput = createInput('Enter your name');
-  nameInput.position(450, 300);
+  nameInput.position(445, 300);
   nameInput.hide(); // Hide it until the game is over
   db  = firebase.firestore();
   
@@ -504,7 +504,7 @@ function drawHowPage() {
   textSize(20);
   text("INSTRUCTIONS:", 100, 50, 200, 50);
   textSize(small);
-  text("Left/right arrow keys or A/D to move\n\nI key to turn invisible\n\nYou can't be invisible and have speed boost at the same timeF key to speed boost\n\nThe percentage is the chance that each thing will kill you. Jellies have the lowest chance, followed by fish, and then coral. Rocks definitely kill you\n\n\n\nTry to reach the end with the fastest time", 100, 100, 400, 500);
+  text("Left/right arrow keys or A/D to move\n\nI key to turn invisible\n\nF key to speed boost\n\nYou can't be invisible and have speed boost at the same timeF key to speed boost\n\nThe percentage is the chance that each thing will kill you. Jellies have the lowest chance, followed by fish, and then coral. Rocks definitely kill you\n\n\n\nTry to reach the end with the fastest time", 100, 100, 400, 500);
   
   image(jelly, 100, 400, 40, 40);
  
