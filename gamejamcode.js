@@ -76,7 +76,7 @@ let elapsedTime = 0;
 let isRunning = false;
 let highScore = Infinity;
 
-const submitNameButtonX = 440;
+const submitNameButtonX = 438;
 const submitNameButtonY = 330;
 const submitNameButtonWidth = 100;
 const submitNameButtonHeight = 50;
@@ -135,7 +135,7 @@ function preload() {
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
   nameInput = createInput('Enter your name');
-  nameInput.position(445, 300);
+  nameInput.position(444, 300);
   nameInput.hide(); // Hide it until the game is over
   db  = firebase.firestore();
   
