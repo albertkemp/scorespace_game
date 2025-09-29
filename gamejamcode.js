@@ -426,6 +426,12 @@ image(sea, x1, y1, width, height);
   if (y2 > height) {
     y2 = -height;
   }
+  if (x1 < -width){
+    x1 = width;
+  }
+  if (x2 < -width){
+    x2 = width;
+  }
 
   if (playerState == "normal") {
     image(boatNormal, player.x, player.y, player.w, player.h);
