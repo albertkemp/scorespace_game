@@ -268,7 +268,7 @@ function draw() {
     
   }*/
   
-}
+}/*
 function keyPressed() {
   if (gameState === "playing") {
   if (keyCode === LEFT_ARROW || keyCode === 65) {
@@ -309,6 +309,50 @@ moveLeft = false;
   }
   
 }
+}*/
+// A new function to manage the state transitions
+function updatePlayerState() {
+  if (isInvisible && invisibility > 0) {
+    playerState = "invisible";
+  } else if (speedBoostOn && speedBoost > 0) {
+    playerState = "speed";
+  } else if (moveLeft) {
+    playerState = "left";
+  } else if (moveRight) {
+    playerState = "right";
+  } else {
+    playerState = "normal";
+  }
+}
+
+// Key functions with the corrected logic
+
+function keyPressed() {
+  if (gameState === "playing") {
+    if (keyCode === LEFT_ARROW || keyCode === 65) {
+      moveLeft = true;
+      moveRight = false;
+    } else if (keyCode === RIGHT_ARROW || keyCode === 68) {
+      moveRight = true;
+      moveLeft = false;
+    } else if (keyCode === 70 && speedBoost > 0) {
+      speedBoostOn = true;
+      isInvisible = false; // Turn off the other boost when a new one is activated
+    } else if (keyCode === 73 && invisibility > 0) {
+      isInvisible = true;
+      speedBoostOn = false; // Turn off the other boost when a new one is activated
+    }
+    updatePlayerState(); // Update the player's state immediately after a key is pressed
+  }
+}
+
+function keyReleased() {
+  if (keyCode === LEFT_ARROW || keyCode === 65) {
+    moveLeft = false;
+  } else if (keyCode === RIGHT_ARROW || keyCode === 68) {
+    moveRight = false;
+  }
+  updatePlayerState(); // Update the state after a key is released
 }
 function drawStartPage() {
   background(5, 192, 222);
@@ -407,7 +451,7 @@ function playerTouching(obj) {
     // No collision at all, so the player is not stopped
     return false;
 }
-
+/*
 function drawPlayPage() {
 background(5, 192, 222);
 
@@ -445,7 +489,7 @@ background(5, 192, 222);
     fill(255);
   } else{
     text("Speed boost: Off", 10, 50, 200, 100);
-  }*/
+  }*//*
   fill(255);
     obstacleMoving = true;
 
@@ -497,6 +541,49 @@ background(5, 192, 222);
             drawChance(obstacle.x, obstacle.y, obstacle.w, obstacle.h, obstacle.c);
         }
     }
+}*/
+function drawPlayPage() {
+  background(5, 192, 222);
+
+  // Use the new updatePlayerState function at the beginning of the draw loop
+  updatePlayerState();
+
+  // Draw and play music based on the final playerState
+  if (playerState === "normal") {
+    music.speed(1);
+    music.loop();
+    image(boatNormal, player.x, player.y, player.w, player.h);
+  } else if (playerState === "left") {
+    music.speed(1);
+    music.loop();
+    image(boatLeft, player.x, player.y, player.w, player.h);
+  } else if (playerState === "right") {
+    music.speed(1);
+    music.loop();
+    image(boatRight, player.x, player.y, player.w, player.h);
+  } else if (playerState === "invisible") {
+    music.stop();
+    image(playerInvisible, player.x, player.y, player.w, player.h);
+  } else if (playerState === "speed") {
+    music.speed(2);
+    music.loop();
+    image(playerSpeedBoost, player.x, player.y, player.w, player.h);
+  }
+
+  // Rest of your drawPlayPage() code remains the same
+  // ... (collision detection, obstacle movement, etc.)
+
+  if (speedBoostOn && speedBoost > 0) {
+    speedBoost--;
+  } else {
+    speedBoostOn = false;
+  }
+
+  if (isInvisible && invisibility > 0) {
+    invisibility--;
+  } else {
+    isInvisible = false;
+  }
 }
 function drawHowPage() {
   background(5, 192, 222)
