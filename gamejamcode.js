@@ -268,9 +268,11 @@ function keyPressed() {
     moveRight = true;
     moveLeft = false;
   } else if (keyCode === 70) {
+    playerState = "speed";
     speedBoostOn = true;
     isInvisible = false;
   } else if (keyCode === 73) {
+    playerState = "invisible"
     isInvisible=true;
     speedBoostOn=false;
   }
@@ -279,13 +281,22 @@ function keyPressed() {
 }
 function keyReleased() {
   if (keyCode === LEFT_ARROW || keyCode === 65) {
-    moveLeft = false;
+   if (playerState != "invisible" && playerState != "speed") {
+moveLeft = false;
     playerState = "normal";
+   }else{
+    moveLeft = false;
+   }
+    
   } else if (keyCode === RIGHT_ARROW || keyCode === 68) {
+    if (playerState != "invisible" && playerState != "speed") {
     moveRight = false;
     playerState = "normal";
+  } else{
+    moveRight = false;
   }
   
+}
 }
 function drawStartPage() {
   background(79,66,181);
@@ -337,6 +348,7 @@ function mouseClicked() {
 function playerTouching(obj) {
     // Basic collision detection
     if (isInvisible && invisibility>0) {
+      playerState="invisible";
       invisibility--;
       return false;
     }else{
@@ -378,19 +390,18 @@ function playerTouching(obj) {
 }
 
 function drawPlayPage() {
-  if (!isInvisible&&!speedBoostOn)  {
+
   if (playerState == "normal") {
     image(boatNormal, player.x, player.y, player.w, player.h);
   } else if (playerState == "left") {
     image(boatLeft, player.x, player.y, player.w, player.h);
   } else if (playerState == "right") {
     image(boatRight, player.x, player.y, player.w, player.h);
+  } else if (playerState == "invisible") {
+    image(playerInvisible, player.x, player.y, player.w, player.h);
+  } else if (playerState == "speed") {
+    image(playerSpeedBoost, player.x, player.y, player.w, player.h);
   }
-} else if (isInvisible && invisibility>0) {
-image(playerInvisible, player.x, player.y, player.w, player.h);
-} else if (speedBoostOn && speedBoost>0) {
-  image(playerSpeedBoost, player.x, player.y, player.w, player.h);//Can change to w+10 or sth
-}
     textSize(20);/*
   if (isInvisible && invisibility>0) {
     fill(0, 255, 0);
@@ -426,6 +437,7 @@ image(playerInvisible, player.x, player.y, player.w, player.h);
             let obstacle = obstacleCourse[i];
             if (speedBoostOn && speedBoost>0) {
               obstacle.y+=speedyBlockSpeed;
+              playerStaet ="speed";
               speedBoost--;
             } else {
             obstacle.y += blockSpeed;
