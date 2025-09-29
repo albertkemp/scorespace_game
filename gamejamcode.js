@@ -370,11 +370,11 @@ function playerTouching(obj) {
 }
 
 function drawPlayPage() {
-  if (playerState = "normal") {
+  if (playerState == "normal") {
     image(boatNormal, player.x, player.y, player.w, player.h);
-  } else if (playerState = "left") {
+  } else if (playerState == "left") {
     image(boatLeft, player.x, player.y, player.w, player.h);
-  } else if (playerState = "right") {
+  } else if (playerState == "right") {
     image(boatRight, player.x, player.y, player.w, player.h);
   }
     textSize(20);
