@@ -410,16 +410,22 @@ function playerTouching(obj) {
 
 function drawPlayPage() {
 background(5, 192, 222);
-music.loop();
+
   if (playerState == "normal") {
+    music.loop();
     image(boatNormal, player.x, player.y, player.w, player.h);
   } else if (playerState == "left") {
+    music.loop();
     image(boatLeft, player.x, player.y, player.w, player.h);
   } else if (playerState == "right") {
+    music.loop();
     image(boatRight, player.x, player.y, player.w, player.h);
   } else if (playerState == "invisible") {
+    music.stop();
     image(playerInvisible, player.x, player.y, player.w, player.h);
   } else if (playerState == "speed") {
+    music.rate(1.5);
+    music.loop();
     image(playerSpeedBoost, player.x, player.y, player.w, player.h);
   }
     textSize(20);/*
