@@ -86,10 +86,6 @@ const playAgainButtonY = 100;
 const playAgainButtonWidth = 150;
 const playAgainButtonHeight = 50;
 
-const coralWidth = 200;
-const coralHeight = 100;
-const normalWidth = 100;
-const normalHeight = 100;
 
 /*
 function preload() {
@@ -147,18 +143,18 @@ function setup() {
   
 }
 let obstacleCourse = [
-  {name: "chance", x: 100, y: 100, hasCollided: false, c: "50%"},
-  {name: "block", x: 400, y:300},
-  {name: "chance", x: 200, y: 500, w: coralWidth, h: coralHeight, hasCollided: false, c: "80%"},//
-  {name: "block", x: 250, y: 700},
-  {name: "chance", x: -150, y: 800, hasCollided: false, c: "20%"},
-  {name: "block", x:500, y: 1100},
-  {name: "chance", x:-150, y: 1300, hasCollided: false, c: "50%"},
-  {name: "block", x:5, y: 1500},
-  {name: "chance", x:100, y: 1700, hasCollided: false, c: "50%"},
-  {name: "block", x: 800, y: 1800},
+  {name: "chance", x: 100, y: 100, w: 100, h: 100, hasCollided: false, c: "50%"},
+  {name: "block", x: 400, y:300, w: 100, h: 100},
+  {name: "chance", x: 200, y: 500, w: 200, h: 150, hasCollided: false, c: "80%"},//
+  {name: "block", x: 250, y: 700, w: 100, h: 100,},
+  {name: "chance", x: -150, y: 800,  w: 100, h: 100, hasCollided: false, c: "20%"},
+  {name: "block", x:500, y: 1100,  w: 100, h: 100},
+  {name: "chance", x:-150, y: 1300,  w: 100, h: 100, hasCollided: false, c: "50%"},
+  {name: "block", x:5, y: 1500, w: 100, h: 100},
+  {name: "chance", x:100, y: 1700,  w: 100, h: 100,hasCollided: false, c: "50%"},
+  {name: "block", x: 800, y: 1800,  w: 100, h: 100},
   {name: "block", x:100, y: 250, w: 100, h: 100},
-  {name: "chance", x:100, y: 1500,  w: coralWidth, h: coralHeight, hasCollided: false,c: "80%"},//
+  {name: "chance", x:100, y: 1500,  w: 200, h: 150, hasCollided: false,c: "80%"},//
   {name: "block", x: 100, y: 500, w: 100, h: 100,},
   {name: "chance", x: 400, y: 1000, w: 100, h: 100, hasCollided: false, c: "10%"},
   {name: "block", x: 300, y: 800, w: 100, h: 100,},
@@ -166,22 +162,22 @@ let obstacleCourse = [
   {name: "chance", x: -100, y: 2300, w: 100, h: 100, hasCollided: false, c: "50%"},
   {name: "block", x: 0, y: 2350,  w: 100, h: 100,},
   {name: "block", x: 900, y: 2500, w: 100, h: 100,},
-  {name: "chance", x: 500, y: 2700, w: coralWidth, h: coralHeight, hasCollided: false, c: "80%"},//
+  {name: "chance", x: 500, y: 2700, w: 200, h: 150, hasCollided: false, c: "80%"},//
   {name: "block", x: 300, y: 2900, w: 100, h: 100,},
   {name: "chance", x: 400, y: 2300, w: 100, h: 100, hasCollided: false, c: "50%"},
   {name: "chance", x: -50, y: 2000,  w: 100, h: 100, hasCollided: false, c: "50%"},
   {name: "chance", x: 0, y: 200,  w: 100, h: 100, hasCollided: false, c: "20%"},
   {name: "chance", x: 400, y: 1500, w: 100, h: 100, hasCollided: false, c: "5%"},
-  {name: "chance", x: 500, w: coralWidth, h: coralHeight, h: 100, hasCollided: false, c: "60%"},//
+  {name: "chance", x: 500, y: 5000, w: 200, h: 150, hasCollided: false, c: "60%"},//
   {name: "chance", x: 500, y: 6000, w: 100, h: 100, hasCollided: false, c: "50%"},
-  {name: "chance", x: 300, y: 1000, w: coralWidth, h: coralHeight, hasCollided: false, c: "60%"},//
+  {name: "chance", x: 300, y: 1000, w: 200, h: 150, hasCollided: false, c: "60%"},//
   {name: "chance", x: 500, y: 500, w: 100, h: 100, hasCollided: false, c: "15%"},
   {name: "chance", x: 550, y: 4000, w: 100, h: 100, hasCollided: false, c: "20%"},
   {name: "chance", x: 0, y: 2750, w: 100, h: 100, hasCollided: false, c: "50%"},
   {name: "chance", x: 400, y: 2500, w: 100, h: 100, hasCollided: false, c: "5%"},
-  {name: "chance", x: 500, y: 2700, w: coralWidth, h: coralHeight, hasCollided: false, c: "55%"},//
-  {name: "chance", x: 500, y: 1200, w: coralWidth, h: coralHeight, hasCollided: false, c: "70%"},//
-  {name: "chance", x: 300, y: 1750, w: coralWidth, h: coralHeight, hasCollided: false, c: "80%"},//
+  {name: "chance", x: 500, y: 2700, w: 200, h: 150, hasCollided: false, c: "55%"},//
+  {name: "chance", x: 500, y: 1200, w: 200, h: 150, hasCollided: false, c: "70%"},//
+  {name: "chance", x: 300, y: 1750, w: 200, h: 150, hasCollided: false, c: "80%"},//
   {name: "chance", x: 500, y: 2900, w: 100, h: 100, hasCollided: false, c: "15%"},
   {name: "chance", x: 550, y: 2800, w: 100, h: 100, hasCollided: false, c: "20%"},
   {name: "chance", x: 0, y: 2750, w: 100, h: 100, hasCollided: false, c: "50%"},
@@ -201,19 +197,17 @@ function randInt(min, max){
 }
 let randomInt = randInt(0, 100);
 //IMPORTANT (tdo to change tmr)
-function drawBlock(x, y) {
-  image(rock, x, y, normalWidth, normalHeight);
+function drawBlock(x, y, w, h) {
+  image(rock, x, y, w, h);
 }
-function drawChance(x, y, p) {
-   if(parseInt(p)>50){
-    image(coral, x, y, coralWidth, coralHeight);
-   }else{
-    if (parseInt(p)<50) {
-    image(jelly, x, y, normalWidth, normalHeight);
-  }else {
-    image(fish, x, y, normalWidth, normalHeight);
+function drawChance(x, y, w, h, p) {
+  if (parseInt(p)<50) {
+    image(jelly, x, y, w, h);
+  }else if (parseInt(p)==50) {
+    image(fish, x, y, w, h);
+  } else{
+    image(coral, x, y, w, h);
   }
-}
   rect(x, y, 40, 20);
   fill(0);
   textSize(small);
@@ -225,6 +219,7 @@ function draw() {
   textSize(20);
   textFont(font);
   fill(255);
+
  if (gameState === "playing") {
     if (distanceCompleted >= 3500) {
       gameState = "end";
@@ -504,9 +499,9 @@ fill(255);
     for (let i = 0; i < obstacleCourse.length; i++) {
         let obstacle = obstacleCourse[i];
         if (obstacle.name === "block") {
-            drawBlock(obstacle.x, obstacle.y);
+            drawBlock(obstacle.x, obstacle.y, obstacle.w, obstacle.h);
         } else if (obstacle.name === "chance") {
-            drawChance(obstacle.x, obstacle.y, obstacle.c);
+            drawChance(obstacle.x, obstacle.y, obstacle.w, obstacle.h, obstacle.c);
         }
     }
   }
