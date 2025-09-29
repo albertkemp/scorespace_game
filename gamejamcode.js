@@ -118,6 +118,7 @@ let coral;
 let sea;
 let font;
 let music;
+let screenshot;
 function preload() {
   rock = loadImage('images/rock.png');
   boatNormal = loadImage('images/boatnormal.png');
@@ -131,6 +132,7 @@ function preload() {
   sea = loadImage('images/sea.png');
   font = loadFont('assets/PressStart2P-Regular.ttf');
   music = createAudio('assets/5499981141770240.wav');
+  screenshot = loadImage('images/screenshot.png');
 }
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
@@ -336,7 +338,7 @@ function keyReleased() {
   updatePlayerState();
 }
 function drawStartPage() {
-  background(5, 192, 222);
+  background(screenshot);
   textSize(60);
   fill(255)
   text("OCEAN", 150, 100);
@@ -357,6 +359,7 @@ textSize(small);
 rect(playAgainButtonX, playAgainButtonY, playAgainButtonWidth, playAgainButtonHeight);
 fill(0);
 text("PLAY AGAIN", playAgainButtonX, playAgainButtonY+diff/2, playAgainButtonWidth, playAgainButtonHeight);
+image(screenshot, 100, 200, 400, 348);
 }
 function mouseClicked() {
   if (gameState == "start") {
