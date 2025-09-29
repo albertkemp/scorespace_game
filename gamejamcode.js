@@ -118,7 +118,7 @@ function preload() {
   jelly = loadImage('images/jelly.png');
   fish = loadImage('images/fish.png');
   playerInvisible = loadImage('images/playerinvisible.png');
-  playerspeedBoost = loadImage('images/playerspeed.png');
+  playerSpeedBoost = loadImage('images/playerspeed.png');
 }
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
@@ -386,12 +386,12 @@ function drawPlayPage() {
   } else if (playerState == "right") {
     image(boatRight, player.x, player.y, player.w, player.h);
   }
-} else if (isInvisible) {
+} else if (isInvisible && invisibility>0) {
 image(playerInvisible, player.x, player.y, player.w, player.h);
-} else if (speedBoostOn) {
+} else if (speedBoostOn && speedBoost>0) {
   image(playerSpeedBoost, player.x, player.y, player.w, player.h);//Can change to w+10 or sth
 }
-    textSize(20);
+    textSize(20);/*
   if (isInvisible && invisibility>0) {
     fill(0, 255, 0);
    text("Invisibility: On", 10, 10, 200, 100);
@@ -405,7 +405,7 @@ image(playerInvisible, player.x, player.y, player.w, player.h);
     fill(255);
   } else{
     text("Speed boost: Off", 10, 50, 200, 100);
-  }
+  }*/
   fill(255);
     obstacleMoving = true;
 
