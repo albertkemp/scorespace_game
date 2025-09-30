@@ -77,7 +77,7 @@ let isRunning = false;
 let highScore = Infinity;
 
 const submitNameButtonX = 438;
-const submitNameButtonY = 330;
+const submitNameButtonY = 230;
 const submitNameButtonWidth = 100;
 const submitNameButtonHeight = 50;
 
@@ -86,6 +86,10 @@ const playAgainButtonY = 100;
 const playAgainButtonWidth = 150;
 const playAgainButtonHeight = 50;
 
+const highButtonX = 190;
+const highButtonY = 300;
+const highButtonWidth = 220;
+const highButtonHeight = 50;
 
 /*
 function preload() {
@@ -137,7 +141,7 @@ function preload() {
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
   nameInput = createInput('Enter your name');
-  nameInput.position(444, 300);
+  nameInput.position(444, 200);
   nameInput.hide(); // Hide it until the game is over
   db  = firebase.firestore();
   
@@ -244,6 +248,8 @@ function draw() {
     drawDiedPage();
   } else if (gameState == "how") {
     drawHowPage();
+  } else if (gameState == "high") {
+    drawHighScoresPage();
   }
    
   if (moveLeft) {
@@ -320,9 +326,11 @@ function drawStartPage() {
   textSize(20);
   rect(startButtonX, startButtonY, startButtonWidth, startButtonHeight);
   rect(howButtonX, howButtonY, howButtonWidth, howButtonHeight);
+  rect(highButtonX, highButtonY, highButtonWidth, highButtonHeight);
   fill(0)
   text("PLAY", startButtonX, startButtonY+diff, startButtonWidth, startButtonHeight);
-  text("HOW", howButtonX, howButtonY+diff, howButtonWidth, howButtonHeight)
+  text("HOW", howButtonX, howButtonY+diff, howButtonWidth, howButtonHeight);
+  text("LEADERBOARD", highButtonX, highButtonY+diff, highButtonWidth, highButtonHeight);
   fill(255);
   image(fish, howButtonX, howButtonY+howButtonHeight+50, 100, 100);
 }
@@ -344,8 +352,10 @@ function mouseClicked() {
       startStopwatch();
     } else if (mouseX >= howButtonX && mouseY >= howButtonY && mouseY<=howButtonY + howButtonHeight && mouseX <= howButtonX + howButtonWidth) {
       gameState = "how";
+    } else if (mouseX >= highButtonX && mouseY >= highButtonY && mouseY<=highButtonY + highButtonHeight && mouseX <= highButtonX + highButtonWidth) {
+      gameState = "high";
     }
-  }  else if (gameState == "how") {
+  }  else if (gameState == "how" || gameState == "high") {
     if (mouseX >= backButtonX && mouseY >= backButtonY && mouseY<=backButtonY + backButtonHeight && mouseX <= backButtonX + backButtonWidth) {
       gameState="start";
     }
@@ -569,6 +579,30 @@ if(submitted) {
             yPos += 20;
         });
       }
+        
+}
+function drawHighScoresPage() {
+  background(5, 192, 222)
+  textSize(20);
+  rect(backButtonX, backButtonY, backButtonWidth, backButtonHeight);
+  text("HIGH SCORES:", 100, 20, 300, 50);
+  textSize(small);
+  if (!scoresLoaded) {
+    getHighScores().then(scores => {
+    highScores = scores;
+    scoresLoaded = true;
+  }).catch(error => {
+    console.error("FAILED TO FETCH SCORES", error);
+  });
+  }else{
+        let yPos = 100;
+        highScores.forEach((scoreData, index) => {
+            text(`${index + 1}. ${scoreData.name}: ${formatTime(scoreData.score)}`, 100, yPos);
+            yPos += 20;
+        });
+      }
+      fill(0);
+      text("BACK", backButtonX, backButtonY+diff, backButtonWidth, backButtonHeight)
 }
 function left() {
   for(obstacle in obstacleCourse) {
