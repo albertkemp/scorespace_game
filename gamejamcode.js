@@ -196,7 +196,7 @@ let obstacleCourse = [
   {name: "block", x: 350, y: 3650,  w: 100, h: 100},
   {name: "block", x:300, y: 4000, w: 100, h: 100},
   {name: "block", x: 200, y: 5300,  w: 100, h: 100},
-  {name: "block", x:100, y: 4250, w: 100, h: 100}
+  {name: "block", x:100, y: 4250, w: 100, h: 100},
 
 
 
