@@ -391,7 +391,11 @@ function playerTouching(obj) {
         playerState="right";
       }else{
       playerState="normal";}}
-    if (!(player.x + player.w < obj.x || player.x > obj.x + obj.w || player.y + player.h < obj.y || player.y > obj.y + obj.h)) {
+      const objw=obj.w-10
+      const objx=obj.x+10
+      const objy=obj.y+10
+      const objh=obj.h-10
+    if (!(player.x + player.w < objx || player.x > objx + objw || player.y + player.h < objy || player.y > objy + objh)) {
         // We have a collision, now handle the chance logic
         if (obj.name === "chance") {
             // This is the crucial part: Check if this is the first frame of collision
