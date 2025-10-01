@@ -231,7 +231,7 @@ function draw() {
   fill(255);
 
  if (gameState === "playing") {
-    if (distanceCompleted >= 3500) {
+    if (distanceCompleted >= 7000) {
       gameState = "end";
       finalTim = stopStopwatch(); // Store the final time
     }
