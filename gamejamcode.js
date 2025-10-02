@@ -325,6 +325,8 @@ function draw() {
     drawHowPage();
   } else if (gameState == "high") {
     drawHighScoresPage();
+  }else if (gameState == "settings") {
+    drawSettingsPage();
   }
    
   if (moveLeft) {
