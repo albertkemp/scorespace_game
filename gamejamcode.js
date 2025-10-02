@@ -38,7 +38,7 @@ var gameState = "start";
 let playerState = "normal";
 var canvasWidth = 600;
 var canvasHeight = 600;
-const obstacleRange = 6000;
+const obstacleRange = 12000;
 const obstacleXRange = 2000;
 const obstacleNumber = 3600;
 const blockRange = 100;
@@ -276,7 +276,7 @@ function draw() {
   fill(255);
 
  if (gameState === "playing") {
-    if (distanceCompleted >= 7000) {
+    if (distanceCompleted >= 14000) {
       gameState = "end";
       finalTim = stopStopwatch(); // Store the final time
     }
