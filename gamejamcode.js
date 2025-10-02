@@ -31,8 +31,8 @@ const originalX = playerX;
 const playerY = 400;
 let playerSpeed = 5;
 let isInvisible = false;
-let invisibility = 3600;
-let speedBoost = 400;
+let invisibility = 14400;
+let speedBoost = 1600;
 let speedBoostOn = false;
 
 let bullets = 10;
@@ -413,7 +413,7 @@ function drawStartPage() {
   text("LEADERBOARD", highButtonX, highButtonY+diff, highButtonWidth, highButtonHeight);
   text("SETTINGS", settingsButtonX, settingsButtonY+diff, settingsButtonWidth, settingsButtonHeight);
   fill(255);
-  image(fish, settingsButtonX, settingsButtonY+settingsButtonHeight, 100, 100);
+  image(fish, howButtonX, settingsButtonY+settingsButtonHeight, 100, 100);
 }
 function drawDiedPage() {
   background(5, 192, 222);
@@ -424,7 +424,7 @@ textSize(small);
 rect(playAgainButtonX, playAgainButtonY, playAgainButtonWidth, playAgainButtonHeight);
 fill(0);
 text("PLAY AGAIN", playAgainButtonX, playAgainButtonY+diff/2, playAgainButtonWidth, playAgainButtonHeight);
-image(rock, 250, 200, 100, 100);
+image(rock, playAgainButtonX, 200, 100, 100);
 }
 function mouseClicked() {
   if (gameState == "start") {
