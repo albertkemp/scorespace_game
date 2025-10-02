@@ -17,6 +17,8 @@ let submitted = false;
 let scoresLoaded = false;
 let highScores = [];
 
+let gameModeTimed = true;
+
 const diff = 40;
 const small = 15;
 //Defining global variables - x, y, speed. OriginalX is for teleporting it back to the start
@@ -90,6 +92,17 @@ const highButtonX = 190;
 const highButtonY = 300;
 const highButtonWidth = 220;
 const highButtonHeight = 50;
+
+const settingsButtonX = 190;
+const settingsButtonY = 350;
+const settingsButtonWidth=220;
+const settingsButtonHeight = 50;
+
+const gameModeButtonX = 200;
+const gameModeButtonY = 200;
+const gameModeButtonWidth = 300;
+const gameModeButtonHeight = 50;
+let gameModeButtonText = "Game mode: Timed";
 
 /*
 function preload() {
@@ -389,12 +402,14 @@ function drawStartPage() {
   rect(startButtonX, startButtonY, startButtonWidth, startButtonHeight);
   rect(howButtonX, howButtonY, howButtonWidth, howButtonHeight);
   rect(highButtonX, highButtonY, highButtonWidth, highButtonHeight);
+  rect(settingsButtonX, settingsButtonY, settingsButtonWidth, settingsButtonHeight);
   fill(0)
   text("PLAY", startButtonX, startButtonY+diff, startButtonWidth, startButtonHeight);
   text("HOW", howButtonX, howButtonY+diff, howButtonWidth, howButtonHeight);
   text("LEADERBOARD", highButtonX, highButtonY+diff, highButtonWidth, highButtonHeight);
+  text("SETTINGS", settingsButtonX, settingsButtonY+diff, settingsButtonWidth, settingsButtonHeight);
   fill(255);
-  image(fish, howButtonX, howButtonY+howButtonHeight+50, 100, 100);
+  image(fish, settingsButtonX, settingsButtonY+settingsButtonHeight, 100, 100);
 }
 function drawDiedPage() {
   background(5, 192, 222);
@@ -417,9 +432,20 @@ function mouseClicked() {
     } else if (mouseX >= highButtonX && mouseY >= highButtonY && mouseY<=highButtonY + highButtonHeight && mouseX <= highButtonX + highButtonWidth) {
       gameState = "high";
     }
-  }  else if (gameState == "how" || gameState == "high") {
+  }  else if (gameState == "how" || gameState == "high" || gameState == "settings") {
     if (mouseX >= backButtonX && mouseY >= backButtonY && mouseY<=backButtonY + backButtonHeight && mouseX <= backButtonX + backButtonWidth) {
       gameState="start";
+    }
+    if (gameState == "settings") {
+      if (mouseX >= gameModeButtonX && mouseY >= gameModeButtonY && mouseY<=gameModeButtonY + gameModeButtonHeight && mouseX <= gameModeButtonX + gameModeButtonWidth) {
+      if(gameModeTimed) {
+        gameModeTimed = false;
+        gameModeButtonText="Game Mode: Endless";
+      }else{
+        gameModeTimed = true;
+        gameModeButtonText="Game Mode: Timed";
+      }
+    }
     }
   } else if (gameState == "end" || gameState == "died") {
     if (gameState == "end") {
@@ -604,6 +630,20 @@ function drawHowPage() {
 textSize(20);
   text("BACK", backButtonX, backButtonY+diff, backButtonWidth, backButtonHeight);
   fill(255);
+}
+function drawSettingsPage() {
+  background(5, 192, 222)
+  fill(255);
+  textSize(20);
+  text("SETTINGS:", 100, 50, 200, 50);
+  rect(backButtonX, backButtonY, backButtonWidth, backButtonHeight);
+  rect(gameModeButtonX, gameModeButtonY, gameModeButtonWidth, gameModeButtonHeight);
+  fill(0);
+  textSize(small);
+  text("BACK", backButtonX, backButtonY+diff, backButtonWidth, backButtonHeight);
+  text(gameModeButtonText, gameModeButtonX, gameModeButtonY+diff, gameModeButtonWidth, gameModeButtonHeight);
+  fill(255);
+
 }
 function drawEndPage() {
   background(5, 192, 222)
