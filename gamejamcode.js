@@ -251,13 +251,13 @@ let obstacleCourse = [
   {name: "chance", x: 500, y: 11300, w: 100, h: 100, hasCollided: false, c: "15%"},
   {name: "chance", x: 550, y: 11000, w: 100, h: 100, hasCollided: false, c: "20%"},
   {name: "chance", x: 0, y: 11500, w: 100, h: 100, hasCollided: false, c: "50%"},
-  {name: "chance", x: 450, y: 11800, w: 200, h: 150, hasCollided: false, c: "55%"},//
-  {name: "chance", x: 450, y: 11600, w: 200, h: 150, hasCollided: false, c: "70%"},//
-  {name: "chance", x: 300, y: 11600, w: 200, h: 150, hasCollided: false, c: "80%"},//
-  {name: "chance", x: 500, y: 12000, w: 100, h: 100, hasCollided: false, c: "15%"},
+  {name: "chance", x: 450, y: 1800, w: 200, h: 150, hasCollided: false, c: "55%"},//
+  {name: "chance", x: 450, y: 2600, w: 200, h: 150, hasCollided: false, c: "70%"},//
+  {name: "chance", x: 300, y: 1600, w: 200, h: 150, hasCollided: false, c: "80%"},//
+  {name: "chance", x: 500, y: 3000, w: 100, h: 100, hasCollided: false, c: "15%"},
   {name: "chance", x: 100, y: 9300, w: 100, h: 100, hasCollided: false, c: "5%"},
-  {name: "chance", x: -150, y: 10000, w: 200, h: 150, hasCollided: false, c: "55%"},//
-  {name: "chance", x: 550, y: 10400, w: 200, h: 150, hasCollided: false, c: "70%"},//
+  {name: "chance", x: -150, y: 1000, w: 200, h: 150, hasCollided: false, c: "55%"},//
+  {name: "chance", x: 550, y: 20400, w: 200, h: 150, hasCollided: false, c: "70%"},//
   {name: "chance", x: 100, y: 10600, w: 200, h: 150, hasCollided: false, c: "80%"},//
   {name: "chance", x: 300, y: 11300, w: 100, h: 100, hasCollided: false, c: "15%"},
   {name: "chance", x: 450, y: 11000, w: 100, h: 100, hasCollided: false, c: "20%"},
