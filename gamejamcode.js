@@ -406,14 +406,14 @@ function drawStartPage() {
   rect(startButtonX, startButtonY, startButtonWidth, startButtonHeight);
   rect(howButtonX, howButtonY, howButtonWidth, howButtonHeight);
   rect(highButtonX, highButtonY, highButtonWidth, highButtonHeight);
-  rect(settingsButtonX, settingsButtonY, settingsButtonWidth, settingsButtonHeight);
+  //rect(settingsButtonX, settingsButtonY, settingsButtonWidth, settingsButtonHeight);
   fill(0)
   text("PLAY", startButtonX, startButtonY+diff, startButtonWidth, startButtonHeight);
   text("HOW", howButtonX, howButtonY+diff, howButtonWidth, howButtonHeight);
   text("LEADERBOARD", highButtonX, highButtonY+diff, highButtonWidth, highButtonHeight);
-  text("SETTINGS", settingsButtonX, settingsButtonY+diff, settingsButtonWidth, settingsButtonHeight);
+  //text("SETTINGS", settingsButtonX, settingsButtonY+diff, settingsButtonWidth, settingsButtonHeight);
   fill(255);
-  image(fish, howButtonX, settingsButtonY+settingsButtonHeight, 100, 100);
+  image(fish, howButtonX, settingsButtonY, 100, 100);
 }
 function drawDiedPage() {
   background(5, 192, 222);
@@ -436,11 +436,11 @@ function mouseClicked() {
     } else if (mouseX >= highButtonX && mouseY >= highButtonY && mouseY<=highButtonY + highButtonHeight && mouseX <= highButtonX + highButtonWidth) {
       gameState = "high";
     }
-  }  else if (gameState == "how" || gameState == "high" || gameState == "settings") {
+  }  else if (gameState == "how" || gameState == "high"/* || gameState == "settings"*/) {
     if (mouseX >= backButtonX && mouseY >= backButtonY && mouseY<=backButtonY + backButtonHeight && mouseX <= backButtonX + backButtonWidth) {
       gameState="start";
     }
-    if (gameState == "settings") {
+    /*if (gameState == "settings") {
       if (mouseX >= gameModeButtonX && mouseY >= gameModeButtonY && mouseY<=gameModeButtonY + gameModeButtonHeight && mouseX <= gameModeButtonX + gameModeButtonWidth) {
       if(gameModeTimed) {
         gameModeTimed = false;
@@ -450,7 +450,7 @@ function mouseClicked() {
         gameModeButtonText="Game Mode: Timed";
       }
     }
-    }
+    }*/
   } else if (gameState == "end" || gameState == "died") {
     if (gameState == "end") {
     if (mouseX >= submitNameButtonX && mouseY >= submitNameButtonY && mouseY<=submitNameButtonY + submitNameButtonHeight && mouseX <= submitNameButtonX + submitNameButtonWidth) {
