@@ -333,6 +333,7 @@ function draw() {
     if (playerHahaX<=canvasWidth/2-obstacleXRange) {
       if (player.x>0) {
         player.x-=playerSpeed;
+        playerHahaX-=playerSpeed;
       }
     } else {
     left();
@@ -341,6 +342,7 @@ function draw() {
     if (playerHahaX>=obstacleXRange-canvasWidth/2){
       if (player.x+player.w<canvasWidth) {
       player.x+=playerSpeed;
+      playerHahaX+=playerSpeed;
       }
     } else {
     right();
