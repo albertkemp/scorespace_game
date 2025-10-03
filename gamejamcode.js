@@ -104,6 +104,8 @@ const gameModeButtonWidth = 300;
 const gameModeButtonHeight = 50;
 let gameModeButtonText = "Game mode: Timed";
 
+let moving = false;
+
 /*
 function preload() {
 playerImage = ""
@@ -372,6 +374,7 @@ function updatePlayerState() {
 // Key functions
 function keyPressed() {
   if (gameState === "playing") {
+    moving = true;
     if (keyCode === LEFT_ARROW || keyCode === 65) {
       moveLeft = true;
       moveRight = false;
@@ -574,7 +577,7 @@ fill(255);
     }
     
     // Move obstacles only if the player is not blocked by any of them
-    if (obstacleMoving) {
+    if (obstacleMoving && moving) {
         for (let i = 0; i < obstacleCourse.length; i++) {
             let obstacle = obstacleCourse[i];
             if (speedBoostOn && speedBoost>0) {
