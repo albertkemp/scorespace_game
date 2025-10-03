@@ -102,6 +102,8 @@ const gameModeButtonX = 200;
 const gameModeButtonY = 200;
 const gameModeButtonWidth = 300;
 const gameModeButtonHeight = 50;
+
+const stuff = document.getElementById('stuff');
 let gameModeButtonText = "Game mode: Timed";
 
 let moving = false;
@@ -382,15 +384,27 @@ function keyPressed() {
     if (keyCode === LEFT_ARROW || keyCode === 65) {
       moveLeft = true;
       moveRight = false;
+      const p = document.createElement('p');
+      p.textContent = elapsedTime+",a";
+      stuff.appendChild(p);
     } else if (keyCode === RIGHT_ARROW || keyCode === 68) {
       moveRight = true;
       moveLeft = false;
+      const p = document.createElement('p');
+      p.textContent = elapsedTime+",d";
+      stuff.appendChild(p);
     } else if (keyCode === 70 && speedBoost > 0) {
       speedBoostOn = true;
       isInvisible = false;
+      const p = document.createElement('p');
+      p.textContent = elapsedTime+",f";
+      stuff.appendChild(p);
     } else if (keyCode === 73 && invisibility > 0) {
       isInvisible = true;
       speedBoostOn = false;
+      const p = document.createElement('p');
+      p.textContent = elapsedTime+",i";
+      stuff.appendChild(p);
     }
   }
   updatePlayerState();
