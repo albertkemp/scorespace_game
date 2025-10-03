@@ -108,6 +108,8 @@ let gameModeButtonText = "Game mode: Timed";
 
 let moving = false;
 let firstmoving = true;
+
+let keylog = ""
 /*
 function preload() {
 playerImage = ""
@@ -384,27 +386,20 @@ function keyPressed() {
     if (keyCode === LEFT_ARROW || keyCode === 65) {
       moveLeft = true;
       moveRight = false;
-      const p = document.createElement('p');
-      p.textContent = elapsedTime+",a";
-      stuff.appendChild(p);
+      keylog += elapsedTime+",a";
     } else if (keyCode === RIGHT_ARROW || keyCode === 68) {
       moveRight = true;
       moveLeft = false;
-      const p = document.createElement('p');
-      p.textContent = elapsedTime+",d";
-      stuff.appendChild(p);
+      keylog += elapsedTime+",d";
     } else if (keyCode === 70 && speedBoost > 0) {
       speedBoostOn = true;
       isInvisible = false;
-      const p = document.createElement('p');
-      p.textContent = elapsedTime+",f";
-      stuff.appendChild(p);
+      keylog += elapsedTime+",f";
     } else if (keyCode === 73 && invisibility > 0) {
       isInvisible = true;
       speedBoostOn = false;
-      const p = document.createElement('p');
-      p.textContent = elapsedTime+",i";
-      stuff.appendChild(p);
+      
+      keylog += elapsedTime+",i";
     }
   }
   updatePlayerState();
@@ -678,6 +673,7 @@ function drawEndPage() {
   textSize(20);
   text('YOUR TIME:', 50, 200, 300, 100);
   textSize(small);
+  text(keylog, 50, 220, 300, 100);
    //text('Refresh the page to play again',150, 100, 300, 100);
    text("LEADERBOARD", 50, 300, 100, 40);
    rect(playAgainButtonX, playAgainButtonY, playAgainButtonWidth, playAgainButtonHeight);
