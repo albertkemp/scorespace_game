@@ -74,8 +74,6 @@ def execute_timed_commands(commands):
         last_time_ms = time_ms
 
     print("Execution finished.")
-
-
 if __name__ == "__main__":
     # Ensure all actions are lowercase for pyautogui
     commands_ms = [(t, a.lower()) for t, a in commands_ms]
