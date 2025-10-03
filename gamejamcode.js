@@ -433,7 +433,7 @@ function mouseClicked() {
   if (gameState == "start") {
     if (mouseX >= startButtonX && mouseY >= startButtonY && mouseY <= startButtonY + startButtonHeight && mouseX <= startButtonX + startButtonWidth) {
       gameState = "playing";
-      startStopwatch();
+      
     } else if (mouseX >= howButtonX && mouseY >= howButtonY && mouseY<=howButtonY + howButtonHeight && mouseX <= howButtonX + howButtonWidth) {
       gameState = "how";
     } else if (mouseX >= highButtonX && mouseY >= highButtonY && mouseY<=highButtonY + highButtonHeight && mouseX <= highButtonX + highButtonWidth) {
@@ -578,6 +578,7 @@ fill(255);
     
     // Move obstacles only if the player is not blocked by any of them
     if (obstacleMoving && moving) {
+      startStopwatch();
         for (let i = 0; i < obstacleCourse.length; i++) {
             let obstacle = obstacleCourse[i];
             if (speedBoostOn && speedBoost>0) {
