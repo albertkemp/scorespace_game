@@ -105,7 +105,7 @@ const gameModeButtonHeight = 50;
 let gameModeButtonText = "Game mode: Timed";
 
 let moving = false;
-
+let firstmoving = true;
 /*
 function preload() {
 playerImage = ""
@@ -375,6 +375,10 @@ function updatePlayerState() {
 function keyPressed() {
   if (gameState === "playing") {
     moving = true;
+    if (firstmoving) {
+      startStopwatch();
+      firstmoving = false;
+    }
     if (keyCode === LEFT_ARROW || keyCode === 65) {
       moveLeft = true;
       moveRight = false;
@@ -391,9 +395,7 @@ function keyPressed() {
   }
   updatePlayerState();
 }
-if (moving) {
-  startStopwatch();
-}
+
 
 function keyReleased() {
   if (keyCode === LEFT_ARROW || keyCode === 65) {
