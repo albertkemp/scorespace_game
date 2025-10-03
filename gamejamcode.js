@@ -391,6 +391,9 @@ function keyPressed() {
   }
   updatePlayerState();
 }
+if (moving) {
+  startStopwatch();
+}
 
 function keyReleased() {
   if (keyCode === LEFT_ARROW || keyCode === 65) {
@@ -578,7 +581,6 @@ fill(255);
     
     // Move obstacles only if the player is not blocked by any of them
     if (obstacleMoving && moving) {
-      startStopwatch();
         for (let i = 0; i < obstacleCourse.length; i++) {
             let obstacle = obstacleCourse[i];
             if (speedBoostOn && speedBoost>0) {
