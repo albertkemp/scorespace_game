@@ -677,7 +677,7 @@ function drawEndPage() {
   textSize(20);
   text('YOUR TIME:', 50, 200, 300, 100);
   textSize(small);
-  text(keylog, 50, 220, 300, 100);
+  //text(keylog, 50, 220, 300, 100);
    //text('Refresh the page to play again',150, 100, 300, 100);
    text("LEADERBOARD", 50, 300, 100, 40);
    rect(playAgainButtonX, playAgainButtonY, playAgainButtonWidth, playAgainButtonHeight);
