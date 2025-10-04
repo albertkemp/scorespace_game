@@ -386,20 +386,20 @@ function keyPressed() {
     if (keyCode === LEFT_ARROW || keyCode === 65) {
       moveLeft = true;
       moveRight = false;
-      //keylog += elapsedTime+",a";
+      keylog += elapsedTime+",a";
     } else if (keyCode === RIGHT_ARROW || keyCode === 68) {
       moveRight = true;
       moveLeft = false;
-      //keylog += elapsedTime+",d";
+      keylog += elapsedTime+",d";
     } else if (keyCode === 70 && speedBoost > 0) {
       speedBoostOn = true;
       isInvisible = false;
-      //keylog += elapsedTime+",f";
+      keylog += elapsedTime+",f";
     } else if (keyCode === 73 && invisibility > 0) {
       isInvisible = true;
       speedBoostOn = false;
       
-      //keylog += elapsedTime+",i";
+      keylog += elapsedTime+",i";
     }
   }
   updatePlayerState();
@@ -412,6 +412,7 @@ function keyReleased() {
   } else if (keyCode === RIGHT_ARROW || keyCode === 68) {
     moveRight = false;
   }
+  keylog+=elapsedTime+",";
   updatePlayerState();
 }
 function drawStartPage() {
@@ -602,13 +603,13 @@ fill(255);
               if (speedBoost==0) {
                 if (moveLeft) {
                   playerState="left";
-                  keylog += elapsedTime+",a";
+                  //keylog += elapsedTime+",a";
                 } else if (moveRight) {
                   playerState ="right";
-                  keylog += elapsedTime+",d";
+                  //keylog += elapsedTime+",d";
                 } else{
               playerState="normal";
-              keylog+=elapsedTime+","
+              //keylog+=elapsedTime+","
                 }
               }
             obstacle.y += blockSpeed;
