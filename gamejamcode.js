@@ -608,6 +608,7 @@ fill(255);
                   keylog += elapsedTime+",d";
                 } else{
               playerState="normal";
+              keylog+=elapsedTime+","
                 }
               }
             obstacle.y += blockSpeed;

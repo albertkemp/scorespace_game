@@ -31,12 +31,13 @@ print(commands)
 commands_ms = [
 ]
 for i in range(0, len(times)):
-    if (len(commands[i])==2):
+    if len(commands[i])==2:
         commands_ms.append((times[i], commands[i][0]))
         commands_ms.append((times[i], commands[i][1]))
+    elif len(commands[i])==0:
+        commands_ms.append((times[i], "-"+commands[i-1]))
     else:
         commands_ms.append((times[i], commands[i]))
-
 def execute_timed_commands(commands):
     """Executes a list of commands based on their millisecond timestamps."""
 
