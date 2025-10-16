@@ -165,7 +165,7 @@ function setup() {
   db  = firebase.firestore();
   
 }
-let obstacleCourse;/*[
+let obstacleCourse = [
   {name: "chance", x: 100, y: 100, w: 100, h: 100, hasCollided: false, c: "50%"},
   {name: "block", x: 400, y:1300, w: 100, h: 100},
   {name: "chance", x: 200, y: 500, w: 200, h: 150, hasCollided: false, c: "80%"},//
@@ -272,32 +272,7 @@ let obstacleCourse;/*[
   {name: "chance", x: 150, y: 11600, w: 200, h: 150, hasCollided: false, c: "70%"},//
   {name: "chance", x: 200, y: 11600, w: 200, h: 150, hasCollided: false, c: "80%"},//
   {name: "chance", x: 400, y: 12000, w: 100, h: 100, hasCollided: false, c: "15%"}
-];*/
-const filePath = 'lvl.json';
-
-// Use the fetch API to request the file
-fetch(filePath)
-    .then(response => {
-        // 1. Check if the request was successful
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        // 2. Parse the response body as JSON
-        return response.json();
-    })
-    .then(data => {
-        // 3. 'data' is now a JavaScript object/array
-        console.log("JSON data successfully loaded:");
-        console.log(data); 
-        obstacleCourse = data;
-        // Example: Accessing a property
-        // if the file is [{name: "item", ...}, ...]
-        // console.log("First item's name:", data[0].name); 
-    })
-    .catch(error => {
-        // Handle any errors during the fetch or parsing process
-        console.error("Error reading JSON file:", error);
-    });
+];
 
 for (obstacle in obstacleCourse) {//can be changed
   obstacleCourse[obstacle].y-=obstacleRange;
@@ -330,11 +305,11 @@ function draw() {
   textFont(font);
   fill(255);
 
- if (gameState === "playing") {/*
+ if (gameState === "playing") {
     if (distanceCompleted >= 13000) {
       gameState = "end";
       finalTim = stopStopwatch(); // Store the final time
-    }*/
+    }
   } else if (gameState === "died") {
     // Also, handle the 'died' state.
     // Ensure the stopwatch is only stopped once.
