@@ -183,125 +183,2525 @@ let obstacleCourse = [
   ];
 let levels = [
   [
-  {name: "chance", x: 100, y: 100, w: 100, h: 100, hasCollided: false, c: "50%"},
-  {name: "block", x: 400, y:1300, w: 100, h: 100},
-  {name: "chance", x: 200, y: 500, w: 200, h: 150, hasCollided: false, c: "80%"},//
-  {name: "block", x: 250, y: 4700, w: 100, h: 100,},
-  {name: "chance", x: -150, y: 1000,  w: 100, h: 100, hasCollided: false, c: "20%"},
-  {name: "block", x:500, y: 1500,  w: 100, h: 100},
-  {name: "chance", x:-150, y: 1200,  w: 100, h: 100, hasCollided: false, c: "50%"},
-  //{name: "block", x:5, y: 1500, w: 100, h: 100},
-  {name: "chance", x:100, y: 2000,  w: 100, h: 100,hasCollided: false, c: "50%"},
-  {name: "block", x: 800, y: 1600,  w: 100, h: 100},
-  {name: "block", x:100, y: 2500, w: 100, h: 100},
-  {name: "chance", x:100, y: 2250,  w: 200, h: 150, hasCollided: false,c: "80%"},//
-  {name: "block", x: 100, y: 3500, w: 100, h: 100,},
-  {name: "chance", x: 400, y: 8000, w: 100, h: 100, hasCollided: false, c: "10%"},
+    {
+      name: 'chance',
+      x: 100,
+      y: 100,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 350,
+      y: 100,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 200,
+      y: 500,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 450,
+      y: 500,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: -150,
+      y: 1000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 100,
+      y: 1000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: -150,
+      y: 1200,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 100,
+      y: 1200,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    { name: 'block', x: 400, y: 1300, w: 100, h: 100 },
+    { name: 'block', x: 650, y: 1300, w: 100, h: 100 },
+    { name: 'block', x: 500, y: 1500, w: 100, h: 100 },
+    { name: 'block', x: 750, y: 1500, w: 100, h: 100 },
+    { name: 'block', x: 800, y: 1600, w: 100, h: 100 },
+    { name: 'block', x: 1050, y: 1600, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: -100,
+      y: 1800,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 150,
+      y: 1800,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 100,
+      y: 2000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 350,
+      y: 2000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 100,
+      y: 2250,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 350,
+      y: 2250,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    { name: 'block', x: 100, y: 2500, w: 100, h: 100 },
+    { name: 'block', x: 350, y: 2500, w: 100, h: 100 },
+    { name: 'block', x: -150, y: 2900, w: 100, h: 100 },
+    { name: 'block', x: 100, y: 2900, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 500,
+      y: 3100,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 750,
+      y: 3100,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '20%'
+    },
+    { name: 'block', x: 900, y: 3500, w: 100, h: 100 },
+    { name: 'block', x: 100, y: 3500, w: 100, h: 100 },
+    { name: 'block', x: 1150, y: 3500, w: 100, h: 100 },
+    { name: 'block', x: 350, y: 3500, w: 100, h: 100 },
+    { name: 'block', x: 0, y: 4550, w: 100, h: 100 },
+    { name: 'block', x: 250, y: 4550, w: 100, h: 100 },
+    { name: 'block', x: 250, y: 4700, w: 100, h: 100 },
+    { name: 'block', x: 500, y: 4700, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 400,
+      y: 8000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '10%'
+    },
+    {
+      name: 'chance',
+      x: 650,
+      y: 8000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '10%'
+    }
   ],
   [
-  {name: "block", x: 300, y: 2800, w: 100, h: 100,},
-  {name: "block", x: -150, y: 2900, w: 100, h: 100,},
-  {name: "chance", x: -100, y: 1800, w: 100, h: 100, hasCollided: false, c: "50%"},
-  {name: "block", x: 0, y: 4550,  w: 100, h: 100,},
-  {name: "block", x: 900, y: 3500, w: 100, h: 100,},
-  {name: "chance", x: 500, y: 3100, w: 200, h: 150, hasCollided: false, c: "80%"},//
-  {name: "block", x: 300, y: 5900, w: 100, h: 100,},
-  {name: "chance", x: 400, y: 2300, w: 100, h: 100, hasCollided: false, c: "50%"},
-  {name: "chance", x: -50, y: 2000,  w: 100, h: 100, hasCollided: false, c: "50%"},
-  {name: "chance", x: 0, y: 2200,  w: 100, h: 100, hasCollided: false, c: "20%"},
-  {name: "chance", x: 400, y: 1500, w: 100, h: 100, hasCollided: false, c: "5%"},
-  {name: "chance", x: 500, y: 5000, w: 200, h: 150, hasCollided: false, c: "60%"},//
-  {name: "chance", x: 500, y: 6000, w: 100, h: 100, hasCollided: false, c: "50%"},
-  {name: "chance", x: 300, y: 1000, w: 200, h: 150, hasCollided: false, c: "60%"},//
-  {name: "chance", x: 500, y: 5500, w: 100, h: 100, hasCollided: false, c: "15%"},
+    {
+      name: 'chance',
+      x: 300,
+      y: 1000,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '60%'
+    },
+    {
+      name: 'chance',
+      x: 550,
+      y: 1000,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '60%'
+    },
+    {
+      name: 'chance',
+      x: 400,
+      y: 1500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '5%'
+    },
+    {
+      name: 'chance',
+      x: 650,
+      y: 1500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '5%'
+    },
+    { name: 'block', x: 800, y: 1600, w: 100, h: 100 },
+    { name: 'block', x: 1050, y: 1600, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 0,
+      y: 1750,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 250,
+      y: 1750,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: -100,
+      y: 1800,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 150,
+      y: 1800,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: -50,
+      y: 2000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 100,
+      y: 2000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 200,
+      y: 2000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 350,
+      y: 2000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 0,
+      y: 2200,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 250,
+      y: 2200,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 100,
+      y: 2250,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 350,
+      y: 2250,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 400,
+      y: 2300,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 650,
+      y: 2300,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    { name: 'block', x: 100, y: 2500, w: 100, h: 100 },
+    { name: 'block', x: 350, y: 2500, w: 100, h: 100 },
+    { name: 'block', x: 300, y: 2800, w: 100, h: 100 },
+    { name: 'block', x: 550, y: 2800, w: 100, h: 100 },
+    { name: 'block', x: -150, y: 2900, w: 100, h: 100 },
+    { name: 'block', x: 100, y: 2900, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 500,
+      y: 3100,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 750,
+      y: 3100,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    { name: 'block', x: 900, y: 3500, w: 100, h: 100 },
+    { name: 'block', x: 100, y: 3500, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 400,
+      y: 3500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '5%'
+    },
+    { name: 'block', x: 1150, y: 3500, w: 100, h: 100 },
+    { name: 'block', x: 350, y: 3500, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 650,
+      y: 3500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '5%'
+    },
+    {
+      name: 'chance',
+      x: 500,
+      y: 3900,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 750,
+      y: 3900,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 550,
+      y: 4000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 800,
+      y: 4000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 0,
+      y: 4150,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 250,
+      y: 4150,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    { name: 'block', x: 0, y: 4550, w: 100, h: 100 },
+    { name: 'block', x: 250, y: 4550, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 450,
+      y: 4700,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 700,
+      y: 4700,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 300,
+      y: 4750,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 550,
+      y: 4750,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 550,
+      y: 4800,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 800,
+      y: 4800,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 500,
+      y: 5000,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '60%'
+    },
+    {
+      name: 'chance',
+      x: 750,
+      y: 5000,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '60%'
+    },
+    {
+      name: 'chance',
+      x: 450,
+      y: 5200,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 700,
+      y: 5200,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 500,
+      y: 5500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 750,
+      y: 5500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 450,
+      y: 5700,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 700,
+      y: 5700,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 300,
+      y: 5750,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 550,
+      y: 5750,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 450,
+      y: 5800,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 700,
+      y: 5800,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    { name: 'block', x: 300, y: 5900, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 500,
+      y: 5900,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    { name: 'block', x: 550, y: 5900, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 750,
+      y: 5900,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 500,
+      y: 6000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 750,
+      y: 6000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 400,
+      y: 8000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '10%'
+    },
+    {
+      name: 'chance',
+      x: 650,
+      y: 8000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '10%'
+    }
   ],
   [
-  {name: "chance", x: 550, y: 4000, w: 100, h: 100, hasCollided: false, c: "20%"},
-  {name: "chance", x: 0, y:1750, w: 100, h: 100, hasCollided: false, c: "50%"},
-  {name: "chance", x: 400, y: 3500, w: 100, h: 100, hasCollided: false, c: "5%"},
-  {name: "chance", x: 450, y: 4700, w: 200, h: 150, hasCollided: false, c: "55%"},//
-  {name: "chance", x: 450, y: 5200, w: 200, h: 150, hasCollided: false, c: "70%"},//
-  {name: "chance", x: 300, y: 5750, w: 200, h: 150, hasCollided: false, c: "80%"},//
-  {name: "chance", x: 500, y: 5900, w: 100, h: 100, hasCollided: false, c: "15%"},
-  {name: "chance", x: 550, y: 4800, w: 100, h: 100, hasCollided: false, c: "20%"},
-  {name: "chance", x: 0, y: 4150, w: 100, h: 100, hasCollided: false, c: "50%"},
-  {name: "chance", x: 450, y: 5700, w: 200, h: 150, hasCollided: false, c: "55%"},//
-  {name: "chance", x: 450, y: 5800, w: 200, h: 150, hasCollided: false, c: "70%"},//
-  {name: "chance", x: 300, y: 4750, w: 200, h: 150, hasCollided: false, c: "80%"},//
-  {name: "chance", x: 500, y: 3900, w: 100, h: 100, hasCollided: false, c: "15%"},
-  {name: "chance", x: 550, y: 4800, w: 100, h: 100, hasCollided: false, c: "20%"},
+    {
+      name: 'chance',
+      x: 400,
+      y: 1500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '5%'
+    },
+    {
+      name: 'chance',
+      x: 650,
+      y: 1500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '5%'
+    },
+    {
+      name: 'chance',
+      x: 0,
+      y: 1750,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 250,
+      y: 1750,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: -50,
+      y: 2000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 200,
+      y: 2000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 0,
+      y: 2200,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 250,
+      y: 2200,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 400,
+      y: 2300,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 650,
+      y: 2300,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 400,
+      y: 3500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '5%'
+    },
+    {
+      name: 'chance',
+      x: 650,
+      y: 3500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '5%'
+    },
+    {
+      name: 'chance',
+      x: 500,
+      y: 3900,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 750,
+      y: 3900,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 550,
+      y: 4000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 800,
+      y: 4000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 0,
+      y: 4150,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 250,
+      y: 4150,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 450,
+      y: 4700,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 700,
+      y: 4700,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 300,
+      y: 4750,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 550,
+      y: 4750,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 550,
+      y: 4800,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 800,
+      y: 4800,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 450,
+      y: 5200,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 700,
+      y: 5200,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 450,
+      y: 5700,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 700,
+      y: 5700,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 300,
+      y: 5750,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 550,
+      y: 5750,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 450,
+      y: 5800,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 700,
+      y: 5800,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 500,
+      y: 5900,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    { name: 'block', x: 300, y: 5900, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 750,
+      y: 5900,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    { name: 'block', x: 550, y: 5900, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 100,
+      y: 6950,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 350,
+      y: 6950,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    { name: 'block', x: 100, y: 7000, w: 100, h: 100 },
+    { name: 'block', x: 350, y: 7000, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 400,
+      y: 7200,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '10%'
+    },
+    {
+      name: 'chance',
+      x: 650,
+      y: 7200,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '10%'
+    },
+    {
+      name: 'chance',
+      x: 0,
+      y: 11500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 250,
+      y: 11500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 150,
+      y: 11600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 200,
+      y: 11600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 400,
+      y: 11600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 450,
+      y: 11600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 250,
+      y: 11800,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 500,
+      y: 11800,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 400,
+      y: 12000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 650,
+      y: 12000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    }
   ],
-[
-  {name: "chance", x: 0, y: 2750, w: 100, h: 100, hasCollided: false, c: "50%"},
-  {name: "block", x: 0, y: 4800,  w: 100, h: 100},
-  {name: "block", x:500, y: 3250, w: 100, h: 100},
-  {name: "block", x: 350, y: 3650,  w: 100, h: 100},
-  {name: "block", x:300, y: 4000, w: 100, h: 100},
-  {name: "block", x: 200, y: 5300,  w: 100, h: 100},
-  {name: "block", x:100, y: 4250, w: 100, h: 100},
-],
-[
-
-  {name: "chance", x: 100, y: 6000, w: 100, h: 100, hasCollided: false, c: "50%"},
-  {name: "block", x: 400, y:6100, w: 100, h: 100},
-  {name: "chance", x: 200, y: 6100, w: 200, h: 150, hasCollided: false, c: "80%"},//
-  {name: "block", x: 250, y: 6300, w: 100, h: 100,},
-  {name: "chance", x: -150, y: 6500,  w: 100, h: 100, hasCollided: false, c: "20%"},
-  {name: "block", x:500, y: 6300,  w: 100, h: 100},
-  {name: "chance", x:-150, y: 6700,  w: 100, h: 100, hasCollided: false, c: "50%"},
-  //{name: "block", x:5, y: 1500, w: 100, h: 100},
-  {name: "chance", x:100, y: 6600,  w: 100, h: 100,hasCollided: false, c: "50%"},
-  {name: "block", x: 800, y: 6600,  w: 100, h: 100},
-  {name: "block", x:100, y: 6800, w: 100, h: 100},
-  {name: "chance", x:100, y: 6950,  w: 200, h: 150, hasCollided: false,c: "80%"},//
-  {name: "block", x: 100, y: 7000, w: 100, h: 100,},
-  {name: "chance", x: 400, y: 7200, w: 100, h: 100, hasCollided: false, c: "10%"},
-],
-[
-  {name: "block", x: 300, y: 7000, w: 100, h: 100,},
-  {name: "block", x: -150, y: 7300, w: 100, h: 100,},
-  {name: "chance", x: -100, y: 7350, w: 100, h: 100, hasCollided: false, c: "50%"},
-  {name: "block", x: 0, y: 7650,  w: 100, h: 100,},
-  {name: "block", x: 900, y: 7500, w: 100, h: 100,},
-  {name: "chance", x: 500, y: 6100, w: 200, h: 150, hasCollided: false, c: "80%"},//
-  {name: "block", x: 300, y: 7700, w: 100, h: 100,},
-  {name: "chance", x: 400, y: 7900, w: 100, h: 100, hasCollided: false, c: "50%"},
-  {name: "chance", x: -50, y: 7700,  w: 100, h: 100, hasCollided: false, c: "50%"},
-  {name: "chance", x: 0, y: 7500,  w: 100, h: 100, hasCollided: false, c: "20%"},
-  {name: "chance", x: 400, y: 8100, w: 100, h: 100, hasCollided: false, c: "5%"},
-  {name: "chance", x: 500, y: 8500, w: 200, h: 150, hasCollided: false, c: "60%"},//
-  {name: "chance", x: 500, y: 9000, w: 100, h: 100, hasCollided: false, c: "50%"},
-  {name: "chance", x: 300, y: 8700, w: 200, h: 150, hasCollided: false, c: "60%"},//
-  {name: "chance", x: 500, y: 9300, w: 100, h: 100, hasCollided: false, c: "15%"},
-  {name: "chance", x: 550, y: 9500, w: 100, h: 100, hasCollided: false, c: "20%"},
-  {name: "chance", x: 0, y:9750, w: 100, h: 100, hasCollided: false, c: "50%"},
-  {name: "chance", x: 400, y: 9300, w: 100, h: 100, hasCollided: false, c: "5%"},
-],
-[
-  {name: "chance", x: 450, y: 10000, w: 200, h: 150, hasCollided: false, c: "55%"},//
-  {name: "chance", x: 450, y: 10400, w: 200, h: 150, hasCollided: false, c: "70%"},//
-  {name: "chance", x: 300, y: 10600, w: 200, h: 150, hasCollided: false, c: "80%"},//
-  {name: "chance", x: 500, y: 11300, w: 100, h: 100, hasCollided: false, c: "15%"},
-  {name: "chance", x: 550, y: 11000, w: 100, h: 100, hasCollided: false, c: "20%"},
-  {name: "chance", x: 0, y: 11500, w: 100, h: 100, hasCollided: false, c: "50%"},
-  {name: "chance", x: 450, y: 1800, w: 200, h: 150, hasCollided: false, c: "55%"},//
-  {name: "chance", x: 450, y: 2600, w: 200, h: 150, hasCollided: false, c: "70%"},//
-  {name: "chance", x: 300, y: 1600, w: 200, h: 150, hasCollided: false, c: "80%"},//
-  {name: "chance", x: 500, y: 3000, w: 100, h: 100, hasCollided: false, c: "15%"},
-],
-[
-  {name: "chance", x: 100, y: 9300, w: 100, h: 100, hasCollided: false, c: "5%"},
-  {name: "chance", x: -150, y: 1000, w: 200, h: 150, hasCollided: false, c: "55%"},//
-  {name: "chance", x: 550, y: 20400, w: 200, h: 150, hasCollided: false, c: "70%"},//
-  {name: "chance", x: 100, y: 10600, w: 200, h: 150, hasCollided: false, c: "80%"},//
-  {name: "chance", x: 300, y: 11300, w: 100, h: 100, hasCollided: false, c: "15%"},
-  {name: "chance", x: 450, y: 11000, w: 100, h: 100, hasCollided: false, c: "20%"},
-  {name: "chance", x: 0, y: 11500, w: 100, h: 100, hasCollided: false, c: "50%"},
-  {name: "chance", x: 250, y: 11800, w: 200, h: 150, hasCollided: false, c: "55%"},//
-  {name: "chance", x: 150, y: 11600, w: 200, h: 150, hasCollided: false, c: "70%"},//
-  {name: "chance", x: 200, y: 11600, w: 200, h: 150, hasCollided: false, c: "80%"},//
-  {name: "chance", x: 400, y: 12000, w: 100, h: 100, hasCollided: false, c: "15%"}
-]
+  [
+    {
+      name: 'chance',
+      x: 0,
+      y: 2750,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 250,
+      y: 2750,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    { name: 'block', x: 500, y: 3250, w: 100, h: 100 },
+    { name: 'block', x: 750, y: 3250, w: 100, h: 100 },
+    { name: 'block', x: 350, y: 3650, w: 100, h: 100 },
+    { name: 'block', x: 600, y: 3650, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 500,
+      y: 3900,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 750,
+      y: 3900,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    { name: 'block', x: 300, y: 4000, w: 100, h: 100 },
+    { name: 'block', x: 550, y: 4000, w: 100, h: 100 },
+    { name: 'block', x: 100, y: 4250, w: 100, h: 100 },
+    { name: 'block', x: 350, y: 4250, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 300,
+      y: 4750,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 550,
+      y: 4750,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    { name: 'block', x: 0, y: 4800, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 550,
+      y: 4800,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    { name: 'block', x: 250, y: 4800, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 800,
+      y: 4800,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    { name: 'block', x: 200, y: 5300, w: 100, h: 100 },
+    { name: 'block', x: 450, y: 5300, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 450,
+      y: 5700,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 700,
+      y: 5700,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 450,
+      y: 5800,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 700,
+      y: 5800,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 200,
+      y: 6100,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 450,
+      y: 6100,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    { name: 'block', x: 250, y: 6300, w: 100, h: 100 },
+    { name: 'block', x: 500, y: 6300, w: 100, h: 100 },
+    { name: 'block', x: 500, y: 6300, w: 100, h: 100 },
+    { name: 'block', x: 750, y: 6300, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: -150,
+      y: 6500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 100,
+      y: 6500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: -150,
+      y: 6700,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 100,
+      y: 6700,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 100,
+      y: 6950,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 350,
+      y: 6950,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    { name: 'block', x: 100, y: 7000, w: 100, h: 100 },
+    { name: 'block', x: 350, y: 7000, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 400,
+      y: 7200,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '10%'
+    },
+    {
+      name: 'chance',
+      x: 650,
+      y: 7200,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '10%'
+    },
+    {
+      name: 'chance',
+      x: 0,
+      y: 11500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 250,
+      y: 11500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 150,
+      y: 11600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 200,
+      y: 11600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 400,
+      y: 11600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 450,
+      y: 11600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 250,
+      y: 11800,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 500,
+      y: 11800,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 400,
+      y: 12000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 650,
+      y: 12000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    }
+  ],
+  [
+    {
+      name: 'chance',
+      x: 500,
+      y: 3900,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 750,
+      y: 3900,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 300,
+      y: 4750,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 550,
+      y: 4750,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 550,
+      y: 4800,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 800,
+      y: 4800,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 450,
+      y: 5700,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 700,
+      y: 5700,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 450,
+      y: 5800,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 700,
+      y: 5800,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    { name: 'block', x: 300, y: 5900, w: 100, h: 100 },
+    { name: 'block', x: 550, y: 5900, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 100,
+      y: 6000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 350,
+      y: 6000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    { name: 'block', x: 400, y: 6100, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 200,
+      y: 6100,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    { name: 'block', x: 650, y: 6100, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 450,
+      y: 6100,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    { name: 'block', x: 250, y: 6300, w: 100, h: 100 },
+    { name: 'block', x: 500, y: 6300, w: 100, h: 100 },
+    { name: 'block', x: 500, y: 6300, w: 100, h: 100 },
+    { name: 'block', x: 750, y: 6300, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: -150,
+      y: 6500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 100,
+      y: 6500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 100,
+      y: 6600,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    { name: 'block', x: 800, y: 6600, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 350,
+      y: 6600,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    { name: 'block', x: 1050, y: 6600, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: -150,
+      y: 6700,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 100,
+      y: 6700,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    { name: 'block', x: 100, y: 6800, w: 100, h: 100 },
+    { name: 'block', x: 350, y: 6800, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 100,
+      y: 6950,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 350,
+      y: 6950,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    { name: 'block', x: 100, y: 7000, w: 100, h: 100 },
+    { name: 'block', x: 350, y: 7000, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 400,
+      y: 7200,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '10%'
+    },
+    {
+      name: 'chance',
+      x: 650,
+      y: 7200,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '10%'
+    }
+  ],
+  [
+    {
+      name: 'chance',
+      x: 500,
+      y: 6100,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 750,
+      y: 6100,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    { name: 'block', x: 300, y: 7000, w: 100, h: 100 },
+    { name: 'block', x: 550, y: 7000, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 400,
+      y: 7200,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '10%'
+    },
+    {
+      name: 'chance',
+      x: 650,
+      y: 7200,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '10%'
+    },
+    { name: 'block', x: -150, y: 7300, w: 100, h: 100 },
+    { name: 'block', x: 100, y: 7300, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: -100,
+      y: 7350,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 150,
+      y: 7350,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    { name: 'block', x: 900, y: 7500, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 0,
+      y: 7500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    { name: 'block', x: 1150, y: 7500, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 250,
+      y: 7500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    { name: 'block', x: 0, y: 7650, w: 100, h: 100 },
+    { name: 'block', x: 250, y: 7650, w: 100, h: 100 },
+    { name: 'block', x: 300, y: 7700, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: -50,
+      y: 7700,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    { name: 'block', x: 550, y: 7700, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 200,
+      y: 7700,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 400,
+      y: 7900,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 650,
+      y: 7900,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 400,
+      y: 8100,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '5%'
+    },
+    {
+      name: 'chance',
+      x: 650,
+      y: 8100,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '5%'
+    },
+    {
+      name: 'chance',
+      x: 500,
+      y: 8500,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '60%'
+    },
+    {
+      name: 'chance',
+      x: 750,
+      y: 8500,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '60%'
+    },
+    {
+      name: 'chance',
+      x: 300,
+      y: 8700,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '60%'
+    },
+    {
+      name: 'chance',
+      x: 550,
+      y: 8700,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '60%'
+    },
+    {
+      name: 'chance',
+      x: 500,
+      y: 9000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 750,
+      y: 9000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 500,
+      y: 9300,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 400,
+      y: 9300,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '5%'
+    },
+    {
+      name: 'chance',
+      x: 750,
+      y: 9300,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 650,
+      y: 9300,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '5%'
+    },
+    {
+      name: 'chance',
+      x: 550,
+      y: 9500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 800,
+      y: 9500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 0,
+      y: 9750,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 250,
+      y: 9750,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 0,
+      y: 11500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 250,
+      y: 11500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 150,
+      y: 11600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 400,
+      y: 11600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 250,
+      y: 11800,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 500,
+      y: 11800,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    }
+  ],
+  [
+    {
+      name: 'chance',
+      x: 300,
+      y: 1600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 550,
+      y: 1600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 450,
+      y: 1800,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 700,
+      y: 1800,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 450,
+      y: 2600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 700,
+      y: 2600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 500,
+      y: 3000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 750,
+      y: 3000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    { name: 'block', x: 800, y: 6600, w: 100, h: 100 },
+    { name: 'block', x: 1050, y: 6600, w: 100, h: 100 },
+    { name: 'block', x: 100, y: 6800, w: 100, h: 100 },
+    { name: 'block', x: 350, y: 6800, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 100,
+      y: 6950,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 350,
+      y: 6950,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    { name: 'block', x: 100, y: 7000, w: 100, h: 100 },
+    { name: 'block', x: 350, y: 7000, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 400,
+      y: 7200,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '10%'
+    },
+    {
+      name: 'chance',
+      x: 650,
+      y: 7200,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '10%'
+    },
+    {
+      name: 'chance',
+      x: 500,
+      y: 9300,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 750,
+      y: 9300,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 550,
+      y: 9500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 800,
+      y: 9500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 0,
+      y: 9750,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 250,
+      y: 9750,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 450,
+      y: 10000,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 700,
+      y: 10000,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 450,
+      y: 10400,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 700,
+      y: 10400,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 300,
+      y: 10600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 550,
+      y: 10600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 550,
+      y: 11000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 800,
+      y: 11000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 500,
+      y: 11300,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 750,
+      y: 11300,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 0,
+      y: 11500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 250,
+      y: 11500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 150,
+      y: 11600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 400,
+      y: 11600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 250,
+      y: 11800,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 500,
+      y: 11800,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    }
+  ],
+  [
+    {
+      name: 'chance',
+      x: -150,
+      y: 1000,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 100,
+      y: 1000,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    { name: 'block', x: 800, y: 6600, w: 100, h: 100 },
+    { name: 'block', x: 1050, y: 6600, w: 100, h: 100 },
+    { name: 'block', x: 100, y: 6800, w: 100, h: 100 },
+    { name: 'block', x: 350, y: 6800, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 100,
+      y: 6950,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 350,
+      y: 6950,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    { name: 'block', x: 100, y: 7000, w: 100, h: 100 },
+    { name: 'block', x: 350, y: 7000, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 400,
+      y: 7200,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '10%'
+    },
+    {
+      name: 'chance',
+      x: 650,
+      y: 7200,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '10%'
+    },
+    {
+      name: 'chance',
+      x: 100,
+      y: 9300,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '5%'
+    },
+    {
+      name: 'chance',
+      x: 350,
+      y: 9300,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '5%'
+    },
+    {
+      name: 'chance',
+      x: 100,
+      y: 10600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 350,
+      y: 10600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 450,
+      y: 11000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 700,
+      y: 11000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 300,
+      y: 11300,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 550,
+      y: 11300,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 0,
+      y: 11500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 250,
+      y: 11500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 150,
+      y: 11600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 200,
+      y: 11600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 400,
+      y: 11600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 450,
+      y: 11600,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+    {
+      name: 'chance',
+      x: 250,
+      y: 11800,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 500,
+      y: 11800,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '55%'
+    },
+    {
+      name: 'chance',
+      x: 400,
+      y: 12000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 650,
+      y: 12000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '15%'
+    },
+    {
+      name: 'chance',
+      x: 550,
+      y: 20400,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    },
+    {
+      name: 'chance',
+      x: 800,
+      y: 20400,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '70%'
+    }
+  ]
 ];
 
 for (obstacle in obstacleCourse) {//can be changed
