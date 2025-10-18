@@ -337,14 +337,24 @@ function draw() {
 
  if (gameState === "playing") {
     if (distanceCompleted >= 13000) {
-      /*gameState = "end";
-      finalTim = stopStopwatch(); // Store the final time
-      */
-     randomNum = randInt(0, levels.length-1);
-     obstacleCourse = levels[randomNum];
-     distanceCompleted = 0;
+        /*
+        The code below is what you need to replace, since levels are reused, and you need to reset the y-coordinate.
+        */
+        randomNum = randInt(0, levels.length-1);
+        
+        // 1. Get a fresh copy of the level so we don't modify the master level array
+        obstacleCourse = JSON.parse(JSON.stringify(levels[randomNum])); 
+        
+        // 2. APPLY THE INITIAL OFFSET TO THE NEW WAVE!
+        for (let i = 0; i < obstacleCourse.length; i++) {
+            obstacleCourse[i].y -= obstacleRange;
+            // Also reset hasCollided flag for all new obstacles
+            obstacleCourse[i].hasCollided = false;
+        }
+
+        distanceCompleted = 0;
     }
-  } else if (gameState === "died") {
+} else if (gameState === "died") {
     // Also, handle the 'died' state.
     // Ensure the stopwatch is only stopped once.
     if (isRunning) {
