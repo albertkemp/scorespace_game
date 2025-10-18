@@ -3133,7 +3133,7 @@ function drawEndPage() {
    text("SUBMIT SCORE", submitNameButtonX, submitNameButtonY+diff/2, submitNameButtonWidth, submitNameButtonHeight);
    fill(255);
    textSize(20);
-  text(distanceCompleted, 250, 200);
+  text(distanceCompleted, 270, 200);
   textSize(small);
   nameInput.show();
   if (submitInputValue!=""&&!submitted){
