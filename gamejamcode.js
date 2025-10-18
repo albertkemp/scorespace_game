@@ -3134,7 +3134,7 @@ function drawEndPage() {
    fill(255);
    textSize(20);
   text(distanceCompleted, 250, 200);
-  
+  textSize(small);
   nameInput.show();
   if (submitInputValue!=""&&!submitted){
     submitScore(submitInputValue, distanceCompleted);
@@ -3154,7 +3154,7 @@ if(submitted) {
   }else{
         let yPos = 350;
         highScores.forEach((scoreData, index) => {
-            text(`${index + 1}. ${scoreData.name}: ${formatTime(scoreData.score)}`, 50, yPos);
+            text(`${index + 1}. ${scoreData.name}: ${scoreData.score}`, 50, yPos);
             yPos += 20;
         });
       }
