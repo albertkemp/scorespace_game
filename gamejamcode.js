@@ -47,6 +47,7 @@ const obstacleNumber = 3600;
 const blockRange = 100;
 let lives = 3;
 let distanceCompleted = 0;
+let totalDistanceCompleted = 0;
 
 
 let moveLeft = false;
@@ -2752,7 +2753,6 @@ function draw() {
             // Also reset hasCollided flag for all new obstacles
             obstacleCourse[i].hasCollided = false;
         }
-
         distanceCompleted = 0;
     }
 } else if (gameState === "died") {
@@ -2767,7 +2767,7 @@ function draw() {
   } else if (gameState == "playing") {
     drawPlayPage();
    textSize(20);
-  text(distanceCompleted, 400, 20, 200, 100);
+  text(totalDistanceCompleted, 400, 20, 200, 100);
   } else if (gameState == "end") {
     drawEndPage();
   } else if (gameState == "died") {
@@ -3063,8 +3063,10 @@ fill(255);
         }
         if(speedBoostOn&& speedBoost>0) {
           distanceCompleted += speedyBlockSpeed;
+          totalDistanceCompleted += speedyBlockSpeed;
         }else{
         distanceCompleted += blockSpeed;
+        totalDistanceCompleted += blockSpeed;
         }
     }
 
@@ -3133,11 +3135,11 @@ function drawEndPage() {
    text("SUBMIT SCORE", submitNameButtonX, submitNameButtonY+diff/2, submitNameButtonWidth, submitNameButtonHeight);
    fill(255);
    textSize(20);
-  text(distanceCompleted, 270, 200);
+  text(totalDistanceCompleted, 270, 200);
   textSize(small);
   nameInput.show();
   if (submitInputValue!=""&&!submitted){
-    submitScore(submitInputValue, distanceCompleted);
+    submitScore(submitInputValue, totalDistanceCompleted);
     submitted = true;
     
 }
