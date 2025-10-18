@@ -33,6 +33,7 @@ let playerSpeed = 5;
 let isInvisible = false;
 let invisibility = 14400;
 let speedBoost = 1600;
+let originalSpeedBoost = speedBoost;
 let speedBoostOn = false;
 
 let bullets = 10;
@@ -3014,6 +3015,7 @@ function drawPlayPage() {
     speedBoost--;
   } else {
     speedBoostOn = false;
+    speedBoost = originalSpeedBoost; 
   }
 
   if (isInvisible && invisibility > 0) {
