@@ -2766,8 +2766,8 @@ function draw() {
     drawStartPage();
   } else if (gameState == "playing") {
     drawPlayPage();
-   
-  displayStopwatch(400, 20);
+   textSize(20);
+  text(distanceCompleted, 400, 20, 200, 100);
   } else if (gameState == "end") {
     drawEndPage();
   } else if (gameState == "died") {
