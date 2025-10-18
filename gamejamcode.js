@@ -180,6 +180,25 @@ let obstacleCourse = [
   {name: "chance", x:100, y: 2250,  w: 200, h: 150, hasCollided: false,c: "80%"},//
   {name: "block", x: 100, y: 3500, w: 100, h: 100,},
   {name: "chance", x: 400, y: 8000, w: 100, h: 100, hasCollided: false, c: "10%"},
+  ];
+let levels = [
+  [
+  {name: "chance", x: 100, y: 100, w: 100, h: 100, hasCollided: false, c: "50%"},
+  {name: "block", x: 400, y:1300, w: 100, h: 100},
+  {name: "chance", x: 200, y: 500, w: 200, h: 150, hasCollided: false, c: "80%"},//
+  {name: "block", x: 250, y: 4700, w: 100, h: 100,},
+  {name: "chance", x: -150, y: 1000,  w: 100, h: 100, hasCollided: false, c: "20%"},
+  {name: "block", x:500, y: 1500,  w: 100, h: 100},
+  {name: "chance", x:-150, y: 1200,  w: 100, h: 100, hasCollided: false, c: "50%"},
+  //{name: "block", x:5, y: 1500, w: 100, h: 100},
+  {name: "chance", x:100, y: 2000,  w: 100, h: 100,hasCollided: false, c: "50%"},
+  {name: "block", x: 800, y: 1600,  w: 100, h: 100},
+  {name: "block", x:100, y: 2500, w: 100, h: 100},
+  {name: "chance", x:100, y: 2250,  w: 200, h: 150, hasCollided: false,c: "80%"},//
+  {name: "block", x: 100, y: 3500, w: 100, h: 100,},
+  {name: "chance", x: 400, y: 8000, w: 100, h: 100, hasCollided: false, c: "10%"},
+  ],
+  [
   {name: "block", x: 300, y: 2800, w: 100, h: 100,},
   {name: "block", x: -150, y: 2900, w: 100, h: 100,},
   {name: "chance", x: -100, y: 1800, w: 100, h: 100, hasCollided: false, c: "50%"},
@@ -195,6 +214,8 @@ let obstacleCourse = [
   {name: "chance", x: 500, y: 6000, w: 100, h: 100, hasCollided: false, c: "50%"},
   {name: "chance", x: 300, y: 1000, w: 200, h: 150, hasCollided: false, c: "60%"},//
   {name: "chance", x: 500, y: 5500, w: 100, h: 100, hasCollided: false, c: "15%"},
+  ],
+  [
   {name: "chance", x: 550, y: 4000, w: 100, h: 100, hasCollided: false, c: "20%"},
   {name: "chance", x: 0, y:1750, w: 100, h: 100, hasCollided: false, c: "50%"},
   {name: "chance", x: 400, y: 3500, w: 100, h: 100, hasCollided: false, c: "5%"},
@@ -209,6 +230,8 @@ let obstacleCourse = [
   {name: "chance", x: 300, y: 4750, w: 200, h: 150, hasCollided: false, c: "80%"},//
   {name: "chance", x: 500, y: 3900, w: 100, h: 100, hasCollided: false, c: "15%"},
   {name: "chance", x: 550, y: 4800, w: 100, h: 100, hasCollided: false, c: "20%"},
+  ],
+[
   {name: "chance", x: 0, y: 2750, w: 100, h: 100, hasCollided: false, c: "50%"},
   {name: "block", x: 0, y: 4800,  w: 100, h: 100},
   {name: "block", x:500, y: 3250, w: 100, h: 100},
@@ -216,8 +239,8 @@ let obstacleCourse = [
   {name: "block", x:300, y: 4000, w: 100, h: 100},
   {name: "block", x: 200, y: 5300,  w: 100, h: 100},
   {name: "block", x:100, y: 4250, w: 100, h: 100},
-
-
+],
+[
 
   {name: "chance", x: 100, y: 6000, w: 100, h: 100, hasCollided: false, c: "50%"},
   {name: "block", x: 400, y:6100, w: 100, h: 100},
@@ -233,6 +256,8 @@ let obstacleCourse = [
   {name: "chance", x:100, y: 6950,  w: 200, h: 150, hasCollided: false,c: "80%"},//
   {name: "block", x: 100, y: 7000, w: 100, h: 100,},
   {name: "chance", x: 400, y: 7200, w: 100, h: 100, hasCollided: false, c: "10%"},
+],
+[
   {name: "block", x: 300, y: 7000, w: 100, h: 100,},
   {name: "block", x: -150, y: 7300, w: 100, h: 100,},
   {name: "chance", x: -100, y: 7350, w: 100, h: 100, hasCollided: false, c: "50%"},
@@ -251,6 +276,8 @@ let obstacleCourse = [
   {name: "chance", x: 550, y: 9500, w: 100, h: 100, hasCollided: false, c: "20%"},
   {name: "chance", x: 0, y:9750, w: 100, h: 100, hasCollided: false, c: "50%"},
   {name: "chance", x: 400, y: 9300, w: 100, h: 100, hasCollided: false, c: "5%"},
+],
+[
   {name: "chance", x: 450, y: 10000, w: 200, h: 150, hasCollided: false, c: "55%"},//
   {name: "chance", x: 450, y: 10400, w: 200, h: 150, hasCollided: false, c: "70%"},//
   {name: "chance", x: 300, y: 10600, w: 200, h: 150, hasCollided: false, c: "80%"},//
@@ -261,6 +288,8 @@ let obstacleCourse = [
   {name: "chance", x: 450, y: 2600, w: 200, h: 150, hasCollided: false, c: "70%"},//
   {name: "chance", x: 300, y: 1600, w: 200, h: 150, hasCollided: false, c: "80%"},//
   {name: "chance", x: 500, y: 3000, w: 100, h: 100, hasCollided: false, c: "15%"},
+],
+[
   {name: "chance", x: 100, y: 9300, w: 100, h: 100, hasCollided: false, c: "5%"},
   {name: "chance", x: -150, y: 1000, w: 200, h: 150, hasCollided: false, c: "55%"},//
   {name: "chance", x: 550, y: 20400, w: 200, h: 150, hasCollided: false, c: "70%"},//
@@ -272,6 +301,7 @@ let obstacleCourse = [
   {name: "chance", x: 150, y: 11600, w: 200, h: 150, hasCollided: false, c: "70%"},//
   {name: "chance", x: 200, y: 11600, w: 200, h: 150, hasCollided: false, c: "80%"},//
   {name: "chance", x: 400, y: 12000, w: 100, h: 100, hasCollided: false, c: "15%"}
+]
 ];
 
 for (obstacle in obstacleCourse) {//can be changed
@@ -307,8 +337,12 @@ function draw() {
 
  if (gameState === "playing") {
     if (distanceCompleted >= 13000) {
-      gameState = "end";
+      /*gameState = "end";
       finalTim = stopStopwatch(); // Store the final time
+      */
+     randomNum = randInt(0, levels.length-1);
+     obstacleCourse = levels[randomNum];
+     distanceCompleted = 0;
     }
   } else if (gameState === "died") {
     // Also, handle the 'died' state.
