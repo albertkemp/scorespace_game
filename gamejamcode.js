@@ -2771,7 +2771,7 @@ function draw() {
   } else if (gameState == "end") {
     drawEndPage();
   } else if (gameState == "died") {
-    drawDiedPage();
+    drawEndPage();
   } else if (gameState == "how") {
     drawHowPage();
   } else if (gameState == "high") {
@@ -3121,7 +3121,7 @@ function drawEndPage() {
   textSize(40);
   text("GOOD JOB!", 100, 80, 500, 100);
   textSize(20);
-  text('YOUR TIME:', 50, 200, 300, 100);
+  text('YOUR SCORE:', 50, 200, 300, 100);
   textSize(small);
   //text(keylog, 50, 220, 300, 100);
    //text('Refresh the page to play again',150, 100, 300, 100);
@@ -3132,11 +3132,12 @@ function drawEndPage() {
    text("PLAY AGAIN", playAgainButtonX, playAgainButtonY+diff/2, playAgainButtonWidth, playAgainButtonHeight);
    text("SUBMIT SCORE", submitNameButtonX, submitNameButtonY+diff/2, submitNameButtonWidth, submitNameButtonHeight);
    fill(255);
-  displayFormattedTime(elapsedTime, 250, 200);
+   textSize(20);
+  text(distanceCompleted, 250, 200);
   
   nameInput.show();
   if (submitInputValue!=""&&!submitted){
-    submitScore(submitInputValue, elapsedTime);
+    submitScore(submitInputValue, distanceCompleted);
     submitted = true;
     
 }
@@ -3326,7 +3327,7 @@ function submitScore(playerName, score) {
 async function getHighScores() {
   const highScores = [];
   const snapshot = await db.collection("high_scores")
-    .orderBy("score", "asc")
+    .orderBy("score", "desc")
     .limit(10)
     .get();
 
