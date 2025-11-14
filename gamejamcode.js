@@ -2738,7 +2738,7 @@ function draw() {
   fill(255);
 
  if (gameState === "playing") {
-    if (distanceCompleted >= 13000) {
+    if (distanceCompleted >= 11000) {
         /*
         The code below is what you need to replace, since levels are reused, and you need to reset the y-coordinate.
         */
