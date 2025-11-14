@@ -2715,9 +2715,12 @@ function randInt(min, max){
 let randomInt = randInt(0, 100);
 //IMPORTANT (tdo to change tmr)
 function drawBlock(x, y, w, h) {
+  stroke(255, 0, 0);
   image(rock, x, y, w, h);
+  noStroke();
 }
 function drawChance(x, y, w, h, p) {
+  stroke(255, 0, 0);
   if (parseInt(p)<50) {
     image(jelly, x, y, w, h);
   }else if (parseInt(p)==50) {
@@ -2725,6 +2728,7 @@ function drawChance(x, y, w, h, p) {
   } else{
     image(coral, x, y, w, h);
   }
+  noStroke();
   rect(x, y, 40, 20);
   fill(0);
   textSize(small);
@@ -2992,22 +2996,32 @@ function drawPlayPage() {
   if (playerState === "normal") {
     music.speed(1);
     music.loop();
+    stroke(255, 0, 0);
     image(boatNormal, player.x, player.y, player.w, player.h);
+    noStroke();
   } else if (playerState === "left") {
     music.speed(1);
     music.loop();
+    stroke(255, 0, 0);
     image(boatLeft, player.x, player.y, player.w, player.h);
+    noStroke();
   } else if (playerState === "right") {
     music.speed(1);
     music.loop();
+    stroke(255, 0, 0);
     image(boatRight, player.x, player.y, player.w, player.h);
+    noStroke();
   } else if (playerState === "invisible") {
     music.stop();
+    stroke(255, 0, 0);
     image(playerInvisible, player.x, player.y, player.w, player.h);
+    noStroke();
   } else if (playerState === "speed") {
     music.speed(2);
     music.loop();
+    stroke(255, 0, 0);
     image(playerSpeedBoost, player.x, player.y, player.w, player.h);
+    noStroke();
   }
 
   // Handle speed and invisibility boost durations
