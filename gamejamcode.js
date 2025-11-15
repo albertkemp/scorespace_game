@@ -182,6 +182,31 @@ let obstacleCourse = [
   {name: "chance", x:100, y: 2250,  w: 200, h: 150, hasCollided: false,c: "80%"},//
   {name: "block", x: 100, y: 3500, w: 100, h: 100,},
   {name: "chance", x: 400, y: 8000, w: 100, h: 100, hasCollided: false, c: "10%"},
+  {name: "chance", x: 550, y: 1800, w: 100, h: 100, hasCollided: false, c: "70%"},
+  {name: "chance", x: 50, y: 8500, w: 200, h: 100, hasCollided: false, c: "90%"},
+  {name: "chance", x: 300, y: 3100, w: 100, h: 100, hasCollided: false, c: "60%"},
+  {name: "chance", x: 800, y: 4900, w: 200, h: 100, hasCollided: false, c: "85%"},
+
+  // Block (Standard 100x100)
+  {name: "block", x: 700, y: 1400, w: 100, h: 100},
+  {name: "block", x: 10, y: 2700, w: 100, h: 100},
+  {name: "block", x: 450, y: 6000, w: 100, h: 100},
+  {name: "block", x: 950, y: 7500, w: 100, h: 100},
+  {name: "block", x: 200, y: 9200, w: 100, h: 100},
+
+  // Random/Other Sizes
+  // Small chance object
+  {name: "chance", x: 150, y: 3800, w: 50, h: 50, hasCollided: false, c: "25%"},
+  // Wide block
+  {name: "block", x: 300, y: 5200, w: 300, h: 50},
+  // Large chance object (>50% but custom size)
+  {name: "chance", x: -200, y: 2200, w: 150, h: 200, hasCollided: false, c: "75%"},
+  // Very tall block
+  {name: "block", x: 700, y: 4000, w: 50, h: 400},
+  // Small block
+  {name: "block", x: 100, y: 6800, w: 50, h: 50},
+  // Low chance object (Custom size)
+  {name: "chance", x: 650, y: 9900, w: 150, h: 75, hasCollided: false, c: "40%"}
   ];
 let levels = [
   [
