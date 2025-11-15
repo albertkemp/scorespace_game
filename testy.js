@@ -189,7 +189,7 @@
             // Draw player in all states except loading
             if (gameState !== "loading") {
                  fill(255);
-                 stroke(255, 0, 0);fill(null);rect(player.x, player.y, player.w, player.h);
+                 stroke(255, 0, 0);noFill();rect(player.x, player.y, player.w, player.h);
             }
            
             // Movement logic
