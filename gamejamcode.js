@@ -222,7 +222,7 @@ let levels = [
     {
       name: 'chance',
       x: 350,
-      y: 100,
+      y: 200,
       w: 100,
       h: 100,
       hasCollided: false,
@@ -267,7 +267,7 @@ let levels = [
     {
       name: 'chance',
       x: -150,
-      y: 1200,
+      y: 700,
       w: 100,
       h: 100,
       hasCollided: false,
@@ -300,7 +300,7 @@ let levels = [
     {
       name: 'chance',
       x: 150,
-      y: 1800,
+      y: 1000,
       w: 100,
       h: 100,
       hasCollided: false,
@@ -309,7 +309,7 @@ let levels = [
     {
       name: 'chance',
       x: 100,
-      y: 2000,
+      y: 200,
       w: 100,
       h: 100,
       hasCollided: false,
@@ -318,7 +318,7 @@ let levels = [
     {
       name: 'chance',
       x: 350,
-      y: 2000,
+      y: 2200,
       w: 100,
       h: 100,
       hasCollided: false,
@@ -327,7 +327,104 @@ let levels = [
     {
       name: 'chance',
       x: 100,
-      y: 2250,
+      y: 2150,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+
+    {
+      name: 'chance',
+      x: 350,
+      y: 2150,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '80%'
+    },
+        {
+      name: 'chance',
+      x: -150,
+      y: 1500,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: 100,
+      y: 1200,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '20%'
+    },
+    {
+      name: 'chance',
+      x: -150,
+      y: 1700,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 100,
+      y: 1400,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    { name: 'block', x: 400, y: 2300, w: 100, h: 100 },
+    { name: 'block', x: 650, y: 3300, w: 100, h: 100 },
+    { name: 'block', x: 500, y: 2500, w: 100, h: 100 },
+    { name: 'block', x: 750, y: 500, w: 100, h: 100 },
+    { name: 'block', x: 800, y: 100, w: 100, h: 100 },
+    { name: 'block', x: 1050, y: 1900, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: -100,
+      y: 1900,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 150,
+      y: 100,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 100,
+      y: 1200,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 350,
+      y: 1000,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 100,
+      y: 250,
       w: 200,
       h: 150,
       hasCollided: false,
@@ -336,7 +433,7 @@ let levels = [
     {
       name: 'chance',
       x: 350,
-      y: 2250,
+      y: 2550,
       w: 200,
       h: 150,
       hasCollided: false,
@@ -442,7 +539,7 @@ let levels = [
     {
       name: 'chance',
       x: 250,
-      y: 1750,
+      y: 2750,
       w: 100,
       h: 100,
       hasCollided: false,
@@ -451,7 +548,72 @@ let levels = [
     {
       name: 'chance',
       x: -100,
-      y: 1800,
+      y: 2800,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+       {
+      name: 'chance',
+      x: 300,
+      y: 1500,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '60%'
+    },
+    {
+      name: 'chance',
+      x: 550,
+      y: 1200,
+      w: 200,
+      h: 150,
+      hasCollided: false,
+      c: '60%'
+    },
+    {
+      name: 'chance',
+      x: 400,
+      y: 1900,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '5%'
+    },
+    {
+      name: 'chance',
+      x: 650,
+      y: 1400,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '5%'
+    },
+    { name: 'block', x: 1800, y: 1600, w: 100, h: 100 },
+    { name: 'block', x: 50, y: 1600, w: 100, h: 100 },
+    {
+      name: 'chance',
+      x: 0,
+      y: 1650,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: 250,
+      y: 2750,
+      w: 100,
+      h: 100,
+      hasCollided: false,
+      c: '50%'
+    },
+    {
+      name: 'chance',
+      x: -100,
+      y: 2800,
       w: 100,
       h: 100,
       hasCollided: false,
@@ -592,11 +754,11 @@ let levels = [
       c: '5%'
     },
     { name: 'block', x: 1150, y: 3500, w: 100, h: 100 },
-    { name: 'block', x: 350, y: 3500, w: 100, h: 100 },
+    { name: 'block', x: 350, y: 1500, w: 100, h: 100 },
     {
       name: 'chance',
       x: 650,
-      y: 3500,
+      y: 520,
       w: 100,
       h: 100,
       hasCollided: false,
@@ -605,7 +767,7 @@ let levels = [
     {
       name: 'chance',
       x: 500,
-      y: 3900,
+      y: 900,
       w: 100,
       h: 100,
       hasCollided: false,
@@ -614,7 +776,7 @@ let levels = [
     {
       name: 'chance',
       x: 750,
-      y: 3900,
+      y: 900,
       w: 100,
       h: 100,
       hasCollided: false,
@@ -623,7 +785,7 @@ let levels = [
     {
       name: 'chance',
       x: 550,
-      y: 4000,
+      y: 400,
       w: 100,
       h: 100,
       hasCollided: false,
@@ -632,7 +794,7 @@ let levels = [
     {
       name: 'chance',
       x: 800,
-      y: 4000,
+      y: 1000,
       w: 100,
       h: 100,
       hasCollided: false,
@@ -641,7 +803,7 @@ let levels = [
     {
       name: 'chance',
       x: 0,
-      y: 4150,
+      y: 150,
       w: 100,
       h: 100,
       hasCollided: false,
@@ -650,14 +812,14 @@ let levels = [
     {
       name: 'chance',
       x: 250,
-      y: 4150,
+      y: 150,
       w: 100,
       h: 100,
       hasCollided: false,
       c: '50%'
     },
-    { name: 'block', x: 0, y: 4550, w: 100, h: 100 },
-    { name: 'block', x: 250, y: 4550, w: 100, h: 100 },
+    { name: 'block', x: 0, y: 150, w: 100, h: 100 },
+    { name: 'block', x: 250, y: 550, w: 100, h: 100 },
     {
       name: 'chance',
       x: 450,
@@ -677,9 +839,247 @@ let levels = [
       c: '55%'
     },
     {
+        name: 'block',
+        x: 700,
+        y: 9100,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 800,
+        y: 4100,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 450,
+        y: 3800,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '5%'
+    },
+{
+        name: 'chance',
+        x: 750,
+        y: 1200,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '5%'
+    },
+{
+        name: 'block',
+        x: 950,
+        y: 1300,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 450,
+        y: 3400,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 800,
+        y: 9600,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '60%'
+    },
+{
+        name: 'chance',
+        x: 500,
+        y: 1600,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '50%'
+    },
+{
+        name: 'block',
+        x: 800,
+        y: 8300,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 800,
+        y: 4400,
+        w: 100,
+        h: 100,
+    }
+        ],
+        [
+{
+        name: 'block',
+        x: 600,
+        y: 10000,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 650,
+        y: 9300,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '55%'
+    },
+{
+        name: 'chance',
+        x: 50,
+        y: 3600,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '50%'
+    },
+{
+        name: 'block',
+        x: 900,
+        y: 2700,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 250,
+        y: 1500,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 50,
+        y: 4600,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 200,
+        y: 1700,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 400,
+        y: 8200,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '55%'
+    },
+{
+        name: 'chance',
+        x: 400,
+        y: 1900,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '5%'
+    },
+{
+        name: 'block',
+        x: 800,
+        y: 9200,
+        w: 100,
+        h: 100,
+    }
+        ],
+        [
+{
+        name: 'block',
+        x: 200,
+        y: 8700,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 850,
+        y: 5400,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '55%'
+    },
+{
+        name: 'chance',
+        x: 600,
+        y: 6100,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '20%'
+    },
+{
+        name: 'block',
+        x: 400,
+        y: 9900,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 250,
+        y: 1200,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 400,
+        y: 7100,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 400,
+        y: 9200,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '50%'
+    },
+{
+        name: 'block',
+        x: 700,
+        y: 4700,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 0,
+        y: 8200,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 250,
+        y: 7200,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '10%'
+    },
+    {
       name: 'chance',
       x: 300,
-      y: 4750,
+      y: 1750,
       w: 200,
       h: 150,
       hasCollided: false,
@@ -688,7 +1088,7 @@ let levels = [
     {
       name: 'chance',
       x: 550,
-      y: 4750,
+      y: 750,
       w: 200,
       h: 150,
       hasCollided: false,
@@ -697,7 +1097,7 @@ let levels = [
     {
       name: 'chance',
       x: 550,
-      y: 4800,
+      y: 800,
       w: 100,
       h: 100,
       hasCollided: false,
@@ -706,7 +1106,7 @@ let levels = [
     {
       name: 'chance',
       x: 800,
-      y: 4800,
+      y: 1100,
       w: 100,
       h: 100,
       hasCollided: false,
@@ -857,6 +1257,150 @@ let levels = [
       h: 100,
       hasCollided: false,
       c: '50%'
+    },
+    {
+        name: 'block',
+        x: 450,
+        y: 5000,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 350,
+        y: 1500,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 400,
+        y: 6000,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 950,
+        y: 5000,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 850,
+        y: 1400,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '50%'
+    },
+{
+        name: 'block',
+        x: 150,
+        y: 3100,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 0,
+        y: 5300,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 200,
+        y: 3800,
+        w: 100,
+        h: 100,
+    }
+        ],
+        [
+{
+        name: 'chance',
+        x: 850,
+        y: 10900,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '50%'
+    },
+{
+        name: 'chance',
+        x: 700,
+        y: 8800,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '10%'
+    },
+{
+        name: 'chance',
+        x: 50,
+        y: 11300,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '50%'
+    },
+{
+        name: 'chance',
+        x: 50,
+        y: 11400,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '10%'
+    },
+{
+        name: 'chance',
+        x: 250,
+        y: 7000,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '50%'
+    },
+{
+        name: 'block',
+        x: 350,
+        y: 3200,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 800,
+        y: 4600,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '50%'
+    },
+{
+        name: 'block',
+        x: 450,
+        y: 6200,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 700,
+        y: 7200,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '55%'
+    },
+{
+        name: 'block',
+        x: 500,
+        y: 1800,
+        w: 100,
+        h: 100,
     },
     {
       name: 'chance',
@@ -1243,6 +1787,218 @@ let levels = [
       c: '50%'
     },
     {
+        name: 'block',
+        x: 0,
+        y: 8400,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 600,
+        y: 5700,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 250,
+        y: 3000,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '80%'
+    },
+{
+        name: 'block',
+        x: 350,
+        y: 4500,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 700,
+        y: 2800,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '55%'
+    },
+{
+        name: 'chance',
+        x: 750,
+        y: 9400,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '55%'
+    }
+        ],
+        [
+{
+        name: 'block',
+        x: 750,
+        y: 3100,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 450,
+        y: 1700,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 350,
+        y: 8900,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '55%'
+    },
+{
+        name: 'block',
+        x: 800,
+        y: 10700,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 450,
+        y: 11200,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '55%'
+    },
+{
+        name: 'chance',
+        x: 350,
+        y: 9200,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '80%'
+    },
+{
+        name: 'block',
+        x: 100,
+        y: 8600,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 250,
+        y: 4700,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 100,
+        y: 2400,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 600,
+        y: 8100,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '10%'
+    }
+        ],
+        [
+{
+        name: 'chance',
+        x: 400,
+        y: 7200,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '55%'
+    },
+{
+        name: 'chance',
+        x: 850,
+        y: 3700,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '70%'
+    },
+{
+        name: 'block',
+        x: 200,
+        y: 9600,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 850,
+        y: 8100,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '50%'
+    },
+{
+        name: 'block',
+        x: 400,
+        y: 3100,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 400,
+        y: 11700,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 700,
+        y: 1400,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '70%'
+    },
+{
+        name: 'chance',
+        x: 200,
+        y: 1500,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '10%'
+    },
+{
+        name: 'chance',
+        x: 650,
+        y: 1900,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '60%'
+    },
+{
+        name: 'block',
+        x: 800,
+        y: 9500,
+        w: 100,
+        h: 100,
+    },
+    {
       name: 'chance',
       x: 150,
       y: 11600,
@@ -1346,6 +2102,215 @@ let levels = [
       h: 100,
       hasCollided: false,
       c: '15%'
+    },
+    {
+        name: 'chance',
+        x: 550,
+        y: 2500,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '10%'
+    },
+{
+        name: 'chance',
+        x: 900,
+        y: 1900,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '80%'
+    },
+{
+        name: 'block',
+        x: 800,
+        y: 2500,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 950,
+        y: 11300,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 550,
+        y: 11900,
+        w: 100,
+        h: 100,
+    }
+        ],
+        [
+{
+        name: 'block',
+        x: 900,
+        y: 1000,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 350,
+        y: 3400,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '50%'
+    },
+{
+        name: 'chance',
+        x: 250,
+        y: 7000,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '55%'
+    },
+{
+        name: 'chance',
+        x: 950,
+        y: 7500,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '5%'
+    },
+{
+        name: 'block',
+        x: 550,
+        y: 9100,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 50,
+        y: 7700,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '20%'
+    },
+{
+        name: 'chance',
+        x: 100,
+        y: 10600,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '70%'
+    },
+{
+        name: 'block',
+        x: 800,
+        y: 9300,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 250,
+        y: 11600,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 650,
+        y: 6200,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '60%'
+    }
+        ],
+        [
+{
+        name: 'chance',
+        x: 600,
+        y: 1300,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '60%'
+    },
+{
+        name: 'chance',
+        x: 750,
+        y: 6800,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '60%'
+    },
+{
+        name: 'chance',
+        x: 900,
+        y: 9200,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '5%'
+    },
+{
+        name: 'block',
+        x: 650,
+        y: 4000,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 350,
+        y: 1800,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '60%'
+    },
+{
+        name: 'block',
+        x: 750,
+        y: 2800,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 550,
+        y: 2000,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 150,
+        y: 6100,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '50%'
+    },
+{
+        name: 'chance',
+        x: 900,
+        y: 3000,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '70%'
+    },
+{
+        name: 'chance',
+        x: 450,
+        y: 10500,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '10%'
     },
     {
       name: 'chance',
@@ -1706,6 +2671,216 @@ let levels = [
       c: '70%'
     },
     {
+        name: 'block',
+        x: 600,
+        y: 5200,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 650,
+        y: 4900,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 950,
+        y: 5200,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '20%'
+    },
+{
+        name: 'chance',
+        x: 450,
+        y: 4300,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '55%'
+    },
+{
+        name: 'block',
+        x: 850,
+        y: 3400,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 100,
+        y: 5000,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '15%'
+    }
+        ],
+        [
+{
+        name: 'block',
+        x: 150,
+        y: 7700,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 800,
+        y: 4100,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '60%'
+    },
+{
+        name: 'block',
+        x: 850,
+        y: 4000,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 950,
+        y: 8700,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 350,
+        y: 10100,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '80%'
+    },
+{
+        name: 'block',
+        x: 50,
+        y: 4400,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 0,
+        y: 11300,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '80%'
+    },
+{
+        name: 'chance',
+        x: 50,
+        y: 10400,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '55%'
+    },
+{
+        name: 'block',
+        x: 750,
+        y: 1700,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 150,
+        y: 7900,
+        w: 100,
+        h: 100,
+    }
+        ],
+        [
+{
+        name: 'block',
+        x: 750,
+        y: 2300,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 250,
+        y: 11200,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 550,
+        y: 8900,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '70%'
+    },
+{
+        name: 'chance',
+        x: 600,
+        y: 7000,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '60%'
+    },
+{
+        name: 'chance',
+        x: 650,
+        y: 9600,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '50%'
+    },
+{
+        name: 'block',
+        x: 50,
+        y: 5000,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 800,
+        y: 9200,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '20%'
+    },
+{
+        name: 'chance',
+        x: 550,
+        y: 7800,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '70%'
+    },
+{
+        name: 'block',
+        x: 300,
+        y: 3600,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 50,
+        y: 1000,
+        w: 100,
+        h: 100,
+    },
+    {
       name: 'chance',
       x: 700,
       y: 5800,
@@ -1874,6 +3049,228 @@ let levels = [
       hasCollided: false,
       c: '80%'
     },
+    {
+        name: 'block',
+        x: 950,
+        y: 8000,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 100,
+        y: 7500,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '5%'
+    },
+{
+        name: 'block',
+        x: 100,
+        y: 1700,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 0,
+        y: 2700,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '5%'
+    },
+{
+        name: 'block',
+        x: 700,
+        y: 3200,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 150,
+        y: 6100,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 550,
+        y: 6900,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 600,
+        y: 9200,
+        w: 100,
+        h: 100,
+    }
+        ],
+        [
+{
+        name: 'chance',
+        x: 50,
+        y: 10700,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '70%'
+    },
+{
+        name: 'block',
+        x: 450,
+        y: 7700,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 300,
+        y: 1000,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '55%'
+    },
+{
+        name: 'block',
+        x: 400,
+        y: 3000,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 400,
+        y: 10600,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 650,
+        y: 10800,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 0,
+        y: 7500,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 500,
+        y: 8800,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 250,
+        y: 1800,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '5%'
+    },
+{
+        name: 'chance',
+        x: 850,
+        y: 6000,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '15%'
+    }
+        ],
+        [
+{
+        name: 'block',
+        x: 350,
+        y: 6200,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 600,
+        y: 3000,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 200,
+        y: 6100,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 950,
+        y: 11400,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '60%'
+    },
+{
+        name: 'chance',
+        x: 750,
+        y: 9800,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '15%'
+    },
+{
+        name: 'block',
+        x: 400,
+        y: 9900,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 550,
+        y: 10400,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '70%'
+    },
+{
+        name: 'block',
+        x: 500,
+        y: 8400,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 350,
+        y: 9600,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '5%'
+    },
+{
+        name: 'chance',
+        x: 650,
+        y: 10300,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '55%'
+    },
     { name: 'block', x: 300, y: 7000, w: 100, h: 100 },
     { name: 'block', x: 550, y: 7000, w: 100, h: 100 },
     {
@@ -1964,6 +3361,244 @@ let levels = [
       h: 100,
       hasCollided: false,
       c: '50%'
+    },
+    {
+        name: 'block',
+        x: 700,
+        y: 9100,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 800,
+        y: 4100,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 450,
+        y: 3800,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '5%'
+    },
+{
+        name: 'chance',
+        x: 750,
+        y: 1200,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '5%'
+    },
+{
+        name: 'block',
+        x: 950,
+        y: 1300,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 450,
+        y: 3400,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 800,
+        y: 9600,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '60%'
+    },
+{
+        name: 'chance',
+        x: 500,
+        y: 1600,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '50%'
+    },
+{
+        name: 'block',
+        x: 800,
+        y: 8300,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 800,
+        y: 4400,
+        w: 100,
+        h: 100,
+    }
+        ],
+        [
+{
+        name: 'block',
+        x: 600,
+        y: 10000,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 650,
+        y: 9300,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '55%'
+    },
+{
+        name: 'chance',
+        x: 50,
+        y: 8600,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '50%'
+    },
+{
+        name: 'block',
+        x: 900,
+        y: 8700,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 250,
+        y: 3500,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 50,
+        y: 8600,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 200,
+        y: 9700,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 400,
+        y: 7200,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '55%'
+    },
+{
+        name: 'chance',
+        x: 400,
+        y: 2900,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '5%'
+    },
+{
+        name: 'block',
+        x: 800,
+        y: 10200,
+        w: 100,
+        h: 100,
+    }
+        ],
+        [
+{
+        name: 'block',
+        x: 200,
+        y: 9700,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 850,
+        y: 6400,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '55%'
+    },
+{
+        name: 'chance',
+        x: 600,
+        y: 5100,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '20%'
+    },
+{
+        name: 'block',
+        x: 400,
+        y: 10900,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 250,
+        y: 11200,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 400,
+        y: 8100,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 400,
+        y: 10200,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '50%'
+    },
+{
+        name: 'block',
+        x: 700,
+        y: 3700,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 0,
+        y: 9200,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 250,
+        y: 8200,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '10%'
     },
     {
       name: 'chance',
@@ -2289,6 +3924,235 @@ let levels = [
       c: '10%'
     },
     {
+        name: 'block',
+        x: 50,
+        y: 8800,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 900,
+        y: 9600,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '60%'
+    },
+{
+        name: 'block',
+        x: 100,
+        y: 9700,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 150,
+        y: 6000,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 800,
+        y: 5200,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '15%'
+    },
+{
+        name: 'chance',
+        x: 450,
+        y: 7600,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '70%'
+    },
+{
+        name: 'block',
+        x: 500,
+        y: 2500,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 950,
+        y: 2100,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '5%'
+    },
+{
+        name: 'chance',
+        x: 900,
+        y: 2500,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '5%'
+    }
+        ],
+        [
+{
+        name: 'block',
+        x: 650,
+        y: 1800,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 200,
+        y: 9800,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '80%'
+    },
+{
+        name: 'block',
+        x: 900,
+        y: 9500,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 200,
+        y: 2000,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 200,
+        y: 3200,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '55%'
+    },
+{
+        name: 'block',
+        x: 150,
+        y: 9300,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 200,
+        y: 7600,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '55%'
+    },
+{
+        name: 'block',
+        x: 950,
+        y: 3900,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 950,
+        y: 7000,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '55%'
+    },
+{
+        name: 'block',
+        x: 100,
+        y: 8400,
+        w: 100,
+        h: 100,
+    }
+        ],
+        [
+{
+        name: 'block',
+        x: 850,
+        y: 1800,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 600,
+        y: 7600,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '55%'
+    },
+{
+        name: 'block',
+        x: 700,
+        y: 9900,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 750,
+        y: 3500,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 650,
+        y: 3100,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 750,
+        y: 3800,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 900,
+        y: 1200,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 600,
+        y: 3600,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 300,
+        y: 4600,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '70%'
+    },
+{
+        name: 'block',
+        x: 800,
+        y: 11800,
+        w: 100,
+        h: 100,
+    },
+    {
       name: 'chance',
       x: 500,
       y: 9300,
@@ -2458,6 +4322,250 @@ let levels = [
       h: 150,
       hasCollided: false,
       c: '70%'
+    },
+    {
+        name: 'chance',
+        x: 800,
+        y: 5600,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '10%'
+    },
+{
+        name: 'block',
+        x: 350,
+        y: 6100,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 950,
+        y: 4800,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 300,
+        y: 2600,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '80%'
+    },
+{
+        name: 'chance',
+        x: 750,
+        y: 1000,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '55%'
+    },
+{
+        name: 'chance',
+        x: 750,
+        y: 8400,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '20%'
+    },
+{
+        name: 'chance',
+        x: 300,
+        y: 8800,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '5%'
+    },
+{
+        name: 'block',
+        x: 900,
+        y: 5200,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 400,
+        y: 7300,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 950,
+        y: 6500,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '20%'
+    }
+        ],
+        [
+{
+        name: 'block',
+        x: 600,
+        y: 1800,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 800,
+        y: 6800,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 850,
+        y: 6800,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 350,
+        y: 2500,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '55%'
+    },
+{
+        name: 'chance',
+        x: 750,
+        y: 4800,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '70%'
+    },
+{
+        name: 'chance',
+        x: 100,
+        y: 7700,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '20%'
+    },
+{
+        name: 'chance',
+        x: 0,
+        y: 8100,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '60%'
+    },
+{
+        name: 'block',
+        x: 500,
+        y: 7400,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 300,
+        y: 9300,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 250,
+        y: 3600,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '55%'
+    }
+        ],
+        [
+{
+        name: 'chance',
+        x: 550,
+        y: 10400,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '5%'
+    },
+{
+        name: 'block',
+        x: 100,
+        y: 7200,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 350,
+        y: 10100,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 150,
+        y: 9000,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 600,
+        y: 7200,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '50%'
+    },
+{
+        name: 'block',
+        x: 500,
+        y: 6700,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 50,
+        y: 9500,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '55%'
+    },
+{
+        name: 'chance',
+        x: 100,
+        y: 3200,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '20%'
+    },
+{
+        name: 'block',
+        x: 700,
+        y: 7100,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 200,
+        y: 2300,
+        w: 100,
+        h: 100,
     },
     {
       name: 'chance',
@@ -2691,6 +4799,229 @@ let levels = [
       h: 150,
       hasCollided: false,
       c: '55%'
+    },
+    {
+        name: 'chance',
+        x: 800,
+        y: 11700,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '50%'
+    },
+{
+        name: 'chance',
+        x: 850,
+        y: 7200,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '10%'
+    },
+{
+        name: 'chance',
+        x: 200,
+        y: 8900,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '60%'
+    },
+{
+        name: 'block',
+        x: 50,
+        y: 5100,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 300,
+        y: 5900,
+        w: 200,
+        h: 150,
+        hasCollided: true,
+        c: '70%'
+    },
+{
+        name: 'chance',
+        x: 700,
+        y: 7100,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '5%'
+    },
+{
+        name: 'chance',
+        x: 650,
+        y: 11700,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '70%'
+    }
+        ],
+        [
+{
+        name: 'chance',
+        x: 350,
+        y: 8200,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '10%'
+    },
+{
+        name: 'chance',
+        x: 400,
+        y: 4100,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '5%'
+    },
+{
+        name: 'chance',
+        x: 750,
+        y: 8200,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '70%'
+    },
+{
+        name: 'block',
+        x: 650,
+        y: 9900,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 350,
+        y: 9200,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 400,
+        y: 11200,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 750,
+        y: 6300,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '15%'
+    },
+{
+        name: 'chance',
+        x: 0,
+        y: 8700,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '70%'
+    },
+{
+        name: 'block',
+        x: 950,
+        y: 5100,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 200,
+        y: 7800,
+        w: 100,
+        h: 100,
+    }
+        ],
+        [
+{
+        name: 'chance',
+        x: 350,
+        y: 3200,
+        w: 200,
+        h: 150,
+        hasCollided: false,
+        c: '55%'
+    },
+{
+        name: 'block',
+        x: 100,
+        y: 5200,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 450,
+        y: 3300,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '50%'
+    },
+{
+        name: 'block',
+        x: 50,
+        y: 9000,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 900,
+        y: 1300,
+        w: 100,
+        h: 100,
+        hasCollided: false,
+        c: '20%'
+    },
+{
+        name: 'block',
+        x: 700,
+        y: 8400,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'chance',
+        x: 350,
+        y: 11200,
+        w: 100,
+        h: 100,
+        hasCollided: true,
+        c: '5%'
+    },
+{
+        name: 'block',
+        x: 250,
+        y: 8800,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 550,
+        y: 5400,
+        w: 100,
+        h: 100,
+    },
+{
+        name: 'block',
+        x: 200,
+        y: 2000,
+        w: 100,
+        h: 100,
     },
     {
       name: 'chance',
