@@ -122,7 +122,7 @@ function draw() {
 
     if (gameState === "playing") {
         // Draw player only during the playing state
-        stroke(255, 0, 0);rect(player.x, player.y, player.w, player.h);
+        stroke(255, 0, 0);fill(null);rect(player.x, player.y, player.w, player.h);
     }
 }
 
