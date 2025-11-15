@@ -2715,12 +2715,12 @@ function randInt(min, max){
 let randomInt = randInt(0, 100);
 //IMPORTANT (tdo to change tmr)
 function drawBlock(x, y, w, h) {
-  stroke(255, 0, 0);noFill();rect(player.x, player.y, player.w, player.h);
+  stroke(255, 0, 0);noFill();rect(x, y, w, h);
   image(rock, x, y, w, h);
   noStroke();
 }
 function drawChance(x, y, w, h, p) {
-  stroke(255, 0, 0);noFill();rect(player.x, player.y, player.w, player.h);
+  stroke(255, 0, 0);noFill();rect(x, y, w, h);
   if (parseInt(p)<50) {
     image(jelly, x, y, w, h);
   }else if (parseInt(p)==50) {
